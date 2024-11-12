@@ -1,3 +1,4 @@
+import { Heading, Theme } from '@radix-ui/themes';
 import './global.css';
 
 const title = 'Jimmy Andrade';
@@ -13,12 +14,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt-br">
-      <body>
-        <header>
-          <h1>{title}</h1>
-        </header>
-        <main id="content" role="main" tabIndex={-1}>{children}</main></body>
-    </html>
+    <Theme asChild>
+      <html lang="pt-br">
+        <body>
+          <header>
+            <Heading as="h1">{title}</Heading>
+          </header>
+          <main id="content" role="main" tabIndex={-1}>
+            {children}
+          </main>
+        </body>
+      </html>
+    </Theme>
   );
 }

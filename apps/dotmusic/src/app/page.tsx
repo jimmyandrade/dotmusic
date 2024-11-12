@@ -1,7 +1,11 @@
+import { Heading, VisuallyHidden } from '@radix-ui/themes';
+
 export default function Index() {
   return (
     <article>
-      <h2>Página inicial</h2>
-      </article>
+      <VisuallyHidden>
+        <Heading as="h2">Página inicial</Heading>
+      </VisuallyHidden>
+    </article>
   );
 }
