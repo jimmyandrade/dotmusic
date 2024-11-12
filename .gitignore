@@ -1,3 +1,30 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+dist
+tmp
+/out-tsc
+
+# dependencies
+node_modules
+jspm_packages/
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
 # Logs
 logs
 *.log
@@ -37,10 +64,6 @@ bower_components
 
 # Compiled binary addons (https://nodejs.org/api/addons.html)
 build/Release
-
-# Dependency directories
-node_modules/
-jspm_packages/
 
 # Snowpack dependency directory (https://snowpack.dev/)
 web_modules/
@@ -89,13 +112,11 @@ out
 
 # Nuxt.js build / generate output
 .nuxt
-dist
 
 # Gatsby files
 .cache/
-# Comment in the public line in if your project uses Gatsby and not Next.js
-# https://nextjs.org/blog/next-9-1#public-directory-support
-# public
+# Ignore public directory only if it is at the root level
+/public
 
 # vuepress build output
 .vuepress/dist
@@ -128,3 +149,18 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# Misc
+/.sass-cache
+/connect.lock
+/libpeerconnection.log
+testem.log
+/typings
+
+# Nx workspace cache
+.nx/cache
+.nx/workspace-data
