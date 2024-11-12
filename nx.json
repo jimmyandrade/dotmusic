@@ -6,18 +6,10 @@
     "sharedGlobals": []
   },
   "nxCloudId": "67339050595e4f505d0cc111",
-  "plugins": [
-    {
-      "plugin": "@nx/js/typescript",
-      "options": {
-        "typecheck": {
-          "targetName": "typecheck"
-        },
-        "build": {
-          "targetName": "build",
-          "configName": "tsconfig.lib.json"
-        }
-      }
+  "installation": {
+    "version": "20.1.0",
+    "plugins": {
+      "@nx/next": "20.1.0"
     }
-  ]
+  }
 }
