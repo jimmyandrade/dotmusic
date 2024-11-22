@@ -2,7 +2,9 @@
   "name": "@jimmyandrade/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "build": "nx build"
+  },
   "private": true,
   "dependencies": {
     "@radix-ui/themes": "3.1.5",
