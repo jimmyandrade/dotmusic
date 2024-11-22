@@ -2,12 +2,29 @@ import { Container, Heading, Theme, VisuallyHidden } from '@radix-ui/themes';
 import Link from 'next/link';
 import '@radix-ui/themes/styles.css';
 import './global.css';
+import type { Metadata, Viewport } from 'next';
 
-export const metadata = {
+const applicationName = 'Jimmy Andrade';
+
+export const metadata: Metadata = {
   title:
     'Jimmy Andrade - Website oficial: Música, Agenda de Shows, Vídeos, Notícias e Biografia',
   description:
     'Website oficial do cantor, compositor e produtor musical Jimmy Andrade. Artista de indie, pop e rock brasileiro. Escute suas músicas, consulte sua agenda e obtenha outras informações sobre a sua música.',
+  appleWebApp: {
+    capable: true,
+    title: applicationName,
+  },
+  applicationName,
+  openGraph: {
+    siteName: applicationName,
+  },
+};
+
+export const viewport: Viewport = {
+  initialScale: 1,
+  userScalable: true,
+  width: 'device-width',
 };
 
 export default function RootLayout({
