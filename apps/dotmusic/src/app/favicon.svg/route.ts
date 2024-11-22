@@ -1,7 +1,7 @@
 export const dynamic = 'force-static';
 
 export async function GET() {
-  const svg = `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+  const iconSVG = `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <svg version="1.2" viewBox="0 0 1292 1292" width="323" height="323" baseProfile="tiny-ps" xmlns="http://www.w3.org/2000/svg">
   <title>Jimmy Andrade</title>
   <path transform="translate(601)" d="m0 0h91l52 7 29 5 28 6 36 10 35 12 30 12 34 16 21 11 24 14 16 10 22 15 19 14 10 8 22 18 30 28 13 13 7 8 8 8 7 8 14 17 11 14 11 15 14 20 15 24 13 23 12 23 13 27 13 32 9 25 10 34 8 33 6 32 6 45 2 18v80l-6 51-7 41-7 30-8 29-13 38-14 34-16 33-15 28-14 23-10 15-13 19-14 18-18 22-9 10-7 8-14 14-5 6-8 7-13 13-8 7-10 9-28 22-18 13-24 16-25 15-27 15-29 14-31 13-30 11-33 10-37 9-39 7-45 6-10 1h-82l-24-3-44-6-31-6-40-10-43-14-32-13-26-12-26-13-24-14-18-11-12-8-16-11-16-12-10-8-17-14-10-9-13-12-7-7-8-7-14-15-8-8-7-8-12-14-8-10-13-17-13-18-11-17-13-21-9-16-13-24-15-32-13-33-12-36-8-29-7-30-6-36-6-48v-90l7-53 6-33 7-30 10-35 11-32 12-29 9-20 8-16 14-26 9-15 12-19 13-19 8-11 12-16 11-13 9-11 12-13 11-12 22-22 8-7 8-8 22-18 18-14 18-13 21-14 21-13 29-16 26-13 25-11 29-11 33-11 34-9 39-8 25-4z" fill="#443C8C"/>
@@ -12,7 +12,7 @@ export async function GET() {
 </svg>
 `;
 
-  return new Response(svg, {
+  return new Response(iconSVG, {
     headers: {
       'Cache-Control': 'public, max-age=31536000, immutable',
       'Content-Type': 'image/svg+xml',
