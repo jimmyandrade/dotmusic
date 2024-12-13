@@ -8,6 +8,7 @@ export const SocialMediaLinks = () => (
           href="https://instagram.com/jimmyandrade"
           rel="noopener noreferrer"
           target="_blank"
+          title="Instagram"
         >
           Instagram
         </a>
@@ -17,6 +18,7 @@ export const SocialMediaLinks = () => (
           href="https://youtube.com/jimmyandrade"
           rel="noopener noreferrer"
           target="_blank"
+          title="YouTube"
         >
           YouTube
         </a>
