@@ -6,12 +6,16 @@ module.exports = {
   content: [
     join(
       __dirname,
-      '{src,pages,components,app}/**/*!(*.stories|*.spec).{ts,tsx,html}'
+      '{src,pages,components,app}/**/*!(*.stories|*.spec).{ts,tsx,html}',
     ),
     ...createGlobPatternsForDependencies(__dirname),
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        black: '#0b0e0d',
+      },
+    },
   },
   plugins: [],
 };
