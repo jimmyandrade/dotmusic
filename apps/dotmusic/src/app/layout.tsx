@@ -1,8 +1,17 @@
-import { Container, Heading, Theme, VisuallyHidden } from '@radix-ui/themes';
+import {
+  Box,
+  Container,
+  Flex,
+  Heading,
+  TabNav,
+  Theme,
+  VisuallyHidden,
+} from '@radix-ui/themes';
 import Link from 'next/link';
 import '@radix-ui/themes/styles.css';
 import './global.css';
 import type { Metadata, Viewport } from 'next';
+import { SocialMediaLinks } from '../features/social-media-links';
 
 const applicationName = 'Jimmy Andrade';
 
@@ -33,43 +42,59 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <Theme asChild hasBackground>
+    <Theme asChild appearance="dark" hasBackground>
       <html lang="pt-br">
-        <body className="bg-black text-white">
-          <header>
-            <Container>
-              <Heading as="h1">
-                <Link href="/">Jimmy Andrade</Link>
-              </Heading>
-              <VisuallyHidden asChild>
-                <a href="#content">Pular para o conteúdo principal</a>
-              </VisuallyHidden>
-              <nav aria-label="Navegação">
-                <ul>
-                  <li>
-                    <Link href="/">Início</Link>
-                  </li>
-                  <li>
-                    <Link href="/musica">Música</Link>
-                  </li>
-                  <li>
-                    <Link href="/bio">
-                      Bio&nbsp;e&nbsp;
-                      <em className="not-italic" lang="en">
-                        Releases
-                      </em>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/midia">Mídia</Link>
-                  </li>
-                </ul>
-              </nav>
-            </Container>
-          </header>
+        <body>
+          <Box asChild position="fixed" width="100%" className="z-10 bg-black">
+            <header>
+              <Container>
+                <Flex>
+                  <Heading as="h1" size="1">
+                    <Link href="/">Jimmy Andrade</Link>
+                  </Heading>
+                  <VisuallyHidden asChild>
+                    <a href="#content">Pular para o conteúdo principal</a>
+                  </VisuallyHidden>
+                  <TabNav.Root aria-label="Navegação principal">
+                    <TabNav.Link asChild>
+                      <Link href="/">Início</Link>
+                    </TabNav.Link>
+                    <TabNav.Link asChild>
+                      <Link href="/musica">Música</Link>
+                    </TabNav.Link>
+                    <TabNav.Link asChild>
+                      <Link href="/bio">
+                        Bio&nbsp;e&nbsp;
+                        <em className="not-italic" lang="en">
+                          Releases
+                        </em>
+                      </Link>
+                    </TabNav.Link>
+                    <TabNav.Link asChild>
+                      <Link href="/midia">Mídia</Link>
+                    </TabNav.Link>
+                  </TabNav.Root>
+                  <SocialMediaLinks />
+                </Flex>
+              </Container>
+            </header>
+          </Box>
           <main id="content" role="main" tabIndex={-1}>
             {children}
           </main>
+          <footer>
+            <Container>
+              <Flex justify="between">
+                <p>
+                  2008-2024 Jimmy Andrade Produção Fonográfica, Musical e
+                  Marketing.
+                </p>
+                <Flex asChild>
+                  <SocialMediaLinks />
+                </Flex>
+              </Flex>
+            </Container>
+          </footer>
         </body>
       </html>
     </Theme>
