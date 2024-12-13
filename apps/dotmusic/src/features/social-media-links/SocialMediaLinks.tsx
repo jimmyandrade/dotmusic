@@ -28,6 +28,7 @@ export const SocialMediaLinks = () => (
           href="https://tiktok.com/@jimmyandrademusic"
           rel="noopener noreferrer"
           target="_blank"
+          title="TikTok"
         >
           TikTok
         </a>
@@ -36,6 +37,7 @@ export const SocialMediaLinks = () => (
         <a
           href="https://open.spotify.com/intl-pt/artist/5cXCuau8jCVmsRoFYj5oGB"
           rel="noopener noreferrer"
+          title="Spotify"
         >
           Spotify
         </a>
@@ -45,6 +47,7 @@ export const SocialMediaLinks = () => (
           href="https://music.apple.com/br/artist/jimmy-andrade/678083982"
           rel="noopener noreferrer"
           target="_blank"
+          title="Apple Music"
         >
           Apple Music
         </a>
