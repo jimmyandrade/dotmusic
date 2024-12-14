@@ -52,7 +52,9 @@ export const YouTubeVideo = ({
   };
 
   Object.entries(searchParams).forEach(([key, value]) => {
-    url.searchParams.append(key, value);
+    if (typeof value !== 'undefined') {
+      url.searchParams.append(key, value);
+    }
   });
 
   const allow = [
