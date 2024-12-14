@@ -2,7 +2,6 @@ import {
   Button,
   Flex,
   Inset,
-  Link,
   Card as PrimitiveCard,
   Text,
 } from '@radix-ui/themes';
