@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+:root,
+.radix-themes,
+.radix-themes body {
   --color-background: #0b0e0d;
+  --default-font-family: var(--font-albert-sans);
+}
+
+.social-media-icon {
+  @apply h-5 w-5 sm:h-6 sm:w-6;
 }

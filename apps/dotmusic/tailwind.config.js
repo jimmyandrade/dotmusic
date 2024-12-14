@@ -15,6 +15,9 @@ module.exports = {
       colors: {
         black: '#0b0e0d',
       },
+      fontFamily: {
+        sans: ['var(--font-albert-sans)'],
+      },
     },
   },
   plugins: [],
