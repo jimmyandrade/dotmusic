@@ -211,12 +211,12 @@ export default async function Index() {
       </Section>
 
       <Box position="relative">
-        <Image
+        {/* <Image
           alt="Imagem de divulgação do evento 'Premium Estúdio'"
           height={4000}
           src="/media/concerts/premium-estudio/premium-estudio.png"
           width={6000}
-        />
+        /> */}
         {/* <YouTubeVideo
           allowFullScreen={false}
           autoPlay={true}
