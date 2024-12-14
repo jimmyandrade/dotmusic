@@ -1,2 +1,2 @@
-export const getCountryName = (countryCode: string) =>
-  countryCode.replace('Brazil', 'Brasil');
+export const getCountryName = (countryName: string) =>
+  countryName.replace('Brazil', 'Brasil');
