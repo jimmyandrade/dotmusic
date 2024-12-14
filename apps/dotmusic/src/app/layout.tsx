@@ -7,6 +7,7 @@ import { SiteFooter } from '../libs/shared/ui/SiteFooter';
 import { SiteHeader } from '../libs/shared/ui/SiteHeader';
 import { MainContent } from '../libs/shared/ui/MainContent';
 import { type ReactNode } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 
 const albertSans = Albert_Sans({
   display: 'swap',
@@ -44,6 +45,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <SiteHeader />
           <MainContent>{children}</MainContent>
           <SiteFooter />
+          <Analytics />
         </body>
       </html>
     </Theme>
