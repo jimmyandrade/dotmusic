@@ -8,22 +8,23 @@ import { SiteHeader } from '../libs/shared/ui/SiteHeader';
 import { MainContent } from '../libs/shared/ui/MainContent';
 import { type ReactNode } from 'react';
 import { Analytics } from '@vercel/analytics/react';
+import getManifest from './manifest';
 
 const albertSans = Albert_Sans({
   display: 'swap',
   subsets: ['latin'],
   variable: '--font-albert-sans',
 });
-const applicationName = 'Jimmy Andrade';
+
+const manifestData = getManifest();
 
 export const metadata: Metadata = {
-  title:
-    'Jimmy Andrade - Website oficial: Música, Agenda de Shows, Vídeos, Notícias e Biografia',
+  title: `${manifestData.name} - ${manifestData.description}`,
   description:
     'Website oficial do cantor, compositor e produtor musical Jimmy Andrade. Artista de indie, pop e rock brasileiro. Escute suas músicas, consulte sua agenda e obtenha outras informações sobre a sua música.',
-  applicationName,
+  applicationName: manifestData.name,
   openGraph: {
-    siteName: applicationName,
+    siteName: manifestData.name,
   },
 };
 
