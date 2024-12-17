@@ -369,11 +369,11 @@ export default async function Index() {
                 <ul>
                   <li>
                     Melhor na Música em Belo Horizonte{' '}
-                    <Badge variant="soft">Semifinalista</Badge>
+                    <Badge variant="soft">2&ordm; Lugar</Badge>
                   </li>
                   <li>
-                    Padrinho da Premiação{' '}
-                    <Badge variant="surface">Menção Honrosa</Badge>
+                    Madrinhas e Padrinhos Butterfly{' '}
+                    <Badge variant="surface">Honrado</Badge>
                   </li>
                 </ul>
               </li>
