@@ -24,10 +24,10 @@ import { DeezerLogo } from '../libs/music-app-links/ui/DeezerLogo';
 import { AmazonMusicLogo } from '../libs/music-app-links/ui/AmazonMusicLogo';
 import { Container } from '../libs/shared/ui/Container';
 
-export default async function Index() {
+export default async function IndexPage() {
   return (
-    <article>
-      <Box asChild pt={{ initial: '8', md: '0' }}>
+    <article id={IndexPage.name}>
+      <Box asChild mt="-8">
         <header>
           <VisuallyHidden asChild>
             <Heading as="h2">
