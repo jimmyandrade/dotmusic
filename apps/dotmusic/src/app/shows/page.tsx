@@ -1,7 +1,5 @@
+import { Container, PageHeader, PageHeading } from '@jimmyandrade/ui/server';
 import { ConcertsList } from '../../libs/concerts/feature/ConcertsList';
-import { Container } from '../../libs/shared/ui/Container';
-import { PageHeader } from '../../libs/shared/ui/PageHeader';
-import { PageHeading } from '../../libs/shared/ui/PageHeading';
 
 export default async function ConcertsPage() {
   return (
