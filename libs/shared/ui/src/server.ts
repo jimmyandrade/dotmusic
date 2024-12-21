@@ -1,2 +1,12 @@
-// Use this file to export React server components
-export * from './lib/hello-server';
+export * from './lib/components/server/Container';
+export * from './lib/components/server/HeaderHomeLink';
+export * from './lib/components/server/InstagramMedia';
+export * from './lib/components/server/MainContent';
+export * from './lib/components/server/PageHeader';
+export * from './lib/components/server/PageHeading';
+export * from './lib/components/server/ProseText';
+export * from './lib/components/server/SiteFooter';
+export * from './lib/components/server/SiteHeader';
+export * from './lib/components/server/SiteNavigation';
+export * from './lib/components/server/TabNavLink';
+export * from './lib/components/server/icons/ShoppingCartIcon';
