@@ -9,6 +9,11 @@ import { MainContent } from '../libs/shared/ui/MainContent';
 import { type ReactNode } from 'react';
 import { Analytics } from '@vercel/analytics/react';
 import getManifest from './manifest';
+import {
+  defaultLocale,
+  generateStaticParamsWithLang,
+  type ParamWithLangCollection,
+} from '../libs/i18n/model';
 
 const albertSans = Albert_Sans({
   display: 'swap',
@@ -36,13 +41,18 @@ export const viewport: Viewport = {
 
 export interface RootLayoutProps {
   children: ReactNode;
+  params: ParamWithLangCollection;
 }
 
-export default function RootLayout({ children }: RootLayoutProps) {
+export async function generateStaticParams() {
+  return generateStaticParamsWithLang();
+}
+
+export default function RootLayout({ children, params }: RootLayoutProps) {
   return (
     <Theme asChild appearance="dark" hasBackground accentColor="red">
-      <html className={albertSans.variable} lang="pt-br">
-        <body className="font-sans overscroll-y-none">
+      <html className={albertSans.variable} lang={params.lang ?? defaultLocale}>
+        <body className="font-sans">
           <SiteHeader />
           <MainContent>{children}</MainContent>
           <SiteFooter />
