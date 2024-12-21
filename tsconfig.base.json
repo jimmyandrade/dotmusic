@@ -33,7 +33,10 @@
     "verbatimModuleSyntax": false,
     "rootDir": ".",
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@jimmyandrade/ui": ["libs/shared/ui/src/index.ts"],
+      "@jimmyandrade/ui/server": ["libs/shared/ui/src/server.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
