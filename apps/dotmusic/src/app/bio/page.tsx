@@ -1,7 +1,5 @@
-import { Flex, Text } from '@radix-ui/themes';
-import { Container } from '../../libs/shared/ui/Container';
-import { PageHeader } from '../../libs/shared/ui/PageHeader';
-import { PageHeading } from '../../libs/shared/ui/PageHeading';
+import { PageHeader, PageHeading, ProseText } from '@jimmyandrade/ui/server';
+import { Container, Flex } from '@radix-ui/themes';
 
 export default function BioPage() {
   return (
@@ -13,25 +11,12 @@ export default function BioPage() {
       </PageHeader>
       <Container>
         <Flex direction="column" gapY="4">
-          <Text
-            as="div"
-            className="max-w-prose"
-            size={{
-              initial: '2',
-              xs: '3',
-              sm: '4',
-              md: '5',
-              lg: '6',
-              xl: '7',
-            }}
-          >
-            <p>
-              Cantor, compositor e produtor musical. Nasceu em{' '}
-              <time dateTime="1989-05-27">27 de maio de 1989</time> em Minas
-              Novas, uma cidade localizada na região do Vale do Jequitinhonha,
-              em Minas Gerais, conhecida por sua riqueza cultural.
-            </p>
-          </Text>
+          <ProseText as="p">
+            Cantor, compositor e produtor musical. Nasceu em{' '}
+            <time dateTime="1989-05-27">27 de maio de 1989</time> em Minas
+            Novas, uma cidade localizada na região do Vale do Jequitinhonha, em
+            Minas Gerais, conhecida por sua riqueza cultural.
+          </ProseText>
         </Flex>
       </Container>
     </article>
