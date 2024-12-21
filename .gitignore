@@ -165,3 +165,4 @@ testem.log
 .nx/cache
 .nx/workspace-data
 .nx/installation
+vite.config.*.timestamp*
