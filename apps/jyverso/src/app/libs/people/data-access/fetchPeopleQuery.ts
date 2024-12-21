@@ -26,7 +26,7 @@ export const fetchPeopleQuery = async () => {
   } satisfies HeadersInit;
 
   const body = JSON.stringify({
-    filter,
+    filter: {},
   });
 
   const response = await fetch(baseUrl, {
