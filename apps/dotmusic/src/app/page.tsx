@@ -22,7 +22,7 @@ import { SpotifyLogo } from '../libs/music-app-links/ui/SpotifyLogo';
 import { AppleMusicLogo } from '../libs/music-app-links/ui/AppleMusicLogo';
 import { DeezerLogo } from '../libs/music-app-links/ui/DeezerLogo';
 import { AmazonMusicLogo } from '../libs/music-app-links/ui/AmazonMusicLogo';
-import { Container } from '../libs/shared/ui/Container';
+import { Container } from '@jimmyandrade/ui/server';
 
 export default async function IndexPage() {
   return (
