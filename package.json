@@ -1,15 +1,19 @@
 {
   "name": "@jimmyandrade/source",
   "version": "0.0.0",
-  "license": "MIT",
   "scripts": {
     "build": "nx build",
     "dev": "nx dev"
   },
   "private": true,
+  "engineStrict": true,
+  "engines": {
+    "node": "18.15.0 || >=18.16.0"
+  },
   "dependencies": {
     "@radix-ui/themes": "3.1.5",
     "@vercel/analytics": "1.4.1",
+    "classnames": "2.3.2",
     "next": "14.2.16",
     "react": "18.3.1",
     "react-dom": "18.3.1"
