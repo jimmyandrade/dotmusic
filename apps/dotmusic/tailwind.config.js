@@ -16,7 +16,8 @@ module.exports = {
         black: '#0b0e0d',
       },
       fontFamily: {
-        sans: ['var(--font-albert-sans)'],
+        sans: ['var(--font-sans)'],
+        serif: ['var(--font-serif)'],
       },
     },
   },
