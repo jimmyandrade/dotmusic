@@ -30,6 +30,15 @@ const nextConfig = {
     // See: https://github.com/gregberge/svgr
     svgr: false,
   },
+  redirects: async () => {
+    return [
+      {
+        source: '/manifest.json',
+        destination: '/manifest.webmanifest',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 const plugins = [
