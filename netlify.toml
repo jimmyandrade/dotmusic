@@ -1,0 +1,50 @@
+[build]
+  base = "/"
+
+[[redirects]]
+  from = "http://jimmyandrade.com"
+  to = "https://jimmyandrade.music"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://jimmyandrade.com"
+  to = "https://jimmyandrade.music"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://jimmyandrade.com.br"
+  to = "https://jimmyandrade.music"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://jimmyandrade.com.br"
+  to = "https://jimmyandrade.music"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://jimmyandrade.net"
+  to = "https://jimmyandrade.music"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://jimmyandrade.net"
+  to = "https://jimmyandrade.music"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://jimmyandrade.netlify.com"
+  to = "https://jimmyandrade.music"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://jimmyandrade.netlify.com"
+  to = "https://jimmyandrade.music"
+  status = 301
+  force = true
