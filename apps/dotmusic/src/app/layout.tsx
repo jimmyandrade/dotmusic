@@ -12,10 +12,10 @@ import {
   type ParamWithLangCollection,
 } from '../libs/i18n/model';
 import {
+  GlobalFooter,
+  GlobalHeader,
   HeaderHomeLink,
   MainContent,
-  SiteFooter,
-  SiteHeader,
 } from '@jimmyandrade/ui/server';
 
 import { SocialMediaLinks } from '../libs/social-media-links';
@@ -57,9 +57,13 @@ export async function generateStaticParams() {
 export default function RootLayout({ children, params }: RootLayoutProps) {
   return (
     <Theme asChild appearance="dark" hasBackground accentColor="red">
-      <html className={albertSans.variable} lang={params.lang ?? defaultLocale}>
+      <html
+        className={albertSans.variable}
+        lang={params.lang ?? defaultLocale}
+        prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# product: http://ogp.me/ns/product#"
+      >
         <body className="font-sans">
-          <SiteHeader>
+          <GlobalHeader>
             <HeaderHomeLink>
               <Strong>Jimmy Andrade</Strong>
             </HeaderHomeLink>
@@ -74,11 +78,11 @@ export default function RootLayout({ children, params }: RootLayoutProps) {
             <div className="hidden md:block">
               <SocialMediaLinks.Root />
             </div>
-          </SiteHeader>
+          </GlobalHeader>
           <MainContent>{children}</MainContent>
-          <SiteFooter>
+          <GlobalFooter>
             <SocialMediaLinks.Root />
-          </SiteFooter>
+          </GlobalFooter>
           <Analytics />
         </body>
       </html>

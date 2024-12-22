@@ -3,16 +3,17 @@ import {
   Card,
   Flex,
   Theme,
-  type BoxProps as SiteHeaderProps,
+  type BoxProps as GlobalHeaderProps,
 } from '@radix-ui/themes';
 import { Container } from '../Container';
 
-export { SiteHeaderProps };
+export { GlobalHeaderProps };
 
-export const SiteHeader = ({
+export const GlobalHeader = ({
   asChild = true,
   className,
   children,
+  id = 'globalheader',
   itemScope = true,
   itemType = 'http://schema.org/WPHeader',
   position = 'fixed',
@@ -20,11 +21,12 @@ export const SiteHeader = ({
   top = '-1px',
   width = '100%',
   ...props
-}: SiteHeaderProps) => (
+}: GlobalHeaderProps) => (
   <Theme asChild radius="none">
     <Box
       asChild={asChild}
       className={`z-10 ${className}`}
+      id={id}
       position={position}
       top={top}
       width={width}

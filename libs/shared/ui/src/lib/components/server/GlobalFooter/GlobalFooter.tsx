@@ -1,6 +1,6 @@
 import {
   Box,
-  type BoxProps as SiteFooterProps,
+  type BoxProps as GlobalFooterProps,
   Flex,
   Separator,
   Strong,
@@ -9,16 +9,16 @@ import {
 } from '@radix-ui/themes';
 import { Container } from '../Container';
 
-export type { SiteFooterProps };
+export type { GlobalFooterProps };
 
-export const SiteFooter = ({
+export const GlobalFooter = ({
   asChild = true,
   children,
   itemScope = true,
   itemType = 'https://schema.org/WPFooter',
   role = 'contentinfo',
   ...props
-}: SiteFooterProps) => (
+}: GlobalFooterProps) => (
   <Box
     asChild={asChild}
     itemScope={itemScope}
