@@ -5,8 +5,10 @@ import {
 
 export type { ContainerProps };
 
-export const Container = ({ children, ...props }: ContainerProps) => (
+export const Container = ({ asChild, children, className = "", ...props }: ContainerProps) => (
   <PrimitiveContainer
+    asChild={asChild}
+    className={className}
     size={{
       initial: '1',
       xs: '1',
@@ -19,3 +21,4 @@ export const Container = ({ children, ...props }: ContainerProps) => (
     {children}
   </PrimitiveContainer>
 );
+Container.displayName = 'Container';
