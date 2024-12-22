@@ -59,6 +59,7 @@ export default function RootLayout({ children, params }: RootLayoutProps) {
     <Theme asChild appearance="dark" hasBackground accentColor="red">
       <html
         className={albertSans.variable}
+        dir={'ltr'}
         lang={params.lang ?? defaultLocale}
         prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# product: http://ogp.me/ns/product#"
       >
