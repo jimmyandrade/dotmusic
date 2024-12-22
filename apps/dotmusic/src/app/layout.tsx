@@ -60,6 +60,7 @@ export default function RootLayout({ children, params }: RootLayoutProps) {
       <html
         className={albertSans.variable}
         dir={'ltr'}
+        id="root"
         lang={params.lang ?? defaultLocale}
         prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# product: http://ogp.me/ns/product#"
       >
