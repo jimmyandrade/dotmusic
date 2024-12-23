@@ -6,7 +6,7 @@
 .radix-themes,
 .radix-themes body {
   --color-background: #0b0e0d;
-  --default-font-family: var(--font-albert-sans);
+  --default-font-family: var(--font-sans);
 }
 
 .social-media-icon {

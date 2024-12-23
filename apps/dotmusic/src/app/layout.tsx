@@ -1,5 +1,5 @@
-import { Inset, Strong, Theme, VisuallyHidden } from '@radix-ui/themes';
-import '@radix-ui/themes/styles.css';
+import { Inset, Strong, Theme } from '@radix-ui/themes';
+
 import './global.css';
 import type { Metadata, Viewport } from 'next';
 import { Albert_Sans } from 'next/font/google';
@@ -14,12 +14,14 @@ import {
 import {
   GlobalFooter,
   GlobalHeader,
+  GlobalRootLayout,
   HeaderHomeLink,
   MainContent,
 } from '@jimmyandrade/ui/server';
 
 import { SocialMediaLinks } from '../libs/social-media-links';
 import { DotMusicNavLinks } from '../components/DotMusicNavLinks';
+import classNames from 'classnames';
 
 const albertSans = Albert_Sans({
   display: 'swap',
@@ -57,37 +59,30 @@ export async function generateStaticParams() {
 export default function RootLayout({ children, params }: RootLayoutProps) {
   return (
     <Theme asChild appearance="dark" hasBackground accentColor="red">
-      <html
-        className={albertSans.variable}
-        dir={'ltr'}
-        id="root"
+      <GlobalRootLayout
+        className={classNames(albertSans.variable, 'scroll-smooth')}
         lang={params.lang ?? defaultLocale}
-        prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# product: http://ogp.me/ns/product#"
       >
-        <body className="font-sans">
-          <GlobalHeader>
-            <HeaderHomeLink>
-              <Strong>Jimmy Andrade</Strong>
-            </HeaderHomeLink>
-            <VisuallyHidden asChild>
-              <a href="#content">Pular para o conteúdo principal</a>
-            </VisuallyHidden>
-            <Inset>
-              <div className="hidden md:block">
-                <DotMusicNavLinks />
-              </div>
-            </Inset>
+        <GlobalHeader>
+          <HeaderHomeLink>
+            <Strong>Jimmy Andrade</Strong>
+          </HeaderHomeLink>
+
+          <Inset>
             <div className="hidden md:block">
-              <SocialMediaLinks.Root />
+              <DotMusicNavLinks />
             </div>
-          </GlobalHeader>
-          <MainContent>{children}</MainContent>
-          <GlobalFooter>
+          </Inset>
+          <div className="hidden md:block">
             <SocialMediaLinks.Root />
-          </GlobalFooter>
-          <Analytics />
-        </body>
-      </html>
+          </div>
+        </GlobalHeader>
+        <MainContent id="content">{children}</MainContent>
+        <GlobalFooter>
+          <SocialMediaLinks.Root />
+        </GlobalFooter>
+        <Analytics />
+      </GlobalRootLayout>
     </Theme>
   );
 }
