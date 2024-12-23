@@ -1,4 +1,6 @@
-export default {
+import type { Config } from 'jest';
+
+const config: Config = {
   displayName: 'dotmusic',
   preset: '../../jest.preset.js',
   transform: {
@@ -8,3 +10,5 @@ export default {
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   coverageDirectory: '../../coverage/apps/dotmusic',
 };
+
+export default config;
