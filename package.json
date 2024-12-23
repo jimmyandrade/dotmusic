@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "build": "nx build",
-    "dev": "nx dev"
+    "dev": "nx dev",
+    "lint": "nx lint"
   },
   "private": true,
   "engineStrict": true,
