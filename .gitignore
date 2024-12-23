@@ -110,6 +110,9 @@ web_modules/
 .next
 out
 
+# Nx Cloud
+nx-cloud.env
+
 # Nuxt.js build / generate output
 .nuxt
 
