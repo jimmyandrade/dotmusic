@@ -8,5 +8,6 @@ export * from './lib/components/server/ProseText';
 export * from './lib/components/server/GlobalFooter';
 export * from './lib/components/server/GlobalHeader';
 export * from './lib/components/server/GlobalNavigation';
+export * from './lib/components/server/GlobalRootLayout';
 export * from './lib/components/server/TabNavLink';
 export * from './lib/components/server/icons/ShoppingCartIcon';
