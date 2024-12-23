@@ -1,7 +1,8 @@
-import { TabNav } from '@radix-ui/themes';
-import { type ComponentProps } from 'react';
+import { TabNav, type LinkProps } from '@radix-ui/themes';
 
-export interface TabNavLinkProps extends ComponentProps<typeof TabNav.Link> {}
+export interface TabNavLinkProps extends LinkProps {
+  active?: boolean;
+}
 
 export const TabNavLink = ({
   asChild,
