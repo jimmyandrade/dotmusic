@@ -3,8 +3,7 @@ import '@radix-ui/themes/styles.css';
 import { VisuallyHidden } from '@radix-ui/themes';
 import { type HTMLAttributes } from 'react';
 
-export interface GlobalRootLayoutProps
-  extends HTMLAttributes<HTMLHtmlElement> {}
+export type GlobalRootLayoutProps = HTMLAttributes<HTMLHtmlElement>;
 
 export const GlobalRootLayout = ({
   className = '',
