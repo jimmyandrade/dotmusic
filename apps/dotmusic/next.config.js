@@ -10,17 +10,33 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'photos.bandsintown.com',
-        port: '',
-        pathname: '/large/**',
-        search: '',
+        hostname: 'jimmyandrade.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'jimmyandrade.music',
+      },
+      {
+        protocol: 'https',
+        hostname: 'jimmyandrade.net',
+      },
+      {
+        protocol: 'https',
+        hostname: 'jyverso.com.br',
+      },
+      {
+        protocol: 'https',
+        hostname: 'quemeusou.com.br',
       },
       {
         protocol: 'https',
         hostname: 'photos.bandsintown.com',
-        port: '',
+        pathname: '/large/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'photos.bandsintown.com',
         pathname: '/thumb/**',
-        search: '',
       },
     ],
   },
