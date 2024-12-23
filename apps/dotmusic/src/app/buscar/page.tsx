@@ -1,5 +1,4 @@
 import { Container } from '@jimmyandrade/ui/server';
-import { Card } from '@radix-ui/themes';
 
 export default async function SearchPage() {
   const customSearchBaseURL = 'https://www.googleapis.com/customsearch/v1';
@@ -19,21 +18,11 @@ export default async function SearchPage() {
 
   const response = await fetch(url.toString());
   const data = await response.json();
-  const { items, ...props } = data;
+  const { ...props } = data;
 
   return (
     <div id={SearchPage.name}>
-      <Container>
-        {items.map((item) => (
-          <Card asChild key={item.cacheId}>
-            <a href={item.link} target="_blank" rel="noopener noreferrer">
-              <h2>{item.title}</h2>
-              <p>{item.snippet}</p>
-              {item.link}
-            </a>
-          </Card>
-        ))}
-      </Container>
+      <Container />
       <pre>{JSON.stringify(props, null, 2)}</pre>
     </div>
   );
