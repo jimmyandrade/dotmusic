@@ -7,7 +7,7 @@ export interface MainContentProps extends HTMLAttributes<HTMLDivElement> {
 
 export const MainContent = ({
   children,
-  id = 'content',
+  id,
   role = 'main',
   tabIndex = -1,
   ...props
