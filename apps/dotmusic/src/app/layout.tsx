@@ -1,16 +1,5 @@
 import { Inset, Strong, Theme } from '@radix-ui/themes';
 
-import './global.css';
-import type { Metadata, Viewport } from 'next';
-import { Albert_Sans } from 'next/font/google';
-import { type ReactNode } from 'react';
-import { Analytics } from '@vercel/analytics/react';
-import getManifest from './manifest';
-import {
-  defaultLocale,
-  generateStaticParamsWithLang,
-  type ParamWithLangCollection,
-} from '../libs/i18n/model';
 import {
   GlobalFooter,
   GlobalHeader,
@@ -18,10 +7,21 @@ import {
   HeaderHomeLink,
   MainContent,
 } from '@jimmyandrade/ui/server';
+import { Analytics } from '@vercel/analytics/react';
+import type { Metadata, Viewport } from 'next';
+import { Albert_Sans } from 'next/font/google';
+import { type ReactNode } from 'react';
+import {
+  defaultLocale,
+  generateStaticParamsWithLang,
+  type ParamWithLangCollection,
+} from '../libs/i18n/model';
+import './global.css';
+import getManifest from './manifest';
 
-import { SocialMediaLinks } from '../libs/social-media-links';
-import { DotMusicNavLinks } from '../components/DotMusicNavLinks';
 import classNames from 'classnames';
+import { DotMusicNavLinks } from '../components/DotMusicNavLinks';
+import { SocialMediaLinks } from '../libs/social-media-links';
 
 const albertSans = Albert_Sans({
   display: 'swap',
@@ -60,7 +60,7 @@ export default function RootLayout({ children, params }: RootLayoutProps) {
   return (
     <Theme asChild appearance="dark" hasBackground accentColor="red">
       <GlobalRootLayout
-        className={classNames(albertSans.variable, 'scroll-smooth')}
+        className={classNames(albertSans.variable)}
         lang={params.lang ?? defaultLocale}
       >
         <GlobalHeader>
