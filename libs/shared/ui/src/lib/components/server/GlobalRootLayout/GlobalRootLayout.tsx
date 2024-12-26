@@ -1,6 +1,7 @@
 import '@radix-ui/themes/styles.css';
 
 import { VisuallyHidden } from '@radix-ui/themes';
+import classNames from 'classnames';
 import { type HTMLAttributes } from 'react';
 
 export type GlobalRootLayoutProps = HTMLAttributes<HTMLHtmlElement>;
@@ -13,7 +14,13 @@ export const GlobalRootLayout = ({
   prefix = 'og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# product: http://ogp.me/ns/product#',
   ...props
 }: GlobalRootLayoutProps) => (
-  <html className={className} dir={dir} id={id} prefix={prefix} {...props}>
+  <html
+    className={classNames('scroll-smooth', className)}
+    dir={dir}
+    id={id}
+    prefix={prefix}
+    {...props}
+  >
     <body className="font-sans" key="body">
       <noscript dangerouslySetInnerHTML={{ __html: '<!--googleoff: all-->' }} />
       <VisuallyHidden asChild>
