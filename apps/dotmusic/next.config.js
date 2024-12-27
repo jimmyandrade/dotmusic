@@ -38,6 +38,10 @@ const nextConfig = {
         hostname: 'photos.bandsintown.com',
         pathname: '/thumb/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'rsv-ink-images-production.s3.sa-east-1.amazonaws.com',
+      },
     ],
   },
   nx: {
