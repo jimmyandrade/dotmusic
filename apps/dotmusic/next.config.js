@@ -56,6 +56,21 @@ const nextConfig = {
         destination: '/manifest.webmanifest',
         permanent: true,
       },
+      {
+        source: '/albums',
+        destination: '/musica',
+        permanent: false,
+      },
+      {
+        source: '/songs',
+        destination: '/musica',
+        permanent: true,
+      },
+      {
+        source: '/videos',
+        destination: '/musica',
+        permanent: false,
+      },
     ];
   },
 };
