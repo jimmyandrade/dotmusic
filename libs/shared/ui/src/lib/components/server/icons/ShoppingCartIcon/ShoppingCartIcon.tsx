@@ -16,9 +16,9 @@ export const ShoppingCartIcon = ({
     viewBox={viewBox}
     fill="none"
     stroke="currentColor"
-    stroke-width="2"
-    stroke-linecap="round"
-    stroke-linejoin="round"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
     {...props}
   >
     <circle cx="9" cy="21" r="1"></circle>
