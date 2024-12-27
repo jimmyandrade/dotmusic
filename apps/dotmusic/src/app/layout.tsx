@@ -20,7 +20,7 @@ import './global.css';
 import getManifest from './manifest';
 
 import classNames from 'classnames';
-import { DotMusicNavLinks } from '../components/DotMusicNavLinks';
+import { DotMusicNavLinks } from '../libs/navigation-and-seo/ui/DotMusicNavLinks';
 import { SocialMediaLinks } from '../libs/social-media-links';
 
 const albertSans = Albert_Sans({
