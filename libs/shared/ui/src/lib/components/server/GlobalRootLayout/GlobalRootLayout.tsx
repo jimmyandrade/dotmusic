@@ -1,8 +1,9 @@
 import '@radix-ui/themes/styles.css';
 
-import { VisuallyHidden } from '@radix-ui/themes';
 import classNames from 'classnames';
 import { type HTMLAttributes } from 'react';
+import { contentAnchorName } from '../../../constants';
+import { VisuallyHidden } from '../VisuallyHidden';
 
 export type GlobalRootLayoutProps = HTMLAttributes<HTMLHtmlElement>;
 
@@ -21,10 +22,10 @@ export const GlobalRootLayout = ({
     prefix={prefix}
     {...props}
   >
-    <body className="font-sans" key="body">
+    <body className="font-sans m-0" key="body">
       <noscript dangerouslySetInnerHTML={{ __html: '<!--googleoff: all-->' }} />
       <VisuallyHidden asChild>
-        <a href="#content">Pular para o conteúdo principal</a>
+        <a href={`#${contentAnchorName}`}>Pular para o conteúdo principal</a>
       </VisuallyHidden>
       <noscript dangerouslySetInnerHTML={{ __html: '<!--googleon: all-->' }} />
       {children}
