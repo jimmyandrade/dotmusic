@@ -1,28 +1,25 @@
+import { Container } from '@jimmyandrade/ui/server';
 import {
   AspectRatio,
   Badge,
   Box,
-  Button,
   Card,
   Flex,
   Grid,
   Heading,
-  Kbd,
   Section,
-  Select,
   Strong,
-  TextField,
   VisuallyHidden,
 } from '@radix-ui/themes';
+import Image from 'next/image';
 import Link from 'next/link';
 import { ConcertsList } from '../libs/concerts/feature/ConcertsList';
-import { YouTubeVideo } from '../libs/videos/ui/YouTubeVideo';
-import Image from 'next/image';
-import { SpotifyLogo } from '../libs/music-app-links/ui/SpotifyLogo';
+import { AmazonMusicLogo } from '../libs/music-app-links/ui/AmazonMusicLogo';
 import { AppleMusicLogo } from '../libs/music-app-links/ui/AppleMusicLogo';
 import { DeezerLogo } from '../libs/music-app-links/ui/DeezerLogo';
-import { AmazonMusicLogo } from '../libs/music-app-links/ui/AmazonMusicLogo';
-import { Container } from '@jimmyandrade/ui/server';
+import { SpotifyLogo } from '../libs/music-app-links/ui/SpotifyLogo';
+import { SubscribeForm } from '../libs/newsletter/SubscribeForm';
+import { YouTubeVideo } from '../libs/videos/ui/YouTubeVideo';
 
 export default async function IndexPage() {
   return (
@@ -239,76 +236,6 @@ export default async function IndexPage() {
       </Box>
 
       <Section>
-        <Container pt="8">
-          <Heading align="center" as="h2" mb="6">
-            Assine para receber novidades
-          </Heading>
-          <Flex asChild gapY="4" direction="column">
-            <form>
-              <Grid
-                asChild
-                columns={{
-                  initial: '1',
-                  sm: '3',
-                }}
-                gap="4"
-              >
-                <fieldset>
-                  <TextField.Root
-                    id="email"
-                    autoComplete="email"
-                    autoCorrect="off"
-                    name="email"
-                    placeholder="Seu e-mail"
-                    required
-                    size="3"
-                    type="email"
-                  ></TextField.Root>
-                  <TextField.Root
-                    id="tel"
-                    autoComplete="tel-national"
-                    autoCorrect="off"
-                    name="tel"
-                    placeholder="Seu telefone"
-                    required
-                    size="3"
-                    type="tel"
-                  ></TextField.Root>
-                  <Select.Root autoComplete="address-level1" required size="3">
-                    <Select.Trigger placeholder="Escolha seu estado&hellip;" />
-                    <Select.Content className="w-full">
-                      <Select.Group>
-                        <Select.Item value="BR-MG">
-                          MG - Minas Gerais
-                        </Select.Item>
-                        <Select.Item value="BR-SP">SP - São Paulo</Select.Item>
-                      </Select.Group>
-                    </Select.Content>
-                  </Select.Root>
-                </fieldset>
-              </Grid>
-
-              <Box asChild>
-                <small>
-                  Ao fornecer essas informações, você está optando em receber
-                  e-mails e/ou ligações e mensagens de texto de{' '}
-                  <strong>Jimmy&nbsp;Andrade</strong>&nbsp;com notícias, ofertas
-                  especiais, promoções e mensagens criadas para seus interesses,
-                  e você aceita a nossa Política de Privacidade e nossos Termos
-                  de Uso. O consentimento não é uma condição para compra e não é
-                  exigido para utilizar nossos serviços. A frequência de
-                  mensagens pode variar. Responda <Kbd>pare</Kbd> a qualquer
-                  momento para parar de receber nossas&nbsp;comunicações.
-                </small>
-              </Box>
-              <Box className="mx-auto">
-                <Button type="submit">Assinar</Button>
-              </Box>
-            </form>
-          </Flex>
-        </Container>
-      </Section>
-      <Section>
         <Container>
           <Heading align="center" as="h2" mb="6">
             Destaques
@@ -390,6 +317,17 @@ export default async function IndexPage() {
               </li>
             </ul>
           </Box>
+        </Container>
+      </Section>
+
+      <Section>
+        <Container pt="8">
+          <Heading align="center" as="h2" mb="6">
+            Assine para receber novidades
+          </Heading>
+          <Flex asChild gapY="4" direction="column">
+            <SubscribeForm />
+          </Flex>
         </Container>
       </Section>
     </article>
