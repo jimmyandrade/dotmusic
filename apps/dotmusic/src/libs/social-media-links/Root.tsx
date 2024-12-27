@@ -1,7 +1,8 @@
 import { AccessibleIcon, Flex, type FlexProps } from '@radix-ui/themes';
+import { IconButton } from './IconButton';
 import { InstagramIcon } from './InstagramIcon';
 import { TikTokIcon } from './TikTokIcon';
-import { IconButton } from './IconButton';
+import { YouTubeIcon } from './YouTubeIcon';
 
 export const Root = ({
   asChild = true,
@@ -45,7 +46,7 @@ export const Root = ({
             target="_blank"
           >
             <AccessibleIcon label="YouTube">
-              <InstagramIcon className="social-media-icon" />
+              <YouTubeIcon className="social-media-icon" />
             </AccessibleIcon>
           </a>
         </IconButton>
