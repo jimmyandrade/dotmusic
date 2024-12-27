@@ -1,4 +1,4 @@
-import { MetaHTMLAttributes, type ImgHTMLAttributes } from 'react';
+import { type MetaHTMLAttributes } from 'react';
 
 export enum CustomSearchError {
   MISSING_API_KEY = 'GOOGLE_CUSTOM_SEARCH_API_KEY is not defined',
@@ -19,10 +19,11 @@ interface CustomSearchRequest {
   cx: string;
 }
 
-type CustomSearchImageProps = Pick<
-  ImgHTMLAttributes<HTMLImageElement>,
-  'src' | 'width' | 'height'
->;
+type CustomSearchImageProps = {
+  height?: string;
+  src: string;
+  width?: string;
+};
 
 type MetatagKey = NonNullable<MetaHTMLAttributes<HTMLMetaElement>['name']>;
 type MetatagValue = MetaHTMLAttributes<HTMLMetaElement>['content'];
@@ -49,8 +50,8 @@ interface CustomSearchResult {
   htmlSnippet: string;
   formattedUrl: string;
   htmlFormattedUrl: string;
-  pageMap: {
-    cse_image: CustomSearchImageProps;
+  pagemap: {
+    cse_image: CustomSearchImageProps[];
     cse_thumbnail: CustomSearchImageProps[];
     metatags: Metatag[];
     musicevent: MusicEvent[];
