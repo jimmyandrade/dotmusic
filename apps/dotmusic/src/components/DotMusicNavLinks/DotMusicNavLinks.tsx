@@ -1,10 +1,6 @@
 'use client';
 
-import {
-  ShoppingCartIcon,
-  SiteNavigation,
-  TabNavLink,
-} from '@jimmyandrade/ui/server';
+import { SiteNavigation, TabNavLink } from '@jimmyandrade/ui/server';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
@@ -12,32 +8,42 @@ export const DotMusicNavLinks = () => {
   const pathname = usePathname();
 
   return (
-    <SiteNavigation aria-label="Navegação principal">
-      <TabNavLink asChild active={pathname === '/'}>
-        <Link href="/" title="Início">
+    <SiteNavigation
+      aria-label="Navegação principal"
+      size={{ initial: '1', sm: '2' }}
+    >
+      <TabNavLink
+        asChild
+        active={pathname === '/'}
+        className="xs:hidden xl:flex"
+      >
+        <Link href="/" rel="home" title="Início">
           Início
         </Link>
       </TabNavLink>
       <TabNavLink asChild active={pathname === '/musica'}>
-        <Link href="/musica">Música</Link>
+        <Link href="/musica" title="Música">
+          Música
+        </Link>
       </TabNavLink>
       <TabNavLink asChild active={pathname === '/shows'}>
-        <Link href="/shows">Shows</Link>
+        <Link href="/shows" title="Shows">
+          Shows
+        </Link>
       </TabNavLink>
       <TabNavLink asChild active={pathname === '/bio'}>
-        <Link href="/bio">Bio</Link>
+        <Link href="/bio" title="Bio">
+          Bio
+        </Link>
       </TabNavLink>
       <TabNavLink asChild active={pathname === '/midia'}>
-        <Link href="/midia">Mídia</Link>
+        <Link href="/midia" title="Mídia">
+          Mídia
+        </Link>
       </TabNavLink>
-      <TabNavLink asChild>
-        <Link
-          href="https://reserva.ink/jimmyandrade"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          <ShoppingCartIcon />
-          &nbsp;&nbsp;Loja
+      <TabNavLink asChild active={pathname === '/loja'}>
+        <Link href="/loja" title="Loja">
+          Loja
         </Link>
       </TabNavLink>
     </SiteNavigation>
