@@ -77,7 +77,7 @@ export default function RootLayout({ children, params }: RootLayoutProps) {
             <SocialMediaLinks.Root />
           </div>
         </GlobalHeader>
-        <MainContent id="content">{children}</MainContent>
+        <MainContent>{children}</MainContent>
         <GlobalFooter>
           <SocialMediaLinks.Root />
         </GlobalFooter>
