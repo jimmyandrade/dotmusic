@@ -1,4 +1,4 @@
-import { CustomSearchError } from '../model';
+import { CustomSearchError, type CustomSearchResponseData } from '../model';
 
 export const fetchGoogleCustomSearchResults = async (query: string) => {
   const customSearchBaseURL = 'https://www.googleapis.com/customsearch/v1';
@@ -18,5 +18,5 @@ export const fetchGoogleCustomSearchResults = async (query: string) => {
 
   const response = await fetch(url.toString());
   const data = await response.json();
-  return data;
+  return data as CustomSearchResponseData;
 };
