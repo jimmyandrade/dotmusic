@@ -13,6 +13,10 @@ export const PageHeading = ({
   ...props
 }: PageHeadingProps) => (
   <Heading
+    align={{
+      initial: 'center',
+      xs: 'left',
+    }}
     as={as}
     mb={mb}
     size={
@@ -22,7 +26,7 @@ export const PageHeading = ({
         sm: '6',
         md: '7',
         lg: '8',
-        xl: '9',
+        xl: '8',
       }
     }
     {...props}
