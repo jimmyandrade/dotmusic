@@ -5,51 +5,55 @@ import {
   Theme,
   type BoxProps as GlobalHeaderProps,
 } from '@radix-ui/themes';
+import classnames from 'classnames';
+import { globalHeaderHeightInPixels } from '../../../constants';
 import { Container } from '../Container';
 
 export { GlobalHeaderProps };
 
 export const GlobalHeader = ({
   asChild = true,
-  className,
+  className = '',
   children,
+  height = globalHeaderHeightInPixels,
   id = 'globalheader',
   itemScope = true,
   itemType = 'http://schema.org/WPHeader',
   position = 'fixed',
+  px,
   role = 'banner',
   top = '-1px',
   width = '100%',
   ...props
-}: GlobalHeaderProps) => (
-  <Theme asChild radius="none">
-    <Box
-      asChild={asChild}
-      className={`z-10 ${className}`}
-      id={id}
-      position={position}
-      top={top}
-      width={width}
-      {...props}
-    >
-      <Card
-        asChild
-        className="relative"
-        size={{
-          initial: '1',
-          sm: '2',
-          md: '3',
-          lg: '4',
-        }}
+}: GlobalHeaderProps) => {
+  if (typeof px !== 'undefined') {
+    throw new Error(
+      'Please do not use the px prop on the GlobalHeader component.',
+    );
+  }
+
+  return (
+    <Theme asChild radius="none">
+      <Box
+        asChild={asChild}
+        className={classnames('z-10', className)}
+        height={height}
+        id={id}
+        position={position}
+        top={top}
+        width={width}
+        {...props}
       >
-        <header itemScope={itemScope} itemType={itemType} role={role}>
-          <Container>
-            <Flex justify="between" align="center">
-              {children}
-            </Flex>
-          </Container>
-        </header>
-      </Card>
-    </Box>
-  </Theme>
-);
+        <Card asChild className="relative">
+          <header itemScope={itemScope} itemType={itemType} role={role}>
+            <Container>
+              <Flex justify="between" align="center">
+                {children}
+              </Flex>
+            </Container>
+          </header>
+        </Card>
+      </Box>
+    </Theme>
+  );
+};
