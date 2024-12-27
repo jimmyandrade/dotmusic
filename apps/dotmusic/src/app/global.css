@@ -12,3 +12,23 @@
 .social-media-icon {
   @apply h-5 w-5 sm:h-6 sm:w-6;
 }
+
+@keyframes moveUp {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+}
+
+.animateMoveUp {
+  animation: moveUp 10s ease-in-out infinite;
+}
+
+mark {
+  background-color: var(--accent-1);
+  color: var(--accent-a10);
+  font-weight: var(--font-weight-bold);
+}
