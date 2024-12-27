@@ -21,7 +21,7 @@ export default async function StorePage() {
         px="8"
       >
         <ul>
-          {products.map((product) => (
+          {products.map((product, index) => (
             <li key={product.id}>
               <Card asChild variant="ghost">
                 <Link
@@ -35,6 +35,7 @@ export default async function StorePage() {
                       alt={product.description}
                       className="block object-cover w-full"
                       height={820}
+                      priority={index < 4}
                       src={product.image_link}
                       width={800}
                     />
