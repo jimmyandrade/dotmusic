@@ -18,12 +18,14 @@ import Link from 'next/link';
 import { fetchGoogleCustomSearchResults } from '../../libs/search/data-access';
 
 export interface SearchPageProps {
-  q?: string;
+  searchParams: {
+    q?: string;
+  };
 }
 
-export default async function SearchPage({ searchParams }) {
+export default async function SearchPage({ searchParams }: SearchPageProps) {
   try {
-    const query = searchParams.q;
+    const { q: query = '' } = searchParams;
     const data = await fetchGoogleCustomSearchResults(query);
 
     return (
