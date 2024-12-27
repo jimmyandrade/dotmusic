@@ -2,20 +2,29 @@ import {
   Container,
   PageHeader,
   PageHeading,
+  ProseText,
+  SiteSearchForm,
   VisuallyHidden,
 } from '@jimmyandrade/ui/server';
 import {
-  Button,
   Callout,
   Card,
   Flex,
+  Grid,
   Heading,
+  Inset,
+  Link,
   Quote,
+  Section,
   Text,
-  TextField,
+  Theme,
 } from '@radix-ui/themes';
-import Link from 'next/link';
+import Image from 'next/image';
+import NextLink from 'next/link';
 import { fetchGoogleCustomSearchResults } from '../../libs/search/data-access';
+import { searchYouTubeVideos } from '../../libs/videos/data-access/searchYouTubeVideos';
+import { ResourceKind } from '../../libs/videos/model';
+import { YouTubeVideo } from '../../libs/videos/ui/YouTubeVideo';
 
 export interface SearchPageProps {
   searchParams: {
@@ -26,12 +35,17 @@ export interface SearchPageProps {
 export default async function SearchPage({ searchParams }: SearchPageProps) {
   try {
     const { q: query = '' } = searchParams;
-    const data = await fetchGoogleCustomSearchResults(query);
+
+    const googleSearchResults = await fetchGoogleCustomSearchResults(query);
+    const videoSearchResults = await searchYouTubeVideos(query);
+    const filteredVideoSearchResults = videoSearchResults.items.filter(
+      (item) => item.id.kind === ResourceKind.Video,
+    );
 
     return (
       <article id={SearchPage.name}>
-        <PageHeader>
-          <VisuallyHidden>
+        <VisuallyHidden>
+          <PageHeader>
             {query === '' ? (
               <>
                 Resultados da busca por <Quote>{query}</Quote>
@@ -39,54 +53,160 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
             ) : (
               <PageHeading>Buscar</PageHeading>
             )}
-          </VisuallyHidden>
-        </PageHeader>
+          </PageHeader>
+        </VisuallyHidden>
         <Container>
-          <Flex asChild gapX="2">
-            <form>
-              <TextField.Root
-                className="flex-grow"
-                defaultValue={query}
-                id="q"
-                name="q"
-                placeholder="Pesquisar em JimmyAndrade.music, JYVERSO e sites relacionados"
-                size="3"
-                type="search"
-              />
-              <Button size="3" type="submit">
-                Pesquisar
-              </Button>
-            </form>
-          </Flex>
-          {typeof data.items !== 'undefined' && (
-            <ul>
-              {data.items.map((item) => (
-                <li data-kind={item.kind} key={item.formattedUrl}>
-                  <Card asChild mt="4">
-                    <Link href={item.formattedUrl} title={item.title}>
-                      <Text
-                        color="gray"
-                        mb="4"
-                        size="1"
-                        dangerouslySetInnerHTML={{
-                          __html: item.htmlFormattedUrl,
-                        }}
-                      />
-                      <Heading
-                        dangerouslySetInnerHTML={{ __html: item.htmlTitle }}
-                        size={'3'}
-                      />
-                      <Text
-                        as="p"
-                        aria-label={item.snippet}
-                        dangerouslySetInnerHTML={{ __html: item.htmlSnippet }}
-                      />
-                      {/* {JSON.stringify(item.pagemap)} */}
-                    </Link>
-                  </Card>
-                </li>
-              ))}
-            </ul>
+          <Section>
+            <SiteSearchForm defaultValue={query} />
+          </Section>
+          {query !== '' && filteredVideoSearchResults.length > 0 && (
+            <Section size="1">
+              <Heading as="h3" mb="4">
+                Vídeos
+              </Heading>
+              <Grid asChild columns="4" gap="1">
+                <ul>
+                  {filteredVideoSearchResults.map((item) => (
+                    <li key={item.etag} data-kind={item.kind}>
+                      {item.id.kind === ResourceKind.Video && (
+                        <Card asChild>
+                          <a
+                            href={`https://youtube.com/watch?v=${item.id.videoId}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <Inset className="pointer-events-none">
+                              <YouTubeVideo
+                                data-kind={item.id.kind}
+                                id={item.id.videoId}
+                              />
+                            </Inset>
+                          </a>
+                        </Card>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </Grid>
+            </Section>
+          )}
+
+          {typeof googleSearchResults.items !== 'undefined' && query !== '' && (
+            <Section size="1">
+              <Heading as="h3" mb="4">
+                Websites
+              </Heading>
+              <Theme radius="none">
+                <Flex asChild direction="column" gapY="4" mb="4">
+                  <ul>
+                    {googleSearchResults.items.map((item) => (
+                      <li
+                        className="relative overflow-hidden"
+                        data-kind={item.kind}
+                        key={item.formattedUrl}
+                      >
+                        {typeof item.pagemap.cse_image !== 'undefined' &&
+                          item.pagemap.cse_image.map((image) => {
+                            if (typeof image.src === 'undefined') {
+                              return;
+                            }
+                            return (
+                              <Image
+                                alt={item.title}
+                                className="absolute w-full h-full object-center object-cover animateMoveUp opacity-15"
+                                crossOrigin="anonymous"
+                                key={image.src}
+                                height={
+                                  typeof image.height === 'string'
+                                    ? parseInt(image.height)
+                                    : 300
+                                }
+                                src={image.src}
+                                width={
+                                  typeof image.width === 'string'
+                                    ? parseInt(image.width)
+                                    : 300
+                                }
+                              />
+                            );
+                          })}
+                        <Card asChild>
+                          <NextLink href={item.formattedUrl} title={item.title}>
+                            <Flex justify="between">
+                              <Flex direction="column" gap="2">
+                                <Link asChild>
+                                  <Text
+                                    color="gray"
+                                    size="1"
+                                    dangerouslySetInnerHTML={{
+                                      // replace strong by mark using regex
+                                      __html: item.htmlFormattedUrl
+                                        .replace(/<b>/g, '<mark>')
+                                        .replace(/<\/b>/g, '</mark>'),
+                                    }}
+                                  />
+                                </Link>
+                                <Heading
+                                  dangerouslySetInnerHTML={{
+                                    // replace strong by mark using regex
+                                    __html: item.htmlTitle
+                                      .replace(/<b>/g, '<mark>')
+                                      .replace(/<\/b>/g, '</mark>'),
+                                  }}
+                                  size={'3'}
+                                />
+                                <ProseText
+                                  as="p"
+                                  aria-label={item.snippet}
+                                  dangerouslySetInnerHTML={{
+                                    // replace strong by mark using regex
+                                    __html: item.htmlSnippet
+                                      .replace(/<b>/g, '<mark>')
+                                      .replace(/<\/b>/g, '</mark>'),
+                                  }}
+                                  size="1"
+                                />
+                              </Flex>
+                              {typeof item.pagemap.cse_thumbnail !==
+                                'undefined' &&
+                                item.pagemap.cse_thumbnail.map((thumbnail) => {
+                                  if (typeof thumbnail.src === 'undefined') {
+                                    return;
+                                  }
+                                  return (
+                                    <Inset
+                                      side="right"
+                                      key={thumbnail.src}
+                                      pl="current"
+                                    >
+                                      <Image
+                                        alt={item.title}
+                                        nonce=""
+                                        height={
+                                          typeof thumbnail.height === 'string'
+                                            ? parseInt(thumbnail.height)
+                                            : 300
+                                        }
+                                        key={thumbnail.src}
+                                        src={thumbnail.src}
+                                        width={
+                                          typeof thumbnail.width === 'string'
+                                            ? parseInt(thumbnail.width)
+                                            : 300
+                                        }
+                                      />
+                                    </Inset>
+                                  );
+                                })}
+                            </Flex>
+                          </NextLink>
+                        </Card>
+                      </li>
+                    ))}
+                  </ul>
+                </Flex>
+              </Theme>
+            </Section>
           )}
         </Container>
       </article>
