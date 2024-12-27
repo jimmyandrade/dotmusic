@@ -1,20 +1,29 @@
-import { Box } from '@radix-ui/themes';
-import { type HTMLAttributes, type ReactNode } from 'react';
+import { Box, type BoxProps as MainContentProps } from '@radix-ui/themes';
+import {
+  contentAnchorName,
+  globalHeaderHeightInPixels,
+} from '../../../constants';
 
-export interface MainContentProps extends HTMLAttributes<HTMLDivElement> {
-  children: ReactNode;
-}
+export { type MainContentProps };
 
 export const MainContent = ({
   children,
-  id,
+  id = contentAnchorName,
+  minHeight = '100vh',
+  pt = globalHeaderHeightInPixels,
   role = 'main',
   tabIndex = -1,
   ...props
 }: MainContentProps) => (
-  <Box asChild minHeight={'100vh'} {...props}>
-    <main id={id} role={role} tabIndex={tabIndex}>
-      {children}
-    </main>
+  <Box
+    asChild
+    id={id}
+    minHeight={minHeight}
+    pt={pt}
+    role={role}
+    tabIndex={tabIndex}
+    {...props}
+  >
+    <main>{children}</main>
   </Box>
 );
