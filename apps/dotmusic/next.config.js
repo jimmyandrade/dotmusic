@@ -10,6 +10,24 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
+        hostname: 'db.music',
+      },
+      {
+        protocol: 'https',
+        hostname: '*.ffm.to',
+      },
+      {
+        protocol: 'https',
+        hostname: '*.gstatic.com',
+        pathname: '/images/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'i.ytimg.com',
+        pathname: '/vi/**',
+      },
+      {
+        protocol: 'https',
         hostname: 'jimmyandrade.com',
       },
       {
