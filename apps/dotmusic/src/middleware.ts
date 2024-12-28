@@ -11,6 +11,7 @@ export function middleware(request: NextRequest) {
     manifest-src 'self';
     script-src-elem 'self' 'unsafe-inline' va.vercel-scripts.com;
     style-src 'self' 'unsafe-inline';
+    style-src-elem 'self';
     upgrade-insecure-requests;
 `;
   const cleanedCspHeaderValue = cspHeader.replace(/\s{2,}/g, ' ').trim();
