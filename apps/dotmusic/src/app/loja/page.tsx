@@ -11,11 +11,15 @@ export default async function StorePage() {
     <article id={StorePage.name}>
       <PageHeader>
         <PageHeading>Loja</PageHeading>
+        <Heading as="h3" mb="4" mt="8">
+          Camisetas
+        </Heading>
       </PageHeader>
+
       <Grid
         asChild
         columns={{ initial: '1', xs: '2', md: '2', lg: '4' }}
-        gap="8"
+        gap="4"
         mb="8"
         mt="4"
         px="8"
@@ -23,7 +27,7 @@ export default async function StorePage() {
         <ul>
           {products.map((product, index) => (
             <li key={product.id}>
-              <Card asChild variant="ghost">
+              <Card asChild>
                 <Link
                   href={product.link}
                   rel="noopener noreferrer"

@@ -34,6 +34,10 @@
     "rootDir": ".",
     "baseUrl": ".",
     "paths": {
+      "@jimmyandrade/social-media-ui": ["libs/social-media/ui/src/index.ts"],
+      "@jimmyandrade/social-media-ui/server": [
+        "libs/social-media/ui/src/server.ts"
+      ],
       "@jimmyandrade/ui": ["libs/shared/ui/src/index.ts"],
       "@jimmyandrade/ui/server": ["libs/shared/ui/src/server.ts"]
     }

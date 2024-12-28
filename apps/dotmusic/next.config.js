@@ -84,11 +84,6 @@ const nextConfig = {
         destination: '/musica',
         permanent: true,
       },
-      {
-        source: '/videos',
-        destination: '/musica',
-        permanent: false,
-      },
     ];
   },
 };

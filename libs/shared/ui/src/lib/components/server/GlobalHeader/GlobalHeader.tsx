@@ -16,7 +16,7 @@ export const GlobalHeader = ({
   className = '',
   children,
   height = globalHeaderHeightInPixels,
-  id = 'globalheader',
+  id,
   itemScope = true,
   itemType = 'http://schema.org/WPHeader',
   position = 'fixed',
@@ -38,7 +38,7 @@ export const GlobalHeader = ({
         asChild={asChild}
         className={classnames('z-10', className)}
         height={height}
-        id={id}
+        id={id ?? GlobalHeader.name}
         position={position}
         top={top}
         width={width}

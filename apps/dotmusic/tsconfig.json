@@ -30,5 +30,8 @@
     "../../dist/apps/dotmusic/.next/types/**/*.ts"
   ],
   "exclude": ["node_modules", "jest.config.ts", "**/*.spec.ts", "**/*.test.ts"],
-  "references": [{ "path": "../../libs/shared/ui" }]
+  "references": [
+    { "path": "../../libs/social-media/ui" },
+    { "path": "../../libs/shared/ui" }
+  ]
 }

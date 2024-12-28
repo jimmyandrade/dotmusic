@@ -1,5 +1,6 @@
 import { Inset, Strong, Theme } from '@radix-ui/themes';
 
+import { SocialMediaLinks } from '@jimmyandrade/social-media-ui/server';
 import {
   GlobalFooter,
   GlobalHeader,
@@ -21,7 +22,6 @@ import getManifest from './manifest';
 
 import classNames from 'classnames';
 import { DotMusicNavLinks } from '../libs/navigation-and-seo/ui/DotMusicNavLinks';
-import { SocialMediaLinks } from '../libs/social-media-links';
 
 const albertSans = Albert_Sans({
   display: 'swap',
@@ -74,12 +74,12 @@ export default function RootLayout({ children, params }: RootLayoutProps) {
             </div>
           </Inset>
           <div className="hidden md:block">
-            <SocialMediaLinks.Root />
+            <SocialMediaLinks />
           </div>
         </GlobalHeader>
         <MainContent>{children}</MainContent>
         <GlobalFooter>
-          <SocialMediaLinks.Root />
+          <SocialMediaLinks />
         </GlobalFooter>
         <Analytics />
       </GlobalRootLayout>

@@ -1,19 +1,25 @@
-import { AccessibleIcon, Flex, type FlexProps } from '@radix-ui/themes';
-import { IconButton } from './IconButton';
-import { InstagramIcon } from './InstagramIcon';
-import { TikTokIcon } from './TikTokIcon';
-import { YouTubeIcon } from './YouTubeIcon';
+import {
+  AccessibleIcon,
+  Flex,
+  type FlexProps as SocialMediaLinksProps,
+} from '@radix-ui/themes';
+import { InstagramIcon } from '../InstagramIcon';
+import { SocialMediaIconButton } from '../SocialMediaIconButton';
+import { TikTokIcon } from '../TikTokIcon';
+import { YouTubeIcon } from '../YouTubeIcon';
 
-export const Root = ({
+export { type SocialMediaLinksProps };
+
+export const SocialMediaLinks = ({
   asChild = true,
   className,
   gap = '4',
   ...props
-}: FlexProps) => (
+}: SocialMediaLinksProps) => (
   <Flex asChild={asChild} className={className} gap={gap} {...props}>
     <ul>
       <li>
-        <IconButton asChild>
+        <SocialMediaIconButton asChild>
           <a
             href="https://instagram.com/jimmyandrade"
             rel="noopener noreferrer"
@@ -23,10 +29,10 @@ export const Root = ({
               <InstagramIcon className="social-media-icon" />
             </AccessibleIcon>
           </a>
-        </IconButton>
+        </SocialMediaIconButton>
       </li>
       <li>
-        <IconButton asChild>
+        <SocialMediaIconButton asChild>
           <a
             href="https://tiktok.com/@jimmyandrademusic"
             rel="noopener noreferrer"
@@ -36,10 +42,10 @@ export const Root = ({
               <TikTokIcon className="social-media-icon" />
             </AccessibleIcon>
           </a>
-        </IconButton>
+        </SocialMediaIconButton>
       </li>
       <li>
-        <IconButton asChild>
+        <SocialMediaIconButton asChild>
           <a
             href="https://youtube.com/jimmyandrade"
             rel="noopener noreferrer"
@@ -49,11 +55,10 @@ export const Root = ({
               <YouTubeIcon className="social-media-icon" />
             </AccessibleIcon>
           </a>
-        </IconButton>
+        </SocialMediaIconButton>
       </li>
-
       <li>
-        <IconButton asChild>
+        <SocialMediaIconButton asChild>
           <a
             href="https://open.spotify.com/intl-pt/artist/5cXCuau8jCVmsRoFYj5oGB"
             rel="noopener noreferrer"
@@ -63,10 +68,10 @@ export const Root = ({
               <InstagramIcon className="social-media-icon" />
             </AccessibleIcon>
           </a>
-        </IconButton>
+        </SocialMediaIconButton>
       </li>
       <li>
-        <IconButton asChild>
+        <SocialMediaIconButton asChild>
           <a
             href="https://music.apple.com/br/artist/jimmy-andrade/678083982"
             rel="noopener noreferrer"
@@ -76,7 +81,7 @@ export const Root = ({
               <InstagramIcon className="social-media-icon" />
             </AccessibleIcon>
           </a>
-        </IconButton>
+        </SocialMediaIconButton>
       </li>
     </ul>
   </Flex>

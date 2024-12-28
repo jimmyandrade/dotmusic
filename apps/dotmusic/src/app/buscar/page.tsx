@@ -115,17 +115,21 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
                                 alt={item.title}
                                 className="absolute w-full h-full object-center object-cover animateMoveUp opacity-15"
                                 crossOrigin="anonymous"
+                                fill={
+                                  typeof image.height !== 'string' ||
+                                  typeof image.width !== 'string'
+                                }
                                 key={image.src}
                                 height={
                                   typeof image.height === 'string'
                                     ? parseInt(image.height)
-                                    : 300
+                                    : undefined
                                 }
                                 src={image.src}
                                 width={
                                   typeof image.width === 'string'
                                     ? parseInt(image.width)
-                                    : 300
+                                    : undefined
                                 }
                               />
                             );
@@ -181,18 +185,23 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
                                     >
                                       <Image
                                         alt={item.title}
-                                        nonce=""
+                                        className="object-contain"
+                                        fill={
+                                          typeof thumbnail.height !==
+                                            'string' ||
+                                          typeof thumbnail.width !== 'string'
+                                        }
                                         height={
                                           typeof thumbnail.height === 'string'
                                             ? parseInt(thumbnail.height)
-                                            : 300
+                                            : undefined
                                         }
                                         key={thumbnail.src}
                                         src={thumbnail.src}
                                         width={
                                           typeof thumbnail.width === 'string'
                                             ? parseInt(thumbnail.width)
-                                            : 300
+                                            : undefined
                                         }
                                       />
                                     </Inset>

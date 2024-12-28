@@ -1,16 +1,17 @@
-import { Em, Heading, Theme } from '@radix-ui/themes';
-import '@radix-ui/themes/styles.css';
-import './global.css';
-import Link from 'next/link';
 import {
+  GlobalFooter,
+  GlobalHeader,
+  GlobalRootLayout,
   HeaderHomeLink,
   MainContent,
-  SiteFooter,
-  SiteHeader,
-  SiteNavigation,
-  TabNavLink,
 } from '@jimmyandrade/ui/server';
+import { Inset, Theme } from '@radix-ui/themes';
+import '@radix-ui/themes/styles.css';
 import { BrandText } from '../components/BrandText';
+import './global.css';
+
+import { SocialMediaLinks } from '@jimmyandrade/social-media-ui/server';
+import { QuemEuSouNavLinks } from '../components/QuemEuSouNavLinks/QuemEuSouNavLinks';
 
 export const metadata = {};
 
@@ -21,39 +22,28 @@ export default function RootLayout({
 }) {
   return (
     <Theme asChild appearance="light" hasBackground accentColor="purple">
-      <html>
-        <body>
-          <SiteHeader>
-            <HeaderHomeLink>
-              <BrandText />
-            </HeaderHomeLink>
-            <Heading as="h1" size="1">
-              <Link href="/"></Link>
-            </Heading>
-            <SiteNavigation aria-label="Navegação principal">
-              <TabNavLink asChild>
-                <Link href="/">Início</Link>
-              </TabNavLink>
-              <TabNavLink asChild>
-                <Link href="/sobre">Sobre</Link>
-              </TabNavLink>
-              <TabNavLink asChild>
-                <Link href="/musica">Música</Link>
-              </TabNavLink>
-              <TabNavLink asChild>
-                <Link href="/disco">Disco</Link>
-              </TabNavLink>
-              <TabNavLink asChild>
-                <Link href="/tour">
-                  <Em lang="en">Tour</Em>
-                </Link>
-              </TabNavLink>
-            </SiteNavigation>
-          </SiteHeader>
-          <MainContent>{children}</MainContent>
-          <SiteFooter />
-        </body>
-      </html>
+      <GlobalRootLayout>
+        <GlobalHeader>
+          <HeaderHomeLink>
+            <BrandText />
+          </HeaderHomeLink>
+          <Inset>
+            <div className="hidden md:block">
+              <QuemEuSouNavLinks />
+            </div>
+          </Inset>
+          <div className="hidden md:block">
+            <SocialMediaLinks />
+          </div>
+          <Inset>
+            <SocialMediaLinks />
+          </Inset>
+        </GlobalHeader>
+        <MainContent>{children}</MainContent>
+        <GlobalFooter>
+          <SocialMediaLinks />
+        </GlobalFooter>
+      </GlobalRootLayout>
     </Theme>
   );
 }

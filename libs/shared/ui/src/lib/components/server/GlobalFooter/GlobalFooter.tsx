@@ -1,11 +1,11 @@
 import {
   Box,
-  type BoxProps as GlobalFooterProps,
   Flex,
+  Link,
   Separator,
   Strong,
   Text,
-  Link,
+  type BoxProps as GlobalFooterProps,
 } from '@radix-ui/themes';
 import { Container } from '../Container';
 
@@ -14,6 +14,7 @@ export type { GlobalFooterProps };
 export const GlobalFooter = ({
   asChild = true,
   children,
+  id,
   itemScope = true,
   itemType = 'https://schema.org/WPFooter',
   role = 'contentinfo',
@@ -21,6 +22,7 @@ export const GlobalFooter = ({
 }: GlobalFooterProps) => (
   <Box
     asChild={asChild}
+    id={id ?? GlobalFooter.name}
     itemScope={itemScope}
     itemType={itemType}
     role={role}
@@ -53,8 +55,8 @@ export const GlobalFooter = ({
             <Text asChild className="max-w-prose" size="1">
               <small>
                 Todas as imagens, músicas e material audiovisual relacionados a{' '}
-                <Strong>Jimmy&nbsp;Andrade</Strong> são protegidos pela Lei de
-                Direitos Autorais.
+                <Strong>Jimmy&nbsp;Andrade</Strong>
+                <br /> são protegidos pela Lei de Direitos Autorais.
               </small>
             </Text>
           </Flex>

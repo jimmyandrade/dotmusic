@@ -1,4 +1,5 @@
 import { PageHeader, PageHeading } from '@jimmyandrade/ui/server';
+import { Container } from '@radix-ui/themes';
 
 export default function SongsPage() {
   return (
@@ -6,6 +7,7 @@ export default function SongsPage() {
       <PageHeader>
         <PageHeading>Música</PageHeading>
       </PageHeader>
+      <Container />
     </article>
   );
 }
