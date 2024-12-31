@@ -49,14 +49,20 @@ export const viewport: Viewport = {
 
 export interface RootLayoutProps {
   children: ReactNode;
-  params: ParamWithLangCollection;
+  params: Promise<ParamWithLangCollection>;
 }
 
 export async function generateStaticParams() {
   return generateStaticParamsWithLang();
 }
 
-export default function RootLayout({ children, params }: RootLayoutProps) {
+export default async function RootLayout(props: RootLayoutProps) {
+  const params = await props.params;
+
+  const {
+    children
+  } = props;
+
   return (
     <Theme asChild appearance="dark" hasBackground accentColor="red">
       <GlobalRootLayout

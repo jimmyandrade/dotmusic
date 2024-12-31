@@ -27,12 +27,13 @@ import { ResourceKind } from '../../libs/videos/model';
 import { YouTubeVideo } from '../../libs/videos/ui/YouTubeVideo';
 
 export interface SearchPageProps {
-  searchParams: {
+  searchParams: Promise<{
     q?: string;
-  };
+  }>;
 }
 
-export default async function SearchPage({ searchParams }: SearchPageProps) {
+export default async function SearchPage(props: SearchPageProps) {
+  const searchParams = await props.searchParams;
   try {
     const { q: query = '' } = searchParams;
 
@@ -43,7 +44,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
     );
 
     return (
-      <article id={SearchPage.name}>
+      (<article id={SearchPage.name}>
         <VisuallyHidden>
           <PageHeader>
             {query === '' ? (
@@ -218,7 +219,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
             </Section>
           )}
         </Container>
-      </article>
+      </article>)
     );
   } catch (error) {
     return (

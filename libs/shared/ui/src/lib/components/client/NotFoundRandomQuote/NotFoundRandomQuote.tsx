@@ -4,7 +4,7 @@ import {
   Blockquote,
   type BlockquoteProps as NotFoundRandomQuoteProps,
 } from '@radix-ui/themes';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, type JSX } from 'react';
 
 export { type NotFoundRandomQuoteProps };
 
