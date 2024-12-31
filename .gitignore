@@ -170,3 +170,4 @@ testem.log
 .nx/installation
 vite.config.*.timestamp*
 .vercel
+.env*.local
