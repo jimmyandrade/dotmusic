@@ -1,5 +1,13 @@
-import { Theme } from '@radix-ui/themes';
+import {
+  GlobalFooter,
+  GlobalHeader,
+  GlobalRootLayout,
+  HeaderHomeLink,
+  MainContent,
+} from '@jimmyandrade/ui/server';
+import { Strong, Theme } from '@radix-ui/themes';
 import '@radix-ui/themes/styles.css';
+import { Analytics } from '@vercel/analytics/react';
 import './global.css';
 
 export default function RootLayout({
@@ -9,11 +17,16 @@ export default function RootLayout({
 }) {
   return (
     <Theme asChild appearance="dark" hasBackground accentColor="purple">
-      <html lang="pt-br">
-        <body>
-          <main>{children}</main>
-        </body>
-      </html>
+      <GlobalRootLayout>
+        <GlobalHeader>
+          <HeaderHomeLink>
+            <Strong>JYVERSO</Strong>
+          </HeaderHomeLink>
+        </GlobalHeader>
+        <MainContent>{children}</MainContent>
+        <GlobalFooter />
+        <Analytics />
+      </GlobalRootLayout>
     </Theme>
   );
 }
