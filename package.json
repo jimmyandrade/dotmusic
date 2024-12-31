@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "build": "nx build",
+    "build:dotmusic": "npx nx build dotmusic --prod || (npx nx reset && npx nx build dotmusic --prod)",
     "dev": "nx dev",
     "lint": "nx lint"
   },
