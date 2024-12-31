@@ -4,6 +4,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { fetchReservaInkProducts } from '../../libs/products/data-access';
 
+export const metadata = {
+  title: 'Loja',
+  alternates: {
+    canonical: '/loja',
+  },
+};
+
 export default async function StorePage() {
   const products = await fetchReservaInkProducts();
 
