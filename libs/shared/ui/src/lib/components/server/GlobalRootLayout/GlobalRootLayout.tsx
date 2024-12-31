@@ -11,6 +11,7 @@ export const GlobalRootLayout = ({
   className = '',
   children,
   dir = 'ltr',
+  lang = 'pt-br',
   id = 'root',
   prefix = 'og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# product: http://ogp.me/ns/product#',
   ...props
@@ -18,6 +19,7 @@ export const GlobalRootLayout = ({
   <html
     className={classNames('scroll-smooth', className)}
     dir={dir}
+    lang={lang}
     id={id}
     prefix={prefix}
     {...props}
