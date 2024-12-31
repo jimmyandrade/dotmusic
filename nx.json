@@ -83,5 +83,6 @@
       "dependsOn": ["^build"],
       "inputs": ["production", "^production"]
     }
-  }
+  },
+  "nxCloudId": "6773913a9b2056c960082f81"
 }
