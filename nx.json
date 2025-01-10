@@ -15,6 +15,7 @@
     "sharedGlobals": []
   },
   "installation": { "version": "20.3.0", "plugins": { "@nx/next": "20.3.0" } },
+  "neverConnectToCloud": true,
   "plugins": [
     {
       "plugin": "@nx/next/plugin",
