@@ -4,6 +4,7 @@
   "scripts": {
     "build": "nx build",
     "build:dotmusic": "npx nx build dotmusic --prod || (npx nx reset && npx nx build dotmusic --prod)",
+    "build:quem-eu-sou": "npx nx build quem-eu-sou --prod || (npx nx reset && npx nx build quem-eu-sou --prod)",
     "dev": "nx dev",
     "lint": "nx lint"
   },
