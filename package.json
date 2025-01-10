@@ -9,10 +9,6 @@
     "lint": "nx lint"
   },
   "private": true,
-  "engineStrict": true,
-  "engines": {
-    "node": "22.x"
-  },
   "dependencies": {
     "@radix-ui/themes": "3.1.6",
     "@vercel/analytics": "1.4.1",
