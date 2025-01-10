@@ -1,5 +1,13 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "generators": {
+    "@nx/next": { "application": { "style": "tailwind", "linter": "eslint" } },
+    "@nx/react": {
+      "application": {},
+      "library": { "unitTestRunner": "vitest" }
+    }
+  },
+  "installation": { "version": "20.3.1", "plugins": { "@nx/next": "20.3.1" } },
   "namedInputs": {
     "default": ["{projectRoot}/**/*", "sharedGlobals"],
     "production": [
@@ -14,8 +22,6 @@
     ],
     "sharedGlobals": []
   },
-  "installation": { "version": "20.3.1", "plugins": { "@nx/next": "20.3.1" } },
-  "neverConnectToCloud": true,
   "plugins": [
     {
       "plugin": "@nx/next/plugin",
@@ -47,21 +53,6 @@
       }
     }
   ],
-  "generators": {
-    "@nx/next": { "application": { "style": "tailwind", "linter": "eslint" } },
-    "@nx/react": {
-      "application": {},
-      "library": { "unitTestRunner": "vitest" }
-    }
-  },
-  "tasksRunnerOptions": {
-    "default": {
-      "options": {
-        "cacheableOperations": ["build", "e2e", "lint", "test"],
-        "cacheDirectory": "/tmp/nx-cache"
-      }
-    }
-  },
   "targetDefaults": {
     "build": {
       "dependsOn": ["^build"],
@@ -82,6 +73,14 @@
       "cache": true,
       "dependsOn": ["^build"],
       "inputs": ["production", "^production"]
+    }
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "options": {
+        "cacheableOperations": ["build", "e2e", "lint", "test"],
+        "cacheDirectory": "/tmp/nx-cache"
+      }
     }
   }
 }
