@@ -1,5 +1,4 @@
 {
-  "compileOnSave": false,
   "compilerOptions": {
     "allowJs": false,
     "allowSyntheticDefaultImports": true,
@@ -7,32 +6,21 @@
     "declaration": true,
     "declarationMap": true,
     "emitDeclarationOnly": true,
-    "emitDecoratorMetadata": true,
+    "emitDecoratorMetadata": false,
     "esModuleInterop": true,
-    "experimentalDecorators": true,
+    "experimentalDecorators": false,
     "forceConsistentCasingInFileNames": true,
     "importHelpers": true,
     "incremental": true,
     "isolatedModules": true,
     "lib": ["es2022", "dom"],
-    "module": "esnext",
-    "moduleResolution": "node",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
     "noEmitOnError": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitOverride": true,
     "noImplicitReturns": true,
     "noUnusedLocals": true,
-    "pretty": true,
-    "removeComments": false,
-    "resolveJsonModule": false,
-    "skipDefaultLibCheck": true,
-    "skipLibCheck": true,
-    "sourceMap": true,
-    "strict": true,
-    "target": "es2022",
-    "verbatimModuleSyntax": false,
-    "rootDir": ".",
-    "baseUrl": ".",
     "paths": {
       "@jimmyandrade/social-media-ui": ["libs/social-media/ui/src/index.ts"],
       "@jimmyandrade/social-media-ui/server": [
@@ -40,7 +28,18 @@
       ],
       "@jimmyandrade/ui": ["libs/shared/ui/src/index.ts"],
       "@jimmyandrade/ui/server": ["libs/shared/ui/src/server.ts"]
-    }
+    },
+    "pretty": true,
+    "removeComments": false,
+    "resolveJsonModule": false,
+    "skipDefaultLibCheck": false,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strict": true,
+    "target": "es2022",
+    "verbatimModuleSyntax": false,
+    "rootDir": ".",
+    "baseUrl": "."
   },
   "exclude": ["node_modules", "tmp"]
 }
