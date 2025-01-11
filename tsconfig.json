@@ -3,8 +3,23 @@
   "compileOnSave": false,
   "files": [],
   "references": [
-    { "path": "./apps/quem-eu-sou" },
-    { "path": "./apps/dotmusic" },
-    { "path": "./apps/jyverso" },
+    {
+      "path": "./apps/quem-eu-sou"
+    },
+    {
+      "path": "./apps/dotmusic"
+    },
+    {
+      "path": "./apps/jyverso"
+    },
+    {
+      "path": "./libs/social-media/ui"
+    },
+    {
+      "path": "./libs/shared/ui"
+    },
+    {
+      "path": "./apps/dotcom"
+    }
   ]
 }
