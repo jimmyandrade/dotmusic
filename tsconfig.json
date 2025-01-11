@@ -4,9 +4,7 @@
   "files": [],
   "references": [
     { "path": "./apps/quem-eu-sou" },
-    { "path": "./libs/shared/ui" },
     { "path": "./apps/dotmusic" },
     { "path": "./apps/jyverso" },
-    { "path": "./libs/social-media/ui" }
   ]
 }
