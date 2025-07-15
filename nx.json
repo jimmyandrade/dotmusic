@@ -1,25 +1,13 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "generators": {
-    "@nx/next": {
-      "application": {
-        "style": "tailwind",
-        "linter": "eslint"
-      }
-    },
+    "@nx/next": { "application": { "style": "tailwind", "linter": "eslint" } },
     "@nx/react": {
       "application": {},
-      "library": {
-        "unitTestRunner": "vitest"
-      }
+      "library": { "unitTestRunner": "vitest" }
     }
   },
-  "installation": {
-    "version": "20.3.1",
-    "plugins": {
-      "@nx/next": "20.3.1"
-    }
-  },
+  "installation": { "version": "21.2.3", "plugins": { "@nx/next": "21.2.3" } },
   "namedInputs": {
     "default": ["{projectRoot}/**/*", "sharedGlobals"],
     "production": [
@@ -45,28 +33,13 @@
         "serveStaticTargetName": "serve-static"
       }
     },
-    {
-      "plugin": "@nx/jest/plugin",
-      "options": {
-        "targetName": "test"
-      }
-    },
-    {
-      "plugin": "@nx/eslint/plugin",
-      "options": {
-        "targetName": "lint"
-      }
-    },
+    { "plugin": "@nx/jest/plugin", "options": { "targetName": "test" } },
+    { "plugin": "@nx/eslint/plugin", "options": { "targetName": "lint" } },
     {
       "plugin": "@nx/js/typescript",
       "options": {
-        "typecheck": {
-          "targetName": "typecheck"
-        },
-        "build": {
-          "targetName": "build",
-          "configName": "tsconfig.lib.json"
-        }
+        "typecheck": { "targetName": "typecheck" },
+        "build": { "targetName": "build", "configName": "tsconfig.lib.json" }
       }
     },
     {
@@ -89,9 +62,7 @@
     "test": {
       "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"]
     },
-    "e2e": {
-      "inputs": ["default", "^production"]
-    },
+    "e2e": { "inputs": ["default", "^production"] },
     "lint": {
       "inputs": [
         "default",
