@@ -107,8 +107,6 @@ nx-cloud.env
 
 # Gatsby files
 .cache/
-# Ignore public directory only if it is at the root level
-/public
 
 # vuepress build output
 .vuepress/dist
