@@ -1,1 +1,0 @@
-export { fetchSymplaEvents } from './fetchSymplaEvents';
