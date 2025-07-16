@@ -3,7 +3,7 @@ pre-commit:
   commands:
     typescript-check:
       glob: "*.{ts,tsx}"
-      run: tsc --noEmit
+      run: npx tsc --noEmit
 pre-push:
   parallel: true
   commands:
