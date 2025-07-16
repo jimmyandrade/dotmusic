@@ -3,7 +3,7 @@ import {
   type IconButtonProps as SocialMediaIconButtonProps,
 } from '@radix-ui/themes';
 
-export { type SocialMediaIconButtonProps };
+export type { SocialMediaIconButtonProps };
 
 export const SocialMediaIconButton = ({
   children,

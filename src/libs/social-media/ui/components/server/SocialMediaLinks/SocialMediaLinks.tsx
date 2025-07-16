@@ -8,7 +8,7 @@ import { SocialMediaIconButton } from '../SocialMediaIconButton';
 import { TikTokIcon } from '../TikTokIcon';
 import { YouTubeIcon } from '../YouTubeIcon';
 
-export { type SocialMediaLinksProps };
+export type { SocialMediaLinksProps };
 
 export const SocialMediaLinks = ({
   asChild = true,

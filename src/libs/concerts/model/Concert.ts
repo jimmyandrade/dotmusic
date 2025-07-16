@@ -1,7 +1,7 @@
-import { type Artist } from './Artist';
-import { type Offer } from './Offer';
-import { PresaleDetails } from './PresaleDetails';
-import { type Venue } from './Venue';
+import type { Artist } from './Artist';
+import type { Offer } from './Offer';
+import type { PresaleDetails } from './PresaleDetails';
+import type { Venue } from './Venue';
 
 export interface Concert {
   id: string;

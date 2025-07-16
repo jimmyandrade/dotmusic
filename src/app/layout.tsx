@@ -10,13 +10,13 @@ import {
 } from '../libs/i18n/model';
 import './globals.css';
 
+import classNames from 'classnames';
 import { GlobalFooter } from '@/libs/shared/ui/components/server/GlobalFooter';
 import { GlobalHeader } from '@/libs/shared/ui/components/server/GlobalHeader';
 import { GlobalRootLayout } from '@/libs/shared/ui/components/server/GlobalRootLayout';
 import { HeaderHomeLink } from '@/libs/shared/ui/components/server/HeaderHomeLink';
 import { MainContent } from '@/libs/shared/ui/components/server/MainContent';
 import { SocialMediaLinks } from '@/libs/social-media/ui/components/server/SocialMediaLinks';
-import classNames from 'classnames';
 import { DotMusicNavLinks } from '../libs/navigation-and-seo/ui/DotMusicNavLinks';
 import manifest from './manifest';
 

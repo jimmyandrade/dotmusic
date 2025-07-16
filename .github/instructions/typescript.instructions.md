@@ -4,6 +4,8 @@ applyTo: "**/*.ts,**/*.tsx"
 
 # Instructions for TypeScript and TypeScript React files
 
+<!-- only add instructions below this line -->
+
 ## Single Responsibility
 
 Always consider extracting logic into functions with a single responsibility. This improves code cohesion and reusability.
@@ -48,4 +50,18 @@ enum Status {
   INACTIVE,
   PENDING,
 }
+```
+
+## Date and Time Best Practices
+
+When working with dates and times, always prefer using `Date.now()` instead of `new Date().getTime()`. This approach is more readable, avoids unnecessary instantiation of Date objects, and improves performance.
+
+Example:
+
+```ts
+// Good:
+const diff = targetDate.getTime() - Date.now();
+
+// Bad:
+const diff = targetDate.getTime() - new Date().getTime();
 ```

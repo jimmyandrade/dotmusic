@@ -1,9 +1,3 @@
-import { Container } from '@/libs/shared/ui/components/server/Container';
-import { PageHeader } from '@/libs/shared/ui/components/server/PageHeader';
-import { PageHeading } from '@/libs/shared/ui/components/server/PageHeading';
-import { ProseText } from '@/libs/shared/ui/components/server/ProseText';
-import { SiteSearchForm } from '@/libs/shared/ui/components/server/SiteSearchForm';
-import { VisuallyHidden } from '@/libs/shared/ui/components/server/VisuallyHidden';
 import {
   Callout,
   Card,
@@ -19,6 +13,12 @@ import {
 } from '@radix-ui/themes';
 import Image from 'next/image';
 import NextLink from 'next/link';
+import { Container } from '@/libs/shared/ui/components/server/Container';
+import { PageHeader } from '@/libs/shared/ui/components/server/PageHeader';
+import { PageHeading } from '@/libs/shared/ui/components/server/PageHeading';
+import { ProseText } from '@/libs/shared/ui/components/server/ProseText';
+import { SiteSearchForm } from '@/libs/shared/ui/components/server/SiteSearchForm';
+import { VisuallyHidden } from '@/libs/shared/ui/components/server/VisuallyHidden';
 import { searchYouTubeVideos } from '../../libs/videos/data-access/searchYouTubeVideos';
 import { ResourceKind } from '../../libs/videos/model';
 import { YouTubeVideo } from '../../libs/videos/ui/YouTubeVideo';

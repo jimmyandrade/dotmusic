@@ -4,9 +4,9 @@ import {
   Blockquote,
   type BlockquoteProps as NotFoundRandomQuoteProps,
 } from '@radix-ui/themes';
-import { useEffect, useState, type JSX } from 'react';
+import { type JSX, useEffect, useState } from 'react';
 
-export { type NotFoundRandomQuoteProps };
+export type { NotFoundRandomQuoteProps };
 
 export const NotFoundRandomQuote = (props: NotFoundRandomQuoteProps) => {
   const [randomQuote, setRandomQuote] = useState<JSX.Element>(

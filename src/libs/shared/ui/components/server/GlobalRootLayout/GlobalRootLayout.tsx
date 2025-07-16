@@ -1,7 +1,7 @@
 import '@radix-ui/themes/styles.css';
 
 import classNames from 'classnames';
-import { type HTMLAttributes } from 'react';
+import type { HTMLAttributes } from 'react';
 import { contentAnchorName } from '../../../constants';
 import { VisuallyHidden } from '../VisuallyHidden';
 
@@ -25,12 +25,15 @@ export const GlobalRootLayout = ({
     {...props}
   >
     <body className="font-sans m-0" key="body">
+      {/** biome-ignore lint/security/noDangerouslySetInnerHtml: only used for noscript */}
       <noscript dangerouslySetInnerHTML={{ __html: '<!--googleoff: all-->' }} />
       <VisuallyHidden asChild>
         <a href={`#${contentAnchorName}`}>Pular para o conteúdo principal</a>
       </VisuallyHidden>
+      {/** biome-ignore lint/security/noDangerouslySetInnerHtml: only used for noscript */}
       <noscript dangerouslySetInnerHTML={{ __html: '<!--googleon: all-->' }} />
       {children}
+      {/** biome-ignore lint/security/noDangerouslySetInnerHtml: only used for noscript */}
       <noscript dangerouslySetInnerHTML={{ __html: '<!--googleoff: all-->' }} />
       <div
         id="wp-a11y-speak-polite"
@@ -46,6 +49,7 @@ export const GlobalRootLayout = ({
         aria-atomic="true"
         className="screen-reader-text wp-a11y-speak-region"
       />
+      {/** biome-ignore lint/security/noDangerouslySetInnerHtml: only used for noscript */}
       <noscript dangerouslySetInnerHTML={{ __html: '<!--googleon: all-->' }} />
     </body>
   </html>

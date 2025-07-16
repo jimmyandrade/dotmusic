@@ -1,9 +1,9 @@
 'use client';
 
-import { SiteNavigation } from '@/libs/shared/ui/components/server/GlobalNavigation';
-import { TabNavLink } from '@/libs/shared/ui/components/server/TabNavLink';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { SiteNavigation } from '@/libs/shared/ui/components/server/GlobalNavigation';
+import { TabNavLink } from '@/libs/shared/ui/components/server/TabNavLink';
 import { NavigationURL } from '../../model';
 
 export const DotMusicNavLinks = () => {

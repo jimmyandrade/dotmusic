@@ -1,4 +1,4 @@
-import { type Concert } from './Concert';
+import type { Concert } from './Concert';
 
 export const getConcertDate = (concert: Concert) => {
   return concert.starts_at

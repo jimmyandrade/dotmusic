@@ -1,8 +1,8 @@
+import { Container, Flex } from '@radix-ui/themes';
+import Image from 'next/image';
 import { PageHeader } from '@/libs/shared/ui/components/server/PageHeader';
 import { PageHeading } from '@/libs/shared/ui/components/server/PageHeading';
 import { ProseText } from '@/libs/shared/ui/components/server/ProseText';
-import { Container, Flex } from '@radix-ui/themes';
-import Image from 'next/image';
 
 export default function BioPage() {
   return (

@@ -1,9 +1,3 @@
-import { getPressReleases } from '@/libs/press-releases/data-access/getPressReleases';
-import { PressReleaseList } from '@/libs/press-releases/ui/PressReleaseList';
-import { Container } from '@/libs/shared/ui/components/server/Container';
-import { PageHeader } from '@/libs/shared/ui/components/server/PageHeader';
-import { PageHeading } from '@/libs/shared/ui/components/server/PageHeading';
-import { YouTubeVideo } from '@/libs/videos/ui/YouTubeVideo';
 import {
   Badge,
   Box,
@@ -17,6 +11,12 @@ import {
 } from '@radix-ui/themes';
 import Image from 'next/image';
 import Link from 'next/link';
+import { getPressReleases } from '@/libs/press-releases/data-access/getPressReleases';
+import { PressReleaseList } from '@/libs/press-releases/ui/PressReleaseList';
+import { Container } from '@/libs/shared/ui/components/server/Container';
+import { PageHeader } from '@/libs/shared/ui/components/server/PageHeader';
+import { PageHeading } from '@/libs/shared/ui/components/server/PageHeading';
+import { YouTubeVideo } from '@/libs/videos/ui/YouTubeVideo';
 import pdfIconImage from '../../../public/media/icons/pdf-icon-image.png';
 
 export default function PressPage() {

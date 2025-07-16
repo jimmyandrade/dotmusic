@@ -1,11 +1,11 @@
 import {
+  type HeadingProps as HeaderHomeLinkProps,
   Heading,
   Link,
-  type HeadingProps as HeaderHomeLinkProps,
 } from '@radix-ui/themes';
 import NextLink from 'next/link';
 
-export { type HeaderHomeLinkProps };
+export type { HeaderHomeLinkProps };
 
 export const HeaderHomeLink = ({
   as = 'h1',

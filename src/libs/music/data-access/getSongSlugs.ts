@@ -1,9 +1,9 @@
-import { slugify } from '@/libs/shared/utils/slugify';
 import { readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { cwd } from 'node:process';
+import { slugify } from '@/libs/shared/utils/slugify';
 
-export function getSongSlugs(): string[] {
+export const getSongSlugs = (): string[] => {
   const dir = join(cwd(), 'content/songs');
   const files = readdirSync(dir).filter((file) => file.endsWith('.json'));
   return files.map((file) => {
@@ -12,4 +12,4 @@ export function getSongSlugs(): string[] {
     const { title } = JSON.parse(fileContents);
     return slugify(title);
   });
-}
+};

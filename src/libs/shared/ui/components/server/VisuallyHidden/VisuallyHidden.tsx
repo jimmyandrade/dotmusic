@@ -1,6 +1,6 @@
 import { VisuallyHidden as PrimitiveVisuallyHidden } from '@radix-ui/themes';
 import classNames from 'classnames';
-import { ComponentProps } from 'react';
+import type { ComponentProps } from 'react';
 
 export type VisuallyHiddenProps = ComponentProps<
   typeof PrimitiveVisuallyHidden

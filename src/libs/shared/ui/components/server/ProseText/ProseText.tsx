@@ -1,4 +1,4 @@
-import { Text, type TextProps as ProseTextProps } from '@radix-ui/themes';
+import { type TextProps as ProseTextProps, Text } from '@radix-ui/themes';
 
 export type { ProseTextProps };
 

@@ -1,4 +1,4 @@
-import { YouTubeSearchError, YouTubeSearchListResponse } from '../model';
+import { YouTubeSearchError, type YouTubeSearchListResponse } from '../model';
 
 export const searchYouTubeVideos = async (query: string) => {
   const baseURL = 'https://www.googleapis.com/youtube/v3/search';

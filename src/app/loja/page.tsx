@@ -1,8 +1,8 @@
-import { PageHeader } from '@/libs/shared/ui/components/server/PageHeader';
-import { PageHeading } from '@/libs/shared/ui/components/server/PageHeading';
 import { Card, Grid, Heading, Inset } from '@radix-ui/themes';
 import Image from 'next/image';
 import Link from 'next/link';
+import { PageHeader } from '@/libs/shared/ui/components/server/PageHeader';
+import { PageHeading } from '@/libs/shared/ui/components/server/PageHeading';
 import { fetchReservaInkProducts } from '../../libs/products/data-access';
 
 export const metadata = {

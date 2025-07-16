@@ -1,4 +1,4 @@
-import { type SVGProps } from 'react';
+import type { SVGProps } from 'react';
 
 export const AmazonMusicLogo = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -7,6 +7,7 @@ export const AmazonMusicLogo = (props: SVGProps<SVGSVGElement>) => (
     viewBox="0 0 1406.26855 913.56341"
     {...props}
   >
+    <title>Marca do Amazon Music</title>
     <path
       fill="currentColor"
       strokeWidth="0"

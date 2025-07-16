@@ -1,4 +1,4 @@
-import { type Link } from './Link';
+import type { Link } from './Link';
 
 export interface Artist {
   id: string;

@@ -15,7 +15,7 @@ export const useCountdown = (value: string) => {
   const calculateTimeLeft = () => {
     const dateValue = new Date(value);
 
-    const difference = dateValue.getTime() - new Date().getTime();
+    const difference = dateValue.getTime() - Date.now();
     const timeLeft = { ...defaultTimeLeft };
 
     if (difference > zeroValue) {
@@ -26,13 +26,13 @@ export const useCountdown = (value: string) => {
 
       timeLeft.seconds = Math.floor((difference / milliseconds) % seconds);
       timeLeft.minutes = Math.floor(
-        (difference / milliseconds / seconds) % minutes
+        (difference / milliseconds / seconds) % minutes,
       );
       timeLeft.hours = Math.floor(
-        (difference / (milliseconds * seconds * minutes)) % hours
+        (difference / (milliseconds * seconds * minutes)) % hours,
       );
       timeLeft.days = Math.floor(
-        difference / (milliseconds * seconds * minutes * hours)
+        difference / (milliseconds * seconds * minutes * hours),
       );
     }
     return timeLeft;

@@ -1,11 +1,11 @@
 import {
   Box,
   Flex,
+  type BoxProps as GlobalFooterProps,
   Link,
   Separator,
   Strong,
   Text,
-  type BoxProps as GlobalFooterProps,
 } from '@radix-ui/themes';
 import { Container } from '../Container';
 

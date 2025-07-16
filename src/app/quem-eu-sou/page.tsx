@@ -1,7 +1,3 @@
-import { PageHeader } from '@/libs/shared/ui/components/server/PageHeader';
-import { PageHeading } from '@/libs/shared/ui/components/server/PageHeading';
-import { ProseText } from '@/libs/shared/ui/components/server/ProseText';
-import { YouTubeVideo } from '@/libs/videos/ui/YouTubeVideo';
 import {
   AspectRatio,
   Container,
@@ -13,6 +9,10 @@ import {
   Text,
 } from '@radix-ui/themes';
 import Image from 'next/image';
+import { PageHeader } from '@/libs/shared/ui/components/server/PageHeader';
+import { PageHeading } from '@/libs/shared/ui/components/server/PageHeading';
+import { ProseText } from '@/libs/shared/ui/components/server/ProseText';
+import { YouTubeVideo } from '@/libs/videos/ui/YouTubeVideo';
 
 const QuemEuSouPage = () => {
   return (

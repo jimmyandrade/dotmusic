@@ -1,5 +1,5 @@
 import { parse } from 'csv-parse/sync';
-import { mapProducts, ParsedRawData } from '../model/mapProduct';
+import { mapProducts, type ParsedRawData } from '../model/mapProduct';
 
 export const fetchReservaInkProducts = async () => {
   const response = await fetch(

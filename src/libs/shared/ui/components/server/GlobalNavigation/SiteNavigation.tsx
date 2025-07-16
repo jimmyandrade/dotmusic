@@ -1,5 +1,5 @@
 import { TabNav } from '@radix-ui/themes';
-import { type ComponentProps, type ReactNode } from 'react';
+import type { ComponentProps, ReactNode } from 'react';
 
 export interface SiteNavigationProps
   extends ComponentProps<typeof TabNav.Root> {

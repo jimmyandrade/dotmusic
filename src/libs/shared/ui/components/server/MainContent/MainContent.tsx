@@ -4,7 +4,7 @@ import {
   globalHeaderHeightInPixels,
 } from '../../../constants';
 
-export { type MainContentProps };
+export type { MainContentProps };
 
 export const MainContent = ({
   children,

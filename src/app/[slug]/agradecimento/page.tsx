@@ -1,3 +1,4 @@
+import { Container, Flex } from '@radix-ui/themes';
 import { CommunityLinks } from '@/libs/community/ui/components/CommunityLinks';
 import { COMMUNITY_NAME } from '@/libs/community/ui/constants/communityName';
 import { getSongReleaseInfo } from '@/libs/music/data-access/getSongReleaseInfo';
@@ -5,7 +6,6 @@ import { getSongSlugs } from '@/libs/music/data-access/getSongSlugs';
 import { PageHeader } from '@/libs/shared/ui/components/server/PageHeader';
 import { PageHeading } from '@/libs/shared/ui/components/server/PageHeading';
 import { ProseText } from '@/libs/shared/ui/components/server/ProseText';
-import { Container, Flex } from '@radix-ui/themes';
 
 export const generateStaticParams = () =>
   getSongSlugs().map((slug) => ({ slug }));
@@ -23,7 +23,7 @@ export async function generateMetadata({
 }
 
 const SongThankYouPage = async ({ params }: { params: { slug: string } }) => {
-  const { slug } = params;
+  const { slug } = await params;
   const { title, releaseDateFormatted } = getSongReleaseInfo(slug);
   return (
     <article id={`${slug}-thanks-page`}>

@@ -1,10 +1,10 @@
+import { Flex, Link, Section } from '@radix-ui/themes';
 import { NotFoundRandomQuote } from '@/libs/shared/ui/components/client/NotFoundRandomQuote';
 import { Container } from '@/libs/shared/ui/components/server/Container';
 import { PageHeader } from '@/libs/shared/ui/components/server/PageHeader';
 import { PageHeading } from '@/libs/shared/ui/components/server/PageHeading';
 import { ProseText } from '@/libs/shared/ui/components/server/ProseText';
 import { SiteSearchForm } from '@/libs/shared/ui/components/server/SiteSearchForm';
-import { Flex, Link, Section } from '@radix-ui/themes';
 
 export default function NotFoundPage() {
   return (

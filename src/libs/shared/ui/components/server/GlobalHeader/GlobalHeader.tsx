@@ -2,14 +2,14 @@ import {
   Box,
   Card,
   Flex,
-  Theme,
   type BoxProps as GlobalHeaderProps,
+  Theme,
 } from '@radix-ui/themes';
 import classnames from 'classnames';
 import { globalHeaderHeightInPixels } from '../../../constants';
 import { Container } from '../Container';
 
-export { GlobalHeaderProps };
+export type { GlobalHeaderProps };
 
 export const GlobalHeader = ({
   asChild = true,

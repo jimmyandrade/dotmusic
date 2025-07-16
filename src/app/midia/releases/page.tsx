@@ -1,7 +1,7 @@
-import matter from 'gray-matter';
-import Link from 'next/link';
 import fs from 'node:fs';
 import path from 'node:path';
+import matter from 'gray-matter';
+import Link from 'next/link';
 
 export default async function ReleasesPage() {
   const dir = path.join(process.cwd(), 'content/press-releases');

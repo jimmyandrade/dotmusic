@@ -1,3 +1,8 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import { Flex, Grid } from '@radix-ui/themes';
+import matter from 'gray-matter';
+import { notFound } from 'next/navigation';
 import { PrintButton } from '@/libs/press-release/ui/client/PrintButton';
 import { ShareButton } from '@/libs/press-release/ui/client/ShareButton';
 import { Container } from '@/libs/shared/ui/components/server/Container/Container';
@@ -5,11 +10,6 @@ import { PageHeader } from '@/libs/shared/ui/components/server/PageHeader';
 import { PageHeading } from '@/libs/shared/ui/components/server/PageHeading';
 import { ProseText } from '@/libs/shared/ui/components/server/ProseText';
 import { slugify } from '@/libs/shared/utils/slugify';
-import { Flex, Grid } from '@radix-ui/themes';
-import matter from 'gray-matter';
-import { notFound } from 'next/navigation';
-import fs from 'node:fs';
-import path from 'node:path';
 
 interface ReleasePageProps {
   params: { slug: string };

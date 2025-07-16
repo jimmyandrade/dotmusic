@@ -1,9 +1,9 @@
+import { Card, Em, Flex, Grid, Link, Text } from '@radix-ui/themes';
 import { Container } from '@/libs/shared/ui/components/server/Container';
 import { PageHeader } from '@/libs/shared/ui/components/server/PageHeader';
 import { PageHeading } from '@/libs/shared/ui/components/server/PageHeading';
 import { ProseText } from '@/libs/shared/ui/components/server/ProseText';
 import { YouTubeVideo } from '@/libs/videos/ui/YouTubeVideo';
-import { Card, Em, Flex, Grid, Link, Text } from '@radix-ui/themes';
 import { ConcertsList } from '../../libs/concerts/feature/ConcertsList';
 
 export default async function ConcertsPage() {

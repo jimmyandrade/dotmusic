@@ -1,5 +1,3 @@
-import { MusicPage } from '@/libs/music/ui/components/server/MusicPage';
-import { Container } from '@/libs/shared/ui/components/server/Container';
 import {
   Badge,
   Box,
@@ -10,6 +8,8 @@ import {
   VisuallyHidden,
 } from '@radix-ui/themes';
 import Link from 'next/link';
+import { MusicPage } from '@/libs/music/ui/components/server/MusicPage';
+import { Container } from '@/libs/shared/ui/components/server/Container';
 import { ConcertsList } from '../libs/concerts/feature/ConcertsList';
 import { SubscribeForm } from '../libs/newsletter/SubscribeForm';
 

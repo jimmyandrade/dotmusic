@@ -1,6 +1,6 @@
-import { VisuallyHidden } from '@/libs/shared/ui/components/server/VisuallyHidden';
 import { Box, Grid, Heading, Link } from '@radix-ui/themes';
 import Image from 'next/image';
+import { VisuallyHidden } from '@/libs/shared/ui/components/server/VisuallyHidden';
 
 export const MusicGrid = () => (
   <Box asChild>

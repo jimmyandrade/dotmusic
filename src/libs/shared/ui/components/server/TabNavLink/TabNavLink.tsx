@@ -1,4 +1,4 @@
-import { TabNav, type LinkProps } from '@radix-ui/themes';
+import { type LinkProps, TabNav } from '@radix-ui/themes';
 
 export interface TabNavLinkProps extends LinkProps {
   active?: boolean;

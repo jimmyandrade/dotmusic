@@ -1,15 +1,15 @@
-import { getSongSlugs } from '@/libs/music/data-access/getSongSlugs';
-import { PageHeader } from '@/libs/shared/ui/components/server/PageHeader';
-import { PageHeading } from '@/libs/shared/ui/components/server/PageHeading';
-import { YouTubeVideo } from '@/libs/videos/ui/YouTubeVideo';
+import { existsSync, readFileSync } from 'node:fs';
+import { join } from 'node:path';
+import { cwd } from 'node:process';
 import { AspectRatio, Grid } from '@radix-ui/themes';
 import classNames from 'classnames';
 import type { Metadata } from 'next';
 import type { OpenGraph } from 'next/dist/lib/metadata/types/opengraph-types';
 import { notFound, redirect } from 'next/navigation';
-import { existsSync, readFileSync } from 'node:fs';
-import { join } from 'node:path';
-import { cwd } from 'node:process';
+import { getSongSlugs } from '@/libs/music/data-access/getSongSlugs';
+import { PageHeader } from '@/libs/shared/ui/components/server/PageHeader';
+import { PageHeading } from '@/libs/shared/ui/components/server/PageHeading';
+import { YouTubeVideo } from '@/libs/videos/ui/YouTubeVideo';
 
 interface PageParams {
   slug: string;

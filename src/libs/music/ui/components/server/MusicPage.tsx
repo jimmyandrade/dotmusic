@@ -1,9 +1,9 @@
-import { MusicAppLinks } from '@/libs/music-app-links/ui/components/MusicAppLinks';
-import { MusicGrid } from '@/libs/music/ui/components/server/MusicGrid';
-import SpotifyEmbed from '@/libs/music/ui/components/server/SpotifyEmbed';
-import { Container } from '@/libs/shared/ui/components/server/Container';
 import { Section } from '@radix-ui/themes';
 import type { FC } from 'react';
+import { MusicGrid } from '@/libs/music/ui/components/server/MusicGrid';
+import SpotifyEmbed from '@/libs/music/ui/components/server/SpotifyEmbed';
+import { MusicAppLinks } from '@/libs/music-app-links/ui/components/MusicAppLinks';
+import { Container } from '@/libs/shared/ui/components/server/Container';
 
 const MusicPage: FC = () => (
   <>

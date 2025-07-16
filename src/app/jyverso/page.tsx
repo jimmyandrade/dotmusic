@@ -1,10 +1,10 @@
+import { Card, Container, Grid, Heading, Inset, Link } from '@radix-ui/themes';
+import Image from 'next/image';
 import { COMMUNITY_NAME } from '@/libs/community/ui/constants/communityName';
 import { fetchSymplaEvents } from '@/libs/concerts/data-access/fetchSymplaEvents';
 import type { SymplaEvent } from '@/libs/concerts/model/Events';
 import { PageHeader } from '@/libs/shared/ui/components/server/PageHeader';
 import { PageHeading } from '@/libs/shared/ui/components/server/PageHeading';
-import { Card, Container, Grid, Heading, Inset, Link } from '@radix-ui/themes';
-import Image from 'next/image';
 
 const JyversoPage = async () => {
   const events = await fetchSymplaEvents();

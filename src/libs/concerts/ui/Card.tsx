@@ -5,11 +5,11 @@ import {
   Card as PrimitiveCard,
   Text,
 } from '@radix-ui/themes';
-import { type Concert } from '../model/Concert';
+import Image from 'next/image';
+import type { Concert } from '../model/Concert';
 import { getConcertDate } from '../model/getConcertDate';
 import { getCountryName } from '../model/getCountryName';
 import { Name } from './Name';
-import Image from 'next/image';
 
 export interface CardProps {
   concert: Concert;

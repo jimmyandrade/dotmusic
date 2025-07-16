@@ -1,4 +1,4 @@
-import { type SVGProps } from 'react';
+import type { SVGProps } from 'react';
 
 export const DeezerLogo = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -9,6 +9,7 @@ export const DeezerLogo = (props: SVGProps<SVGSVGElement>) => (
     fill="none"
     {...props}
   >
+    <title>Marca do Deezer</title>
     <path
       fillRule="evenodd"
       clipRule="evenodd"

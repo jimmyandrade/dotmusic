@@ -1,7 +1,7 @@
-import {
+import type {
   ProductColor,
   ProductSize,
-  type ReservaInkProduct,
+  ReservaInkProduct,
 } from './ReservaInkProduct';
 
 export type ParsedRawData = Array<Record<string, string>>;
@@ -25,5 +25,5 @@ export const mapProducts = (
         additional_image_link: record.additional_image_link
           .split(',')
           .map((link) => link.trim()),
-      } as ReservaInkProduct),
+      }) as ReservaInkProduct,
   );

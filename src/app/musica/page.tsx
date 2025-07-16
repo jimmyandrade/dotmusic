@@ -1,7 +1,7 @@
+import { Container } from '@radix-ui/themes';
 import { MusicPage } from '@/libs/music/ui/components/server/MusicPage';
 import { PageHeader } from '@/libs/shared/ui/components/server/PageHeader';
 import { PageHeading } from '@/libs/shared/ui/components/server/PageHeading';
-import { Container } from '@radix-ui/themes';
 
 export default function SongsPage() {
   return (
