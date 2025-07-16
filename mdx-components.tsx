@@ -14,16 +14,16 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     ...components,
     h1: (props: Readonly<HeadingProps>) => (
-      <Heading as="h1" class="pb-6" size="6" {...props} />
+      <Heading as="h1" className="pb-6" size="6" {...props} />
     ),
     h2: (props: Readonly<HeadingProps>) => (
-      <Heading as="h2" class="pb-6" size="5" {...props} />
+      <Heading as="h2" className="pb-6" size="5" {...props} />
     ),
     h3: (props: Readonly<HeadingProps>) => (
-      <Heading as="h3" class="pb-6" size="4" {...props} />
+      <Heading as="h3" className="pb-6" size="4" {...props} />
     ),
     h4: (props: Readonly<HeadingProps>) => (
-      <Heading as="h4" class="pb-6" size="3" {...props} />
+      <Heading as="h4" className="pb-6" size="3" {...props} />
     ),
     p: (props: Readonly<TextProps>) => <Text as="p" {...props} />,
     ul: (props: ComponentProps<'ul'>) => <ul {...props} />,

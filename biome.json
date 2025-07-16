@@ -25,7 +25,10 @@
       "nursery": {
         "useExplicitType": "error"
       },
-      "recommended": true
+      "recommended": true,
+      "suspicious": {
+        "noReactSpecificProps": "off"
+      }
     }
   },
   "javascript": {

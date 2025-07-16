@@ -27,7 +27,7 @@ const BioPage: FC = () => {
             alt={'Jimmy Andrade perto de TV de tubo antiga'}
             width={1600}
             height={1067}
-            class="mb-6 rounded-xl object-cover w-full h-auto"
+            className="mb-6 rounded-xl object-cover w-full h-auto"
             priority
           />
 
@@ -49,7 +49,7 @@ const BioPage: FC = () => {
             teatros, centros culturais ("CCUFMG") e casas de shows ("Autêntica",
             "O Gueto").
           </ProseText>
-          <ProseText as="p" class="pb-6" size="3">
+          <ProseText as="p" className="pb-6" size="3">
             Em junho de 2022, participou da ação "Feat Store" do Mercado Livre,
             em que gravou um feat da música "Mais Uma Voz", com Pabllo Vittar,
             para campanha de marketing da empresa. Em 2023, recebeu indicação à

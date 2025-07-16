@@ -77,7 +77,7 @@ export const YouTubeVideo: FC<YouTubeVideoProps> = ({
     <iframe
       id={`youtube-${id}`}
       allow={allow.join('; ')}
-      class={classNames('border-0 overflow-hidden', className)}
+      className={classNames('border-0 overflow-hidden', className)}
       referrerPolicy="strict-origin-when-cross-origin"
       seamless
       src={url.toString()}

@@ -21,7 +21,7 @@ export const SiteNavigation: FC<SiteNavigationProps> = ({
 }: Readonly<SiteNavigationProps>) => (
   <TabNav.Root
     aria-label={ariaLabel}
-    class={`h-11 uppercase ${className}`}
+    className={`h-11 uppercase ${className}`}
     itemScope={itemScope}
     itemType={itemType}
     size={

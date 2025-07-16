@@ -1,131 +1,116 @@
-// import { existsSync, readFileSync } from 'node:fs';
-// import { join } from 'node:path';
-// import { cwd } from 'node:process';
-// import { AspectRatio, Grid } from '@radix-ui/themes';
-// import classNames from 'classnames';
-// import type { Metadata } from 'next';
-// import type { OpenGraph } from 'next/dist/lib/metadata/types/opengraph-types';
-// import { notFound, redirect } from 'next/navigation';
-// import type { FC } from 'react';
-// import { getSongSlugs } from '@/libs/music/data-access/getSongSlugs';
-// import { PageHeader } from '@/libs/shared/ui/components/server/PageHeader';
-// import { PageHeading } from '@/libs/shared/ui/components/server/PageHeading';
-// import { YouTubeVideo } from '@/libs/videos/ui/YouTubeVideo';
-
-import { Grid } from '@radix-ui/themes';
+import { existsSync, readFileSync } from 'node:fs';
+import { join } from 'node:path';
+import { cwd } from 'node:process';
+import { AspectRatio, Grid } from '@radix-ui/themes';
+import classNames from 'classnames';
+import type { Metadata } from 'next';
+import { notFound, redirect } from 'next/navigation';
 import type { FC } from 'react';
+import { getSongSlugs } from '@/libs/music/data-access/getSongSlugs';
+import type {
+  ContentData,
+  PageParams,
+  PageProps,
+} from '@/libs/music/model/song-page';
 import { PageHeader } from '@/libs/shared/ui/components/server/PageHeader';
 import { PageHeading } from '@/libs/shared/ui/components/server/PageHeading';
+import { YouTubeVideo } from '@/libs/videos/ui/YouTubeVideo';
 
-// interface PageParams {
-//   slug: string;
-// }
-// interface PageProps {
-//   params: PageParams;
-// }
-// interface ContentData {
-//   openGraphImages: OpenGraph['images'];
-//   title: string;
-//   youtubeVideoId?: string;
-// }
+export const generateStaticParams = (): PageParams[] => {
+  return getSongSlugs().map((slug) => ({ slug }));
+};
 
-// export const generateStaticParams = (): PageParams[] => {
-//   return getSongSlugs().map((slug) => ({ slug }));
-// };
+const getSongDataBySlug = (
+  slug: PageParams['slug'],
+): ContentData & {
+  /**
+   * @example 927
+   */
+  featureFmFrameHeight: number;
+  /**
+   * @example https://ffm.to/sinceramente
+   */
+  featureFmFrameURL: string;
+} => {
+  if (['duv', 'dúvida', 'd%C3%BAvida'].includes(slug)) {
+    redirect('/duvida');
+  }
+  if (
+    [
+      'sincera-mente',
+      'sincer-mente',
+      'sincera=mente',
+      'sincera%3Dmente',
+    ].includes(slug)
+  ) {
+    redirect('/sinceramente');
+  }
 
-// const getSongDataBySlug = (
-//   slug: PageParams['slug'],
-// ): ContentData & {
-//   /**
-//    * @example 927
-//    */
-//   featureFmFrameHeight: number;
-//   /**
-//    * @example https://ffm.to/sinceramente
-//    */
-//   featureFmFrameURL: string;
-// } => {
-//   console.log(slug);
+  const filePath = join(cwd(), 'content/songs', `${slug}.json`);
 
-//   if (['duv', 'dúvida', 'd%C3%BAvida'].includes(slug)) {
-//     redirect('/duvida');
-//   }
-//   if (
-//     [
-//       'sincera-mente',
-//       'sincer-mente',
-//       'sincera=mente',
-//       'sincera%3Dmente',
-//     ].includes(slug)
-//   ) {
-//     redirect('/sinceramente');
-//   }
+  if (!existsSync(filePath)) {
+    return notFound();
+  }
 
-//   const filePath = join(cwd(), 'content/songs', `${slug}.json`);
+  const fileBuffer = readFileSync(filePath);
 
-//   if (!existsSync(filePath)) {
-//     return notFound();
-//   }
+  if (typeof fileBuffer === 'undefined') {
+    return notFound();
+  }
 
-//   const fileBuffer = readFileSync(filePath);
+  const fileContents = fileBuffer.toString();
 
-//   if (typeof fileBuffer === 'undefined') {
-//     return notFound();
-//   }
+  if (typeof fileContents === 'undefined') {
+    return notFound();
+  }
 
-//   const fileContents = fileBuffer.toString();
+  return JSON.parse(fileContents);
+};
 
-//   if (typeof fileContents === 'undefined') {
-//     return notFound();
-//   }
+export const generateMetadata = async ({
+  params,
+}: PageProps): Promise<Metadata> => {
+  const { slug } = await params;
+  const { openGraphImages, title } = getSongDataBySlug(slug);
+  const url = `/${slug}`;
+  const description = `Ouça ${title} no seu serviço de música preferido, incluindo YouTube, Spotify, Apple Music e Deezer`;
 
-//   return JSON.parse(fileContents);
-// };
+  return {
+    alternates: {
+      canonical: url,
+    },
+    description,
+    openGraph: {
+      description,
+      images: openGraphImages,
+      title,
+      url,
+    },
+    title,
+    twitter: {
+      cardType: 'summary_large_image',
+      description,
+      title,
+    },
+  } as Metadata;
+};
 
-// export const generateMetadata = async ({
-//   params,
-// }: PageProps): Promise<Metadata> => {
-//   const { slug } = await params;
-//   const { openGraphImages, title } = getSongDataBySlug(slug);
-//   const url = `/${slug}`;
-//   const description = `Ouça ${title} no seu serviço de música preferido, incluindo YouTube, Spotify, Apple Music e Deezer`;
+const SingleSongPage: FC<PageProps> = async (props: Readonly<PageProps>) => {
+  const { params } = props;
+  const { slug } = await params;
 
-//   return {
-//     alternates: {
-//       canonical: url,
-//     },
-//     description,
-//     openGraph: {
-//       description,
-//       images: openGraphImages,
-//       title,
-//       url,
-//     },
-//     title,
-//     twitter: {
-//       cardType: 'summary_large_image',
-//       description,
-//       title,
-//     },
-//   } as Metadata;
-// };
+  const { featureFmFrameHeight, featureFmFrameURL, title, youtubeVideoId } =
+    getSongDataBySlug(slug);
+  const frameMaxDimensions = {
+    height: 960,
+    width: 300,
+  };
 
-const SingleSongPage: FC = () => {
-  //   const { slug } = await params;
-
-  //   const { featureFmFrameHeight, featureFmFrameURL, title, youtubeVideoId } =
-  //     getSongDataBySlug(slug);
-  //   const frameMaxDimensions = {
-  //     height: 960,
-  //     width: 300,
-  //   };
-
-  //   const height = featureFmFrameHeight ?? frameMaxDimensions.height;
-  //   const width = frameMaxDimensions.width;
-  const title = 'Mock Song Title'; // Replace with actual title logic
+  const height = featureFmFrameHeight ?? frameMaxDimensions.height;
+  const width = frameMaxDimensions.width;
 
   return (
-    <article class="relative">
+    <article className="relative">
       <PageHeader>
         <PageHeading>{title}</PageHeading>
       </PageHeader>
@@ -137,37 +122,37 @@ const SingleSongPage: FC = () => {
           lg: '3fr 1fr',
           xl: '4fr 1fr',
         }}
-      ></Grid>
+      >
+        <AspectRatio ratio={16 / 9}>
+          <YouTubeVideo
+            allowFullScreen={true}
+            autoPlay={true}
+            className="aspect-video object-fill absolute"
+            controls={true}
+            id={youtubeVideoId}
+            loop={true}
+            muted={true}
+            playsInline={true}
+            showInfo={false}
+            showRelated={false}
+            title={`Videoclipe de '${title}', de Jimmy Andrade, no YouTube`}
+          />
+        </AspectRatio>
+
+        <iframe
+          className={classNames(
+            'min-w-[320px] w-full min-h-[300px]',
+            `max-w-[${height}px] z-50`,
+          )}
+          height={height}
+          loading={'eager'}
+          src={`${featureFmFrameURL}/?height=${height}&width=${width}`}
+          title={title}
+          width={width}
+        />
+      </Grid>
     </article>
   );
 };
 
 export default SingleSongPage;
-
-//         <AspectRatio ratio={16 / 9}>
-//           <YouTubeVideo
-//             allowFullScreen={true}
-//             autoPlay={true}
-//             className="aspect-video object-fill absolute"
-//             controls={true}
-//             id={youtubeVideoId}
-//             loop={true}
-//             muted={true}
-//             playsInline={true}
-//             showInfo={false}
-//             showRelated={false}
-//             title={`Videoclipe de '${title}', de Jimmy Andrade, no YouTube`}
-//           />
-//         </AspectRatio>
-
-//         <iframe
-//           className={classNames(
-//             'min-w-[320px] w-full min-h-[300px]',
-//             `max-w-[${height}px] z-50`,
-//           )}
-//           height={height}
-//           loading={'eager'}
-//           src={`${featureFmFrameURL}/?height=${height}&width=${width}`}
-//           title={title}
-//           width={width}
-//         />

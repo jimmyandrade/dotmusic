@@ -31,10 +31,12 @@ export interface SearchPageProps {
   }>;
 }
 
-const SearchPage: FC = async (props: SearchPageProps) => {
-  const searchParams = await props.searchParams;
+const SearchPage: FC<SearchPageProps> = async (
+  props: Readonly<SearchPageProps>,
+) => {
+  const { searchParams } = props;
   try {
-    const { q: query = '' } = searchParams;
+    const { q: query = '' } = await searchParams;
 
     const googleSearchResults = await fetchGoogleCustomSearchResults(query);
     const videoSearchResults = await searchYouTubeVideos(query);
@@ -75,7 +77,7 @@ const SearchPage: FC = async (props: SearchPageProps) => {
                             target="_blank"
                             rel="noopener noreferrer"
                           >
-                            <Inset class="pointer-events-none">
+                            <Inset className="pointer-events-none">
                               <YouTubeVideo
                                 data-kind={item.id.kind}
                                 id={item.id.videoId}
@@ -101,7 +103,7 @@ const SearchPage: FC = async (props: SearchPageProps) => {
                   <ul>
                     {googleSearchResults.items.map((item) => (
                       <li
-                        class="relative overflow-hidden"
+                        className="relative overflow-hidden"
                         data-kind={item.kind}
                         key={item.formattedUrl}
                       >
@@ -113,7 +115,7 @@ const SearchPage: FC = async (props: SearchPageProps) => {
                             return (
                               <Image
                                 alt={item.title}
-                                class="absolute w-full h-full object-center object-cover animateMoveUp opacity-15"
+                                className="absolute w-full h-full object-center object-cover animateMoveUp opacity-15"
                                 crossOrigin="anonymous"
                                 fill={
                                   typeof image.height !== 'string' ||
@@ -185,7 +187,7 @@ const SearchPage: FC = async (props: SearchPageProps) => {
                                     >
                                       <Image
                                         alt={item.title}
-                                        class="object-contain"
+                                        className="object-contain"
                                         fill={
                                           typeof thumbnail.height !==
                                             'string' ||

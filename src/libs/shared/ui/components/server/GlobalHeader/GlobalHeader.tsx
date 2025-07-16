@@ -37,7 +37,7 @@ export const GlobalHeader: FC<GlobalHeaderProps> = ({
     <Theme asChild radius="none">
       <Box
         asChild={asChild}
-        class={classnames('z-10', className)}
+        className={classnames('z-10', className)}
         height={height}
         id={id ?? GlobalHeader.name}
         position={position}
@@ -45,7 +45,7 @@ export const GlobalHeader: FC<GlobalHeaderProps> = ({
         width={width}
         {...props}
       >
-        <Card asChild class="relative">
+        <Card asChild className="relative">
           <header itemScope={itemScope} itemType={itemType} role={role}>
             <Container>
               <Flex justify="between" align="center">

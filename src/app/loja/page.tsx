@@ -46,7 +46,7 @@ const StorePage: FC = async () => {
                   <Inset clip="padding-box" pb="current" side="top">
                     <Image
                       alt={product.description}
-                      class="block object-cover w-full"
+                      className="block object-cover w-full"
                       height={820}
                       priority={index < 4}
                       src={product.image_link}

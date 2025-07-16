@@ -17,14 +17,14 @@ export const GlobalRootLayout: FC<GlobalRootLayoutProps> = ({
   ...props
 }: Readonly<GlobalRootLayoutProps>) => (
   <html
-    class={classNames('scroll-smooth', className)}
+    className={classNames('scroll-smooth', className)}
     dir={dir}
     lang={lang}
     id={id}
     prefix={prefix}
     {...props}
   >
-    <body class="font-sans m-0" key="body">
+    <body className="font-sans m-0" key="body">
       {/** biome-ignore lint/security/noDangerouslySetInnerHtml: only used for noscript */}
       <noscript dangerouslySetInnerHTML={{ __html: '<!--googleoff: all-->' }} />
       <VisuallyHidden asChild>
@@ -40,14 +40,14 @@ export const GlobalRootLayout: FC<GlobalRootLayoutProps> = ({
         aria-live="polite"
         aria-relevant="additions text"
         aria-atomic="true"
-        class="screen-reader-text wp-a11y-speak-region"
+        className="screen-reader-text wp-a11y-speak-region"
       />
       <div
         id="wp-a11y-speak-assertive"
         aria-live="assertive"
         aria-relevant="additions text"
         aria-atomic="true"
-        class="screen-reader-text wp-a11y-speak-region"
+        className="screen-reader-text wp-a11y-speak-region"
       />
       {/** biome-ignore lint/security/noDangerouslySetInnerHtml: only used for noscript */}
       <noscript dangerouslySetInnerHTML={{ __html: '<!--googleon: all-->' }} />

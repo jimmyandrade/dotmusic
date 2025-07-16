@@ -22,7 +22,7 @@ export const InstagramMedia: FC<InstagramMediaProps> = ({
   return (
     <iframe
       allow={allow}
-      class={`instagram-media border-0 bg-white ${className}`}
+      className={`instagram-media border-0 bg-white ${className}`}
       data-instgrm-permalink={`${permalink}&amp;utm_campaign=loading`}
       src={`https://www.instagram.com/p/${id}/embed`}
       title={title}

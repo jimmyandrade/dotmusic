@@ -14,7 +14,7 @@ export const SubscribeForm: FC<BoxProps> = ({
   id,
   ...props
 }: Readonly<BoxProps>) => (
-  <Box asChild class={className} id={id ?? SubscribeForm.name} {...props}>
+  <Box asChild className={className} id={id ?? SubscribeForm.name} {...props}>
     <form>
       <Grid
         asChild
@@ -47,7 +47,7 @@ export const SubscribeForm: FC<BoxProps> = ({
           ></TextField.Root>
           <Select.Root autoComplete="address-level1" required size="3">
             <Select.Trigger placeholder="Escolha seu estado&hellip;" />
-            <Select.Content class="w-full">
+            <Select.Content className="w-full">
               <Select.Group>
                 <Select.Item value="BR-MG">MG - Minas Gerais</Select.Item>
                 <Select.Item value="BR-SP">SP - São Paulo</Select.Item>
@@ -70,7 +70,7 @@ export const SubscribeForm: FC<BoxProps> = ({
           receber nossas&nbsp;comunicações.
         </small>
       </Box>
-      <Box class="mx-auto">
+      <Box className="mx-auto">
         <Button type="submit">Assinar</Button>
       </Box>
     </form>

@@ -27,7 +27,7 @@ const QuemEuSouPage: FC = () => {
           <YouTubeVideo
             allowFullScreen={true}
             autoPlay={true}
-            class="aspect-video object-fill absolute"
+            className="aspect-video object-fill absolute"
             controls={true}
             id={'ejz5D4xWDXA'}
             loop={true}
@@ -78,7 +78,7 @@ const QuemEuSouPage: FC = () => {
             <Heading as="h3">
               O <Em lang="en">single</Em>
             </Heading>
-            <ProseText as="p" class="pb-6">
+            <ProseText as="p" className="pb-6">
               O <Em lang="en">single</Em> <cite>Quem Eu Sou</cite> é a música
               que dá nome ao projeto e foi lançada em{' '}
               <time dateTime="2024-06-28">28 de junho de 2024</time>, Dia do

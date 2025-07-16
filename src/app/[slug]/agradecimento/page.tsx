@@ -1,15 +1,23 @@
 import { Container, Flex } from '@radix-ui/themes';
 import type { FC } from 'react';
 import { CommunityLinks } from '@/libs/community/ui/components/CommunityLinks';
+import { communityName } from '@/libs/community/ui/constants/communityName';
+import { getSongReleaseInfo } from '@/libs/music/data-access/getSongReleaseInfo';
+import { getSongSlugs } from '@/libs/music/data-access/getSongSlugs';
+import type { PageParams, PageProps } from '@/libs/music/model/song-page';
 import { PageHeader } from '@/libs/shared/ui/components/server/PageHeader';
 import { PageHeading } from '@/libs/shared/ui/components/server/PageHeading';
 import { ProseText } from '@/libs/shared/ui/components/server/ProseText';
 
-const SongThankYouPage: FC = () => {
-  const slug = 'mock';
-  const releaseDateFormatted = '01/01/2024';
-  const title = 'Mock Song Title';
-  const COMMUNITY_NAME = 'DotMusic Community';
+export const generateStaticParams = (): PageParams[] => {
+  return getSongSlugs().map((slug) => ({ slug }));
+};
+
+const SongThankYouPage: FC<PageProps> = async ({
+  params,
+}: Readonly<PageProps>) => {
+  const { slug } = await params;
+  const { title, releaseDateFormatted } = getSongReleaseInfo(slug);
 
   return (
     <article id={`${slug}-thanks-page`}>
@@ -26,13 +34,13 @@ const SongThankYouPage: FC = () => {
             você vai ouvir <cite>{title}</cite> <br />
             antes de todo mundo
           </ProseText>
-          <ProseText size="3" class="pb-6">
-            Enquanto isso, aproveite para fazer parte do&nbsp;{COMMUNITY_NAME}{' '}
-            <br class="hidden md:block" />
+          <ProseText size="3" className="pb-6">
+            Enquanto isso, aproveite para fazer parte do&nbsp;{communityName}{' '}
+            <br className="hidden md:block" />
             e&nbsp;receber conteúdo&nbsp;exclusivo sobre a&nbsp;música:
           </ProseText>
         </Flex>
-        <CommunityLinks class="pb-10" />
+        <CommunityLinks className="pb-10" />
       </Container>
     </article>
   );
@@ -40,22 +48,5 @@ const SongThankYouPage: FC = () => {
 
 SongThankYouPage.displayName = 'SongThankYouPage';
 export default SongThankYouPage;
-
-// import { Container, Flex } from '@radix-ui/themes';
-// import type { FC } from 'react';
-// import { CommunityLinks } from '@/libs/community/ui/components/CommunityLinks';
-// import { COMMUNITY_NAME } from '@/libs/community/ui/constants/communityName';
-// import { getSongReleaseInfo } from '@/libs/music/data-access/getSongReleaseInfo';
-// import { getSongSlugs } from '@/libs/music/data-access/getSongSlugs';
-// import { PageHeader } from '@/libs/shared/ui/components/server/PageHeader';
-// import { PageHeading } from '@/libs/shared/ui/components/server/PageHeading';
-// import { ProseText } from '@/libs/shared/ui/components/server/ProseText';
-
-// export const generateStaticParams = (): PageParams[] => {
-//   return getSongSlugs().map((slug) => ({ slug }));
-// };
-
-//   const { slug } = params;
-//   const { title, releaseDateFormatted } = getSongReleaseInfo(slug);
 
 // };

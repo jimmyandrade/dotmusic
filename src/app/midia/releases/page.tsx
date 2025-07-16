@@ -24,14 +24,14 @@ const ReleasesPage: FC = () => {
   });
 
   return (
-    <main class="p-8">
-      <h1 class="text-2xl font-bold mb-4">Releases</h1>
+    <main className="p-8">
+      <h1 className="text-2xl font-bold mb-4">Releases</h1>
       <ul>
         {releases.map(({ slug, title }) => (
-          <li key={slug} class="mb-2">
+          <li key={slug} className="mb-2">
             <Link
               href={`/midia/releases/${slug}`}
-              class="text-blue-600 hover:underline"
+              className="text-blue-600 hover:underline"
             >
               {title}
             </Link>

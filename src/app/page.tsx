@@ -43,10 +43,10 @@ const IndexPage: FC = () => {
           <Heading align="center" as="h2" mb="6">
             Destaques
           </Heading>
-          <Box class="sm:columns-2 xl:columns-3" asChild>
+          <Box className="sm:columns-2 xl:columns-3" asChild>
             <ul>
-              <li class="break-inside-avoid mb-8">
-                <Heading as="h3" class="uppercase" mb="2" size="4">
+              <li className="break-inside-avoid mb-8">
+                <Heading as="h3" className="uppercase" mb="2" size="4">
                   2024: Profissionais da Música
                 </Heading>
                 <ul>
@@ -63,8 +63,8 @@ const IndexPage: FC = () => {
                   </li>
                 </ul>
               </li>
-              <li class="break-inside-avoid mb-8">
-                <Heading as="h3" class="uppercase" mb="2" size="4">
+              <li className="break-inside-avoid mb-8">
+                <Heading as="h3" className="uppercase" mb="2" size="4">
                   2024: Prêmio Audio For Singers
                 </Heading>
                 <ul>
@@ -77,10 +77,10 @@ const IndexPage: FC = () => {
                 </ul>
               </li>
 
-              <li class="break-inside-avoid mb-8">
-                <Heading as="h3" class="uppercase" mb="2" size="4">
+              <li className="break-inside-avoid mb-8">
+                <Heading as="h3" className="uppercase" mb="2" size="4">
                   2024: 3&ordf; Edição do Festival{' '}
-                  <span class="uppercase">
+                  <span className="uppercase">
                     É Pop <abbr title="Belo Horizonte">BH</abbr>
                   </span>
                 </Heading>
@@ -92,8 +92,8 @@ const IndexPage: FC = () => {
                 </ul>
               </li>
 
-              <li class="break-inside-avoid mb-8">
-                <Heading as="h3" class="uppercase" mb="2" size="4">
+              <li className="break-inside-avoid mb-8">
+                <Heading as="h3" className="uppercase" mb="2" size="4">
                   2023: Prêmios Butterfly
                 </Heading>
                 <ul>
@@ -107,8 +107,8 @@ const IndexPage: FC = () => {
                   </li>
                 </ul>
               </li>
-              <li class="break-inside-avoid mb-8">
-                <Heading as="h3" class="uppercase" mb="2" size="4">
+              <li className="break-inside-avoid mb-8">
+                <Heading as="h3" className="uppercase" mb="2" size="4">
                   2019: Prêmio Biscoito
                 </Heading>
                 <ul>

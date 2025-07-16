@@ -9,9 +9,9 @@ export const SiteSearchForm: FC<SiteSearchFormProps> = ({
 }: Readonly<SiteSearchFormProps>) => (
   <Flex asChild gapX={'2'}>
     <form action="/buscar" method="GET">
-      <fieldset class="w-full">
+      <fieldset className="w-full">
         <TextField.Root
-          class="flex-grow"
+          className="flex-grow"
           defaultValue={defaultValue}
           id="q"
           name="q"

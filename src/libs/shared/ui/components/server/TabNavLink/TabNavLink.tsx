@@ -12,7 +12,12 @@ export const TabNavLink: FC<TabNavLinkProps> = ({
   children,
   ...props
 }: Readonly<TabNavLinkProps>) => (
-  <TabNav.Link asChild={asChild} active={active} class={className} {...props}>
+  <TabNav.Link
+    asChild={asChild}
+    active={active}
+    className={className}
+    {...props}
+  >
     {children}
   </TabNav.Link>
 );

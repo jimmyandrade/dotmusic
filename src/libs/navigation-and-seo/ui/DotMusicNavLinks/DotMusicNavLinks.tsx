@@ -18,7 +18,7 @@ export const DotMusicNavLinks: FC = () => {
       <TabNavLink
         asChild
         active={pathname === NavigationURL.HOME}
-        class="xs:hidden xl:flex"
+        className="xs:hidden xl:flex"
       >
         <Link href={NavigationURL.HOME} rel="home" title="Início">
           Início
@@ -31,7 +31,7 @@ export const DotMusicNavLinks: FC = () => {
       </TabNavLink>
       <TabNavLink asChild active={pathname === NavigationURL.CONCERTS}>
         <Link href={NavigationURL.CONCERTS} title="Shows">
-          <i class="not-italic" lang="en">
+          <i className="not-italic" lang="en">
             Shows
           </i>
         </Link>

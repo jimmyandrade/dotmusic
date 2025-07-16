@@ -15,7 +15,7 @@ export const Container = forwardRef<HTMLDivElement, ContainerProps>(
   ) => (
     <PrimitiveContainer
       asChild={asChild}
-      class={classNames(
+      className={classNames(
         'container max-w-7xl mx-auto px-2 sm:px-6 lg:px-8',
         className,
       )}

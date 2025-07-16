@@ -10,7 +10,7 @@ export const ProseText: FC<ProseTextProps> = ({
   ...props
 }: Readonly<ProseTextProps>) => (
   <Text
-    class={`max-w-prose ${className}`}
+    className={`max-w-prose ${className}`}
     size={
       size ?? {
         initial: '2',

@@ -14,7 +14,7 @@ const SpotifyEmbed: FC<SpotifyEmbedProps> = ({
   className,
 }: Readonly<SpotifyEmbedProps>) => (
   <iframe
-    class={className ?? 'rounded-2xl border-0 w-full bg-black'}
+    className={className ?? 'rounded-2xl border-0 w-full bg-black'}
     src={src}
     title={title}
     height={height}

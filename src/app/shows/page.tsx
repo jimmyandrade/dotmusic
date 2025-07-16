@@ -13,7 +13,7 @@ const ConcertsPage: FC = () => {
       <YouTubeVideo
         allowFullScreen={false}
         autoPlay={true}
-        class="aspect-video h-full w-full object-fill fixed pointer-events-none opacity-25 -z-10"
+        className="aspect-video h-full w-full object-fill fixed pointer-events-none opacity-25 -z-10"
         controls={false}
         id="hmoJUNWfHoU"
         loop={true}
@@ -29,13 +29,13 @@ const ConcertsPage: FC = () => {
       <Container>
         <Grid columns={'3fr 1fr 1fr'} gap={'6'}>
           <div>
-            <ProseText as="p" class="pb-8" size="4">
+            <ProseText as="p" className="pb-8" size="4">
               Durante a turnê &ldquo;QUEM EU SOU? - o show&rdquo;, Jimmy Andrade
               compartilha histórias que inspiraram as letras das canções e se
               conecta com seu público. O espetáculo conta com uma banda completa
               e, dependendo do formato, inclui intérpretes de Libras.
             </ProseText>
-            <ProseText as="p" class="pb-8" size="4">
+            <ProseText as="p" className="pb-8" size="4">
               O show convida o público a refletir sobre temas fundamentais para
               a população LGBTQIAPN+, como auto amor, acolhimento, orgulho e a
               celebração da existência.
@@ -62,7 +62,7 @@ const ConcertsPage: FC = () => {
               </li>
 
               <li>
-                <Card asChild class="h-full">
+                <Card asChild className="h-full">
                   <Link
                     href="https://open.spotify.com/playlist/4gEHuLcJegImyunC9prd1D?si=eaa24c27d24f432e"
                     rel="noopener noreferrer"

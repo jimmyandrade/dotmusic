@@ -11,7 +11,7 @@ export const VisuallyHidden: FC<VisuallyHiddenProps> = ({
   ...props
 }: Readonly<VisuallyHiddenProps>) => (
   <PrimitiveVisuallyHidden
-    class={classNames('sr-only', className)}
+    className={classNames('sr-only', className)}
     {...props}
   />
 );

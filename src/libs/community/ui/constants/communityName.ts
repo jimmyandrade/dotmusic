@@ -1,1 +1,1 @@
-export const COMMUNITY_NAME = 'Jimmyverso';
+export const communityName = 'Jimmyverso';

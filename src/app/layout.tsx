@@ -66,7 +66,7 @@ const RootLayout: FC<RootLayoutProps> = async (
   return (
     <Theme asChild appearance="dark" hasBackground accentColor="red">
       <GlobalRootLayout
-        class={classNames(albertSans.variable)}
+        className={classNames(albertSans.variable)}
         lang={params.lang ?? defaultLocale}
       >
         <GlobalHeader>
@@ -75,11 +75,11 @@ const RootLayout: FC<RootLayoutProps> = async (
           </HeaderHomeLink>
 
           <Inset>
-            <div class="hidden md:block">
+            <div className="hidden md:block">
               <DotMusicNavLinks />
             </div>
           </Inset>
-          <div class="hidden md:block">
+          <div className="hidden md:block">
             <SocialMediaLinks />
           </div>
         </GlobalHeader>

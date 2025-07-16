@@ -17,7 +17,7 @@ export const SocialMediaLinks: FC<SocialMediaLinksProps> = ({
   gap = '4',
   ...props
 }: Readonly<SocialMediaLinksProps>) => (
-  <Flex asChild={asChild} class={className} gap={gap} {...props}>
+  <Flex asChild={asChild} className={className} gap={gap} {...props}>
     <ul>
       <li>
         <SocialMediaIconButton asChild>
@@ -27,7 +27,7 @@ export const SocialMediaLinks: FC<SocialMediaLinksProps> = ({
             target="_blank"
           >
             <AccessibleIcon label="Instagram">
-              <InstagramIcon class="social-media-icon" />
+              <InstagramIcon className="social-media-icon" />
             </AccessibleIcon>
           </a>
         </SocialMediaIconButton>
@@ -40,7 +40,7 @@ export const SocialMediaLinks: FC<SocialMediaLinksProps> = ({
             target="_blank"
           >
             <AccessibleIcon label="TikTok">
-              <TikTokIcon class="social-media-icon" />
+              <TikTokIcon className="social-media-icon" />
             </AccessibleIcon>
           </a>
         </SocialMediaIconButton>
@@ -53,7 +53,7 @@ export const SocialMediaLinks: FC<SocialMediaLinksProps> = ({
             target="_blank"
           >
             <AccessibleIcon label="YouTube">
-              <YouTubeIcon class="social-media-icon" />
+              <YouTubeIcon className="social-media-icon" />
             </AccessibleIcon>
           </a>
         </SocialMediaIconButton>
@@ -66,7 +66,7 @@ export const SocialMediaLinks: FC<SocialMediaLinksProps> = ({
             target="_blank"
           >
             <AccessibleIcon label="Spotify">
-              <InstagramIcon class="social-media-icon" />
+              <InstagramIcon className="social-media-icon" />
             </AccessibleIcon>
           </a>
         </SocialMediaIconButton>
@@ -79,7 +79,7 @@ export const SocialMediaLinks: FC<SocialMediaLinksProps> = ({
             target="_blank"
           >
             <AccessibleIcon label="Apple Music">
-              <InstagramIcon class="social-media-icon" />
+              <InstagramIcon className="social-media-icon" />
             </AccessibleIcon>
           </a>
         </SocialMediaIconButton>

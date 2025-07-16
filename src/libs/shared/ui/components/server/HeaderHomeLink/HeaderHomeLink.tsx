@@ -17,7 +17,7 @@ export const HeaderHomeLink: FC<HeaderHomeLinkProps> = ({
 }: Readonly<HeaderHomeLinkProps>) => (
   <Heading
     as={as}
-    class={`uppercase ${className}`}
+    className={`uppercase ${className}`}
     size={size ?? { initial: '1', sm: '2', md: '3', lg: '4', xl: '5' }}
     {...props}
   >

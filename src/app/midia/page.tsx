@@ -37,7 +37,7 @@ const PressPage: FC = () => {
               height={1067}
               priority
               aria-hidden="true"
-              class="absolute inset-0 w-full h-full object-cover -z-10 opacity-10 pointer-events-none"
+              className="absolute inset-0 w-full h-full object-cover -z-10 opacity-10 pointer-events-none"
             />
             <Heading as="h3" mb="4">
               Fotos em alta resolução
@@ -56,7 +56,7 @@ const PressPage: FC = () => {
                           <picture>
                             <Image
                               alt="Foto de divulgação de Jimmy Andrade"
-                              class="block object-cover w-full"
+                              className="block object-cover w-full"
                               height={2546}
                               src="/media/press/jimmy-andrade-perto-de-tv-de-tubo-antiga.jpg"
                               width={3931}
@@ -98,12 +98,12 @@ const PressPage: FC = () => {
               <ul>
                 <Card asChild>
                   <li>
-                    <YouTubeVideo class="aspect-video" id="BeHjYXsjoUU" />
+                    <YouTubeVideo className="aspect-video" id="BeHjYXsjoUU" />
                   </li>
                 </Card>
                 <Card asChild>
                   <li>
-                    <YouTubeVideo class="aspect-video" id="hmoJUNWfHoU" />
+                    <YouTubeVideo className="aspect-video" id="hmoJUNWfHoU" />
                   </li>
                 </Card>
               </ul>
@@ -115,22 +115,22 @@ const PressPage: FC = () => {
               <ul>
                 <Card asChild>
                   <li>
-                    <YouTubeVideo class="aspect-video" id="_bqLZtpIU7E" />
+                    <YouTubeVideo className="aspect-video" id="_bqLZtpIU7E" />
                   </li>
                 </Card>
                 <Card asChild>
                   <li>
-                    <YouTubeVideo class="aspect-video" id="68Cj9G3vrXw" />
+                    <YouTubeVideo className="aspect-video" id="68Cj9G3vrXw" />
                   </li>
                 </Card>
                 <Card asChild>
                   <li>
-                    <YouTubeVideo class="aspect-video" id="ALgoFiSamS0" />
+                    <YouTubeVideo className="aspect-video" id="ALgoFiSamS0" />
                   </li>
                 </Card>
                 <Card asChild>
                   <li>
-                    <YouTubeVideo class="aspect-video" id="pfHoyHbzwiI" />
+                    <YouTubeVideo className="aspect-video" id="pfHoyHbzwiI" />
                   </li>
                 </Card>
               </ul>

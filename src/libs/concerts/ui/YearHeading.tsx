@@ -6,7 +6,7 @@ export const YearHeading: FC<HeadingProps> = ({
 }: Readonly<HeadingProps>) => (
   <Heading
     as="h3"
-    class="sm:-rotate-90 sm:absolute sm:-left-20 sm:top-8"
+    className="sm:-rotate-90 sm:absolute sm:-left-20 sm:top-8"
     color="gray"
     size="8"
     mb={{

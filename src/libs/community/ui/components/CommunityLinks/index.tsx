@@ -11,11 +11,11 @@ export interface CommunityLinksProps extends HTMLAttributes<HTMLElement> {
 // biome-ignore lint/nursery/useExplicitType: forwardRef already defines the type
 export const CommunityLinks = forwardRef<HTMLDivElement, CommunityLinksProps>(
   ({ className = '', ...props }, forwardedRef) => (
-    <section class={className} {...props} ref={forwardedRef}>
-      <ul class={'flex flex-col gap-y-2'}>
+    <section className={className} {...props} ref={forwardedRef}>
+      <ul className={'flex flex-col gap-y-2'}>
         <li>
           <Link
-            class={'links-section-button'}
+            className={'links-section-button'}
             href={'https://www.cameo.com/jimmyandrade'}
             rel={'noopener noreferrer'}
             target={'_blank'}
@@ -26,7 +26,7 @@ export const CommunityLinks = forwardRef<HTMLDivElement, CommunityLinksProps>(
         </li>
         <li>
           <Link
-            class={'links-section-button'}
+            className={'links-section-button'}
             href={'https://whatsapp.com/channel/0029VaCfLrV3GJP7GDZA5l1Q'}
             rel={'noopener noreferrer'}
             target={'_blank'}
@@ -37,7 +37,7 @@ export const CommunityLinks = forwardRef<HTMLDivElement, CommunityLinksProps>(
         </li>
         <li>
           <Link
-            class={'links-section-button'}
+            className={'links-section-button'}
             href={'https://t.me/+xcKd-SaXUT0zY2Q5'}
             rel={'noopener noreferrer'}
             target={'_blank'}
@@ -48,7 +48,7 @@ export const CommunityLinks = forwardRef<HTMLDivElement, CommunityLinksProps>(
         </li>
         <li>
           <Link
-            class={'links-section-button'}
+            className={'links-section-button'}
             href={'/'}
             rel={'home'}
             target={'_self'}

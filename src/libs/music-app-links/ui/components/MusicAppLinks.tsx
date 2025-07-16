@@ -25,7 +25,7 @@ export const MusicAppLinks: FC = () => (
             target="_blank"
             title="Jimmy Andrade &ndash; Spotify"
           >
-            <SpotifyLogo class="h-6 mx-auto" />
+            <SpotifyLogo className="h-6 mx-auto" />
           </a>
         </Card>
       </li>
@@ -37,7 +37,7 @@ export const MusicAppLinks: FC = () => (
             target="_blank"
             title="Jimmy Andrade &ndash; Apple Music"
           >
-            <AppleMusicLogo class="h-5 mb-1 mx-auto" />
+            <AppleMusicLogo className="h-5 mb-1 mx-auto" />
           </a>
         </Card>
       </li>
@@ -49,7 +49,7 @@ export const MusicAppLinks: FC = () => (
             target="_blank"
             title="Jimmy Andrade &ndash; Deezer"
           >
-            <DeezerLogo class="h-6 mx-auto" />
+            <DeezerLogo className="h-6 mx-auto" />
           </a>
         </Card>
       </li>
@@ -61,7 +61,7 @@ export const MusicAppLinks: FC = () => (
             target="_blank"
             title="Jimmy Andrade &ndash; Amazon Music"
           >
-            <AmazonMusicLogo class="h-6 mx-auto" />
+            <AmazonMusicLogo className="h-6 mx-auto" />
           </a>
         </Card>
       </li>

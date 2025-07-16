@@ -10,7 +10,7 @@ import { PageHeading } from '@/libs/shared/ui/components/server/PageHeading';
 import { ProseText } from '@/libs/shared/ui/components/server/ProseText';
 
 interface ReleasePageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 const ReleasePage: FC<ReleasePageProps> = async ({

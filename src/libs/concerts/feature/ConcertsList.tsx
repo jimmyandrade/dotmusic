@@ -13,7 +13,9 @@ export interface ConcertsListProps {
 
 const START = 0;
 
-export const ConcertsList: FC = async ({ maxYears }: ConcertsListProps) => {
+export const ConcertsList: FC<ConcertsListProps> = async ({
+  maxYears,
+}: Readonly<ConcertsListProps>) => {
   let concerts = [] as ConcertRecord[];
 
   try {
@@ -59,7 +61,7 @@ export const ConcertsList: FC = async ({ maxYears }: ConcertsListProps) => {
   return (
     <ul>
       {years.map((year) => (
-        <li class="relative" key={year}>
+        <li className="relative" key={year}>
           <YearHeading>{year}</YearHeading>
           <Concert.CardList>
             {[...concertsByYear[year]]

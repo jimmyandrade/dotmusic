@@ -24,8 +24,8 @@ export const Card: FC<CardProps> = ({ concert }: Readonly<CardProps>) => {
       <PrimitiveCard key={concert.id} mb="4">
         {concert.artist?.image_url ? (
           <>
-            <Inset class="relative">
-              <div class="bg-gradient-to-t from-[--color-background] absolute w-full h-full"></div>
+            <Inset className="relative">
+              <div className="bg-gradient-to-t from-[--color-background] absolute w-full h-full"></div>
               <Image
                 alt={`Imagem de divulgação do ${concert.title}`}
                 src={concert.artist?.image_url}
@@ -41,7 +41,7 @@ export const Card: FC<CardProps> = ({ concert }: Readonly<CardProps>) => {
                 sm: '4',
               }}
               as="h4"
-              class="relative"
+              className="relative"
               mt="-9"
               mb="4"
             >
