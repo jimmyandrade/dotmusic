@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: 'Jimmy Andrade',
     short_name: 'Jimmy Andrade',
     description:
-      'Website oficial: Música, Agenda de Shows, Vídeos, Notícias e Biografia',
+      'Descubra o universo de Jimmy Andrade – música, shows, vídeos, notícias, conteúdo e mais. Fique a par dos últimos lançamentos, eventos e a produtos das lojas oficiais.',
     start_url: '/?source=pwa',
     id: '/?source=pwa',
     background_color: '#0b0e0d',
