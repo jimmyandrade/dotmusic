@@ -21,3 +21,7 @@ Always follow Next.js and TypeScript best practices.
 Always store dates in files using the ISO 8601 format with explicit timezone information. Recommended example: `2023-11-03T00:00:00-03:00`.
 
 This ensures that the date is interpreted correctly in any environment, avoiding timezone conversion issues.
+
+## Commit Messages
+
+All commit messages must follow the Conventional Commits specification and be written in English. This ensures clarity, consistency, and better automation for releases and changelogs.
