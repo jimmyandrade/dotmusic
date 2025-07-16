@@ -1,5 +1,6 @@
 export const allowedImageHosts = [
   'db.music',
+  'encrypted-tbn0.gstatic.com',
   'ffm.to',
   'gstatic.com',
   'i.ytimg.com',
