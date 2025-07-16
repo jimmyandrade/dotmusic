@@ -1,10 +1,10 @@
 import { Callout } from '@radix-ui/themes';
 import { fetchConcerts } from '../data-access';
+import type { Concert as ConcertRecord } from '../model/Concert';
+import { ConcertsFetchError } from '../model/ConcertsFetchError';
 import { groupConcertsByYear } from '../model/groupConcertsByYear';
 import { Concert } from '../ui';
 import { YearHeading } from '../ui/YearHeading';
-import { Concert as ConcertRecord } from '../model/Concert';
-import { ConcertsFetchError } from '../model/ConcertsFetchError';
 
 export interface ConcertsListProps {
   maxYears?: number;
@@ -56,19 +56,23 @@ export const ConcertsList = async ({ maxYears }: ConcertsListProps) => {
     .slice(START, maxYears);
 
   return (
-    <>
-      <ul>
-        {years.map((year) => (
-          <li className="relative" key={year}>
-            <YearHeading>{year}</YearHeading>
-            <Concert.CardList>
-              {concertsByYear[year].map((concert) => {
-                return <Concert.Card key={concert.id} concert={concert} />;
-              })}
-            </Concert.CardList>
-          </li>
-        ))}
-      </ul>
-    </>
+    <ul>
+      {years.map((year) => (
+        <li className="relative" key={year}>
+          <YearHeading>{year}</YearHeading>
+          <Concert.CardList>
+            {[...concertsByYear[year]]
+              .sort(
+                (a, b) =>
+                  new Date(b.datetime).getTime() -
+                  new Date(a.datetime).getTime(),
+              )
+              .map((concert) => (
+                <Concert.Card key={concert.id} concert={concert} />
+              ))}
+          </Concert.CardList>
+        </li>
+      ))}
+    </ul>
   );
 };
