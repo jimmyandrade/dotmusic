@@ -1,6 +1,7 @@
 import { Card, Grid, Heading, Inset } from '@radix-ui/themes';
 import Image from 'next/image';
 import Link from 'next/link';
+import type { FC } from 'react';
 import { PageHeader } from '@/libs/shared/ui/components/server/PageHeader';
 import { PageHeading } from '@/libs/shared/ui/components/server/PageHeading';
 import { fetchReservaInkProducts } from '../../libs/products/data-access';
@@ -12,7 +13,7 @@ export const metadata = {
   },
 };
 
-export default async function StorePage() {
+const StorePage: FC = async () => {
   const products = await fetchReservaInkProducts();
 
   return (
@@ -45,7 +46,7 @@ export default async function StorePage() {
                   <Inset clip="padding-box" pb="current" side="top">
                     <Image
                       alt={product.description}
-                      className="block object-cover w-full"
+                      class="block object-cover w-full"
                       height={820}
                       priority={index < 4}
                       src={product.image_link}
@@ -65,4 +66,6 @@ export default async function StorePage() {
       {/* <pre>{JSON.stringify(products, null, 2)}</pre> */}
     </article>
   );
-}
+};
+
+export default StorePage;

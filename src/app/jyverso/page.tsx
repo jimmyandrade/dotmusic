@@ -1,12 +1,13 @@
 import { Card, Container, Grid, Heading, Inset, Link } from '@radix-ui/themes';
 import Image from 'next/image';
+import type { FC } from 'react';
 import { COMMUNITY_NAME } from '@/libs/community/ui/constants/communityName';
 import { fetchSymplaEvents } from '@/libs/concerts/data-access/fetchSymplaEvents';
 import type { SymplaEvent } from '@/libs/concerts/model/Events';
 import { PageHeader } from '@/libs/shared/ui/components/server/PageHeader';
 import { PageHeading } from '@/libs/shared/ui/components/server/PageHeading';
 
-const JyversoPage = async () => {
+const JyversoPage: FC = async () => {
   const events = await fetchSymplaEvents();
 
   return (
@@ -16,7 +17,7 @@ const JyversoPage = async () => {
       </PageHeader>
       <Container>
         Benefícios para quem é JYVER
-        <p className="text-lg">
+        <p class="text-lg">
           Em breve você poderá conferir aqui os eventos e produtos com
           benefícios exclusivos para quem faz parte do&nbsp;{COMMUNITY_NAME}.
         </p>

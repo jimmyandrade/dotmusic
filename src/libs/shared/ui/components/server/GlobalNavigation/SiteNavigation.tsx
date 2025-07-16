@@ -1,5 +1,5 @@
 import { TabNav } from '@radix-ui/themes';
-import type { ComponentProps, ReactNode } from 'react';
+import type { ComponentProps, FC, ReactNode } from 'react';
 
 export interface SiteNavigationProps
   extends ComponentProps<typeof TabNav.Root> {
@@ -10,7 +10,7 @@ export interface SiteNavigationProps
   children: ReactNode;
 }
 
-export const SiteNavigation = ({
+export const SiteNavigation: FC<SiteNavigationProps> = ({
   'aria-label': ariaLabel,
   children,
   className,
@@ -18,10 +18,10 @@ export const SiteNavigation = ({
   itemType = 'http://schema.org/SiteNavigationElement',
   size,
   ...props
-}: SiteNavigationProps) => (
+}: Readonly<SiteNavigationProps>) => (
   <TabNav.Root
     aria-label={ariaLabel}
-    className={`h-11 uppercase ${className}`}
+    class={`h-11 uppercase ${className}`}
     itemScope={itemScope}
     itemType={itemType}
     size={

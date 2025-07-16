@@ -1,10 +1,11 @@
 import { Card, Grid } from '@radix-ui/themes';
+import type { FC } from 'react';
 import { AmazonMusicLogo } from '../AmazonMusicLogo';
 import { AppleMusicLogo } from '../AppleMusicLogo';
 import { DeezerLogo } from '../DeezerLogo';
 import { SpotifyLogo } from '../SpotifyLogo';
 
-export const MusicAppLinks = () => (
+export const MusicAppLinks: FC = () => (
   <Grid
     asChild
     columns={{
@@ -24,7 +25,7 @@ export const MusicAppLinks = () => (
             target="_blank"
             title="Jimmy Andrade &ndash; Spotify"
           >
-            <SpotifyLogo className="h-6 mx-auto" />
+            <SpotifyLogo class="h-6 mx-auto" />
           </a>
         </Card>
       </li>
@@ -36,7 +37,7 @@ export const MusicAppLinks = () => (
             target="_blank"
             title="Jimmy Andrade &ndash; Apple Music"
           >
-            <AppleMusicLogo className="h-5 mb-1 mx-auto" />
+            <AppleMusicLogo class="h-5 mb-1 mx-auto" />
           </a>
         </Card>
       </li>
@@ -48,7 +49,7 @@ export const MusicAppLinks = () => (
             target="_blank"
             title="Jimmy Andrade &ndash; Deezer"
           >
-            <DeezerLogo className="h-6 mx-auto" />
+            <DeezerLogo class="h-6 mx-auto" />
           </a>
         </Card>
       </li>
@@ -60,7 +61,7 @@ export const MusicAppLinks = () => (
             target="_blank"
             title="Jimmy Andrade &ndash; Amazon Music"
           >
-            <AmazonMusicLogo className="h-6 mx-auto" />
+            <AmazonMusicLogo class="h-6 mx-auto" />
           </a>
         </Card>
       </li>

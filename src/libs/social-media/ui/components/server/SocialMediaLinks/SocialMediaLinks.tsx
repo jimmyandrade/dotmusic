@@ -3,6 +3,7 @@ import {
   Flex,
   type FlexProps as SocialMediaLinksProps,
 } from '@radix-ui/themes';
+import type { FC } from 'react';
 import { InstagramIcon } from '../InstagramIcon';
 import { SocialMediaIconButton } from '../SocialMediaIconButton';
 import { TikTokIcon } from '../TikTokIcon';
@@ -10,13 +11,13 @@ import { YouTubeIcon } from '../YouTubeIcon';
 
 export type { SocialMediaLinksProps };
 
-export const SocialMediaLinks = ({
+export const SocialMediaLinks: FC<SocialMediaLinksProps> = ({
   asChild = true,
   className,
   gap = '4',
   ...props
-}: SocialMediaLinksProps) => (
-  <Flex asChild={asChild} className={className} gap={gap} {...props}>
+}: Readonly<SocialMediaLinksProps>) => (
+  <Flex asChild={asChild} class={className} gap={gap} {...props}>
     <ul>
       <li>
         <SocialMediaIconButton asChild>
@@ -26,7 +27,7 @@ export const SocialMediaLinks = ({
             target="_blank"
           >
             <AccessibleIcon label="Instagram">
-              <InstagramIcon className="social-media-icon" />
+              <InstagramIcon class="social-media-icon" />
             </AccessibleIcon>
           </a>
         </SocialMediaIconButton>
@@ -39,7 +40,7 @@ export const SocialMediaLinks = ({
             target="_blank"
           >
             <AccessibleIcon label="TikTok">
-              <TikTokIcon className="social-media-icon" />
+              <TikTokIcon class="social-media-icon" />
             </AccessibleIcon>
           </a>
         </SocialMediaIconButton>
@@ -52,7 +53,7 @@ export const SocialMediaLinks = ({
             target="_blank"
           >
             <AccessibleIcon label="YouTube">
-              <YouTubeIcon className="social-media-icon" />
+              <YouTubeIcon class="social-media-icon" />
             </AccessibleIcon>
           </a>
         </SocialMediaIconButton>
@@ -65,7 +66,7 @@ export const SocialMediaLinks = ({
             target="_blank"
           >
             <AccessibleIcon label="Spotify">
-              <InstagramIcon className="social-media-icon" />
+              <InstagramIcon class="social-media-icon" />
             </AccessibleIcon>
           </a>
         </SocialMediaIconButton>
@@ -78,7 +79,7 @@ export const SocialMediaLinks = ({
             target="_blank"
           >
             <AccessibleIcon label="Apple Music">
-              <InstagramIcon className="social-media-icon" />
+              <InstagramIcon class="social-media-icon" />
             </AccessibleIcon>
           </a>
         </SocialMediaIconButton>

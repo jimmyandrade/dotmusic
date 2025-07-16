@@ -1,9 +1,10 @@
 import { Container } from '@radix-ui/themes';
+import type { FC } from 'react';
 import { MusicPage } from '@/libs/music/ui/components/server/MusicPage';
 import { PageHeader } from '@/libs/shared/ui/components/server/PageHeader';
 import { PageHeading } from '@/libs/shared/ui/components/server/PageHeading';
 
-export default function SongsPage() {
+const SongsPage: FC = () => {
   return (
     <article id={SongsPage.name}>
       <PageHeader>
@@ -14,4 +15,6 @@ export default function SongsPage() {
       </Container>
     </article>
   );
-}
+};
+
+export default SongsPage;

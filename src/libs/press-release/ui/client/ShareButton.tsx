@@ -3,18 +3,16 @@
 import { Button, type ButtonProps } from '@radix-ui/themes';
 import type { FC } from 'react';
 
-type ShareButtonProps = Readonly<
-  {
-    title: string;
-  } & ButtonProps
->;
+export interface ShareButtonProps extends ButtonProps {
+  title: string;
+}
 
 export const ShareButton: FC<ShareButtonProps> = ({
   title,
   variant = 'ghost',
   ...props
-}) => {
-  const handleShare = async () => {
+}: Readonly<ShareButtonProps>) => {
+  const handleShare = async (): Promise<void> => {
     if (navigator.share) {
       try {
         await navigator.share({

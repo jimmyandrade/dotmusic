@@ -2,7 +2,19 @@
 
 import { useEffect, useState } from 'react';
 
-export const useCountdown = (value: string) => {
+interface TimeLeft {
+  days: number;
+  hours: number;
+  minutes: number;
+  seconds: number;
+}
+
+export interface CountdownHook {
+  isLoading: boolean;
+  timeLeft: TimeLeft;
+}
+
+export const useCountdown = (value: string): CountdownHook => {
   const zeroValue = 0;
 
   const defaultTimeLeft = {
@@ -12,7 +24,7 @@ export const useCountdown = (value: string) => {
     seconds: zeroValue,
   };
 
-  const calculateTimeLeft = () => {
+  const calculateTimeLeft = (): TimeLeft => {
     const dateValue = new Date(value);
 
     const difference = dateValue.getTime() - Date.now();

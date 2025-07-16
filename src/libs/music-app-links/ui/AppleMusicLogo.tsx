@@ -1,6 +1,8 @@
-import type { SVGProps } from 'react';
+import type { FC, SVGProps } from 'react';
 
-export const AppleMusicLogo = (props: SVGProps<SVGSVGElement>) => (
+export const AppleMusicLogo: FC<SVGProps<SVGSVGElement>> = (
+  props: SVGProps<SVGSVGElement>,
+) => (
   <svg
     width="132"
     height="32"

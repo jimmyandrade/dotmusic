@@ -13,6 +13,7 @@ import {
 } from '@radix-ui/themes';
 import Image from 'next/image';
 import NextLink from 'next/link';
+import type { FC } from 'react';
 import { Container } from '@/libs/shared/ui/components/server/Container';
 import { PageHeader } from '@/libs/shared/ui/components/server/PageHeader';
 import { PageHeading } from '@/libs/shared/ui/components/server/PageHeading';
@@ -30,7 +31,7 @@ export interface SearchPageProps {
   }>;
 }
 
-export default async function SearchPage(props: SearchPageProps) {
+const SearchPage: FC = async (props: SearchPageProps) => {
   const searchParams = await props.searchParams;
   try {
     const { q: query = '' } = searchParams;
@@ -74,7 +75,7 @@ export default async function SearchPage(props: SearchPageProps) {
                             target="_blank"
                             rel="noopener noreferrer"
                           >
-                            <Inset className="pointer-events-none">
+                            <Inset class="pointer-events-none">
                               <YouTubeVideo
                                 data-kind={item.id.kind}
                                 id={item.id.videoId}
@@ -100,7 +101,7 @@ export default async function SearchPage(props: SearchPageProps) {
                   <ul>
                     {googleSearchResults.items.map((item) => (
                       <li
-                        className="relative overflow-hidden"
+                        class="relative overflow-hidden"
                         data-kind={item.kind}
                         key={item.formattedUrl}
                       >
@@ -112,7 +113,7 @@ export default async function SearchPage(props: SearchPageProps) {
                             return (
                               <Image
                                 alt={item.title}
-                                className="absolute w-full h-full object-center object-cover animateMoveUp opacity-15"
+                                class="absolute w-full h-full object-center object-cover animateMoveUp opacity-15"
                                 crossOrigin="anonymous"
                                 fill={
                                   typeof image.height !== 'string' ||
@@ -184,7 +185,7 @@ export default async function SearchPage(props: SearchPageProps) {
                                     >
                                       <Image
                                         alt={item.title}
-                                        className="object-contain"
+                                        class="object-contain"
                                         fill={
                                           typeof thumbnail.height !==
                                             'string' ||
@@ -233,4 +234,6 @@ export default async function SearchPage(props: SearchPageProps) {
       </Callout.Root>
     );
   }
-}
+};
+
+export default SearchPage;

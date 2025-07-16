@@ -1,6 +1,8 @@
-import type { SVGProps } from 'react';
+import type { FC, SVGProps } from 'react';
 
-export const DeezerLogo = (props: SVGProps<SVGSVGElement>) => (
+export const DeezerLogo: FC<SVGProps<SVGSVGElement>> = (
+  props: SVGProps<SVGSVGElement>,
+) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="173"

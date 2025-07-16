@@ -7,9 +7,14 @@ import {
   Select,
   TextField,
 } from '@radix-ui/themes';
+import type { FC } from 'react';
 
-export const SubscribeForm = ({ className = '', id, ...props }: BoxProps) => (
-  <Box asChild className={className} id={id ?? SubscribeForm.name} {...props}>
+export const SubscribeForm: FC<BoxProps> = ({
+  className = '',
+  id,
+  ...props
+}: Readonly<BoxProps>) => (
+  <Box asChild class={className} id={id ?? SubscribeForm.name} {...props}>
     <form>
       <Grid
         asChild
@@ -42,7 +47,7 @@ export const SubscribeForm = ({ className = '', id, ...props }: BoxProps) => (
           ></TextField.Root>
           <Select.Root autoComplete="address-level1" required size="3">
             <Select.Trigger placeholder="Escolha seu estado&hellip;" />
-            <Select.Content className="w-full">
+            <Select.Content class="w-full">
               <Select.Group>
                 <Select.Item value="BR-MG">MG - Minas Gerais</Select.Item>
                 <Select.Item value="BR-SP">SP - São Paulo</Select.Item>
@@ -65,7 +70,7 @@ export const SubscribeForm = ({ className = '', id, ...props }: BoxProps) => (
           receber nossas&nbsp;comunicações.
         </small>
       </Box>
-      <Box className="mx-auto">
+      <Box class="mx-auto">
         <Button type="submit">Assinar</Button>
       </Box>
     </form>

@@ -1,4 +1,5 @@
 import { Flex, Link, Section } from '@radix-ui/themes';
+import type { FC } from 'react';
 import { NotFoundRandomQuote } from '@/libs/shared/ui/components/client/NotFoundRandomQuote';
 import { Container } from '@/libs/shared/ui/components/server/Container';
 import { PageHeader } from '@/libs/shared/ui/components/server/PageHeader';
@@ -6,7 +7,7 @@ import { PageHeading } from '@/libs/shared/ui/components/server/PageHeading';
 import { ProseText } from '@/libs/shared/ui/components/server/ProseText';
 import { SiteSearchForm } from '@/libs/shared/ui/components/server/SiteSearchForm';
 
-export default function NotFoundPage() {
+const NotFoundPage: FC = () => {
   return (
     <article id={NotFoundPage.displayName}>
       <PageHeader>
@@ -34,6 +35,8 @@ export default function NotFoundPage() {
       </Container>
     </article>
   );
-}
+};
 
 NotFoundPage.displayName = 'NotFoundPage';
+
+export default NotFoundPage;

@@ -5,6 +5,7 @@ import type { NextConfig } from 'next';
 
 import { allowedImageHosts } from './src/config/imageHosts';
 
+// biome-ignore lint/nursery/useExplicitType: This is a Next.js config file, types are inferred.
 const withMDX = createMDX({ extension: /\.mdx?$/ });
 
 const nextConfig: NextConfig = {

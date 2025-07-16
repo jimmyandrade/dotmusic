@@ -2,16 +2,17 @@ import {
   Heading,
   type HeadingProps as PageHeadingProps,
 } from '@radix-ui/themes';
+import type { FC } from 'react';
 
 export type { PageHeadingProps };
 
-export const PageHeading = ({
+export const PageHeading: FC<PageHeadingProps> = ({
   as = 'h2',
   children,
   mb = '4',
   size,
   ...props
-}: PageHeadingProps) => (
+}: Readonly<PageHeadingProps>) => (
   <Heading
     align={{
       initial: 'center',

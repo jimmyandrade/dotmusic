@@ -1,7 +1,7 @@
 import { type NextRequest, NextResponse } from 'next/server';
 import { allowedImageHosts } from './config/imageHosts';
 
-export function middleware(request: NextRequest) {
+export function middleware(request: NextRequest): NextResponse {
   const nonce = Buffer.from(crypto.randomUUID()).toString('base64');
   const imgSrc = ["'self'", ...allowedImageHosts].join(' ');
   const cspHeader = `

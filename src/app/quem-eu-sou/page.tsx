@@ -9,12 +9,13 @@ import {
   Text,
 } from '@radix-ui/themes';
 import Image from 'next/image';
+import type { FC } from 'react';
 import { PageHeader } from '@/libs/shared/ui/components/server/PageHeader';
 import { PageHeading } from '@/libs/shared/ui/components/server/PageHeading';
 import { ProseText } from '@/libs/shared/ui/components/server/ProseText';
 import { YouTubeVideo } from '@/libs/videos/ui/YouTubeVideo';
 
-const QuemEuSouPage = () => {
+const QuemEuSouPage: FC = () => {
   return (
     <article id={QuemEuSouPage.displayName}>
       <PageHeader>
@@ -26,7 +27,7 @@ const QuemEuSouPage = () => {
           <YouTubeVideo
             allowFullScreen={true}
             autoPlay={true}
-            className="aspect-video object-fill absolute"
+            class="aspect-video object-fill absolute"
             controls={true}
             id={'ejz5D4xWDXA'}
             loop={true}
@@ -77,7 +78,7 @@ const QuemEuSouPage = () => {
             <Heading as="h3">
               O <Em lang="en">single</Em>
             </Heading>
-            <ProseText as="p" className="pb-6">
+            <ProseText as="p" class="pb-6">
               O <Em lang="en">single</Em> <cite>Quem Eu Sou</cite> é a música
               que dá nome ao projeto e foi lançada em{' '}
               <time dateTime="2024-06-28">28 de junho de 2024</time>, Dia do

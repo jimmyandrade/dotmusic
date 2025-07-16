@@ -8,8 +8,8 @@ type PrintButtonProps = ButtonProps;
 export const PrintButton: FC<PrintButtonProps> = ({
   variant = 'ghost',
   ...props
-}) => (
-  <Button variant={variant} onClick={() => window.print()} {...props}>
+}: Readonly<PrintButtonProps>) => (
+  <Button variant={variant} onClick={(): void => window.print()} {...props}>
     Imprimir
   </Button>
 );

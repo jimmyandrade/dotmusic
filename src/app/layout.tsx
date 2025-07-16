@@ -1,8 +1,8 @@
 import { Inset, Strong, Theme } from '@radix-ui/themes';
 import { Analytics } from '@vercel/analytics/react';
-import type { Metadata, Viewport } from 'next';
+import type { Metadata, MetadataRoute, Viewport } from 'next';
 import { Albert_Sans } from 'next/font/google';
-import type { ReactNode } from 'react';
+import type { FC, ReactNode } from 'react';
 import {
   defaultLocale,
   generateStaticParamsWithLang,
@@ -11,6 +11,7 @@ import {
 import './globals.css';
 
 import classNames from 'classnames';
+import type { NextFontWithVariable } from 'next/dist/compiled/@next/font';
 import { GlobalFooter } from '@/libs/shared/ui/components/server/GlobalFooter';
 import { GlobalHeader } from '@/libs/shared/ui/components/server/GlobalHeader';
 import { GlobalRootLayout } from '@/libs/shared/ui/components/server/GlobalRootLayout';
@@ -20,15 +21,15 @@ import { SocialMediaLinks } from '@/libs/social-media/ui/components/server/Socia
 import { DotMusicNavLinks } from '../libs/navigation-and-seo/ui/DotMusicNavLinks';
 import manifest from './manifest';
 
-const albertSans = Albert_Sans({
+const albertSans: NextFontWithVariable = Albert_Sans({
   display: 'swap',
   subsets: ['latin'],
   variable: '--font-albert-sans',
 });
 
-const manifestData = manifest();
+const manifestData: MetadataRoute.Manifest = manifest();
 
-export const metadata = {
+export const metadata: Metadata = {
   title: `${manifestData.name} - ${manifestData.description}`,
   description:
     'Website oficial do cantor, compositor e produtor musical Jimmy Andrade. Artista de indie, pop e rock brasileiro. Escute suas músicas, consulte sua agenda e obtenha outras informações sobre a sua música.',
@@ -36,7 +37,7 @@ export const metadata = {
   openGraph: {
     siteName: manifestData.name,
   },
-} satisfies Metadata;
+};
 
 export const viewport: Viewport = {
   initialScale: 1,
@@ -49,11 +50,15 @@ export interface RootLayoutProps {
   params: Promise<ParamWithLangCollection>;
 }
 
-export async function generateStaticParams() {
+export const generateStaticParams = async (): Promise<
+  ParamWithLangCollection[]
+> => {
   return generateStaticParamsWithLang();
-}
+};
 
-export default async function RootLayout(props: Readonly<RootLayoutProps>) {
+const RootLayout: FC<RootLayoutProps> = async (
+  props: Readonly<RootLayoutProps>,
+) => {
   const params = await props.params;
 
   const { children } = props;
@@ -61,7 +66,7 @@ export default async function RootLayout(props: Readonly<RootLayoutProps>) {
   return (
     <Theme asChild appearance="dark" hasBackground accentColor="red">
       <GlobalRootLayout
-        className={classNames(albertSans.variable)}
+        class={classNames(albertSans.variable)}
         lang={params.lang ?? defaultLocale}
       >
         <GlobalHeader>
@@ -70,11 +75,11 @@ export default async function RootLayout(props: Readonly<RootLayoutProps>) {
           </HeaderHomeLink>
 
           <Inset>
-            <div className="hidden md:block">
+            <div class="hidden md:block">
               <DotMusicNavLinks />
             </div>
           </Inset>
-          <div className="hidden md:block">
+          <div class="hidden md:block">
             <SocialMediaLinks />
           </div>
         </GlobalHeader>
@@ -86,4 +91,6 @@ export default async function RootLayout(props: Readonly<RootLayoutProps>) {
       </GlobalRootLayout>
     </Theme>
   );
-}
+};
+
+export default RootLayout;

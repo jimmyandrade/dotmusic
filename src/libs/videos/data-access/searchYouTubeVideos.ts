@@ -1,6 +1,8 @@
 import { YouTubeSearchError, type YouTubeSearchListResponse } from '../model';
 
-export const searchYouTubeVideos = async (query: string) => {
+export const searchYouTubeVideos = async (
+  query: string,
+): Promise<YouTubeSearchListResponse> => {
   const baseURL = 'https://www.googleapis.com/youtube/v3/search';
   const url = new URL(baseURL);
 

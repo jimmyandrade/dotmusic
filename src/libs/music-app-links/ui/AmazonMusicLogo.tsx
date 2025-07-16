@@ -1,6 +1,8 @@
-import type { SVGProps } from 'react';
+import type { FC, SVGProps } from 'react';
 
-export const AmazonMusicLogo = (props: SVGProps<SVGSVGElement>) => (
+export const AmazonMusicLogo: FC<SVGProps<SVGSVGElement>> = (
+  props: SVGProps<SVGSVGElement>,
+) => (
   <svg
     id="Layer_1"
     xmlns="http://www.w3.org/2000/svg"

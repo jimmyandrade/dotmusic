@@ -1,4 +1,5 @@
 import { Box, type BoxProps as MainContentProps } from '@radix-ui/themes';
+import type { FC } from 'react';
 import {
   contentAnchorName,
   globalHeaderHeightInPixels,
@@ -6,7 +7,7 @@ import {
 
 export type { MainContentProps };
 
-export const MainContent = ({
+export const MainContent: FC<MainContentProps> = ({
   children,
   id = contentAnchorName,
   minHeight = '100vh',
@@ -14,7 +15,7 @@ export const MainContent = ({
   role = 'main',
   tabIndex = -1,
   ...props
-}: MainContentProps) => (
+}: Readonly<MainContentProps>) => (
   <Box
     asChild
     id={id}

@@ -1,10 +1,11 @@
 import { Heading, type HeadingProps } from '@radix-ui/themes';
+import type { FC } from 'react';
 
-export const Name = ({
+export const Name: FC<HeadingProps> = ({
   children,
   itemProp = 'name',
   ...props
-}: HeadingProps) => (
+}: Readonly<HeadingProps>) => (
   <Heading itemProp={itemProp} {...props}>
     {children}
   </Heading>

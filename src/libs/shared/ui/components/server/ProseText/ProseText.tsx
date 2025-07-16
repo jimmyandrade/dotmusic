@@ -1,15 +1,16 @@
 import { type TextProps as ProseTextProps, Text } from '@radix-ui/themes';
+import type { FC } from 'react';
 
 export type { ProseTextProps };
 
-export const ProseText = ({
+export const ProseText: FC<ProseTextProps> = ({
   className = '',
   children,
   size,
   ...props
-}: ProseTextProps) => (
+}: Readonly<ProseTextProps>) => (
   <Text
-    className={`max-w-prose ${className}`}
+    class={`max-w-prose ${className}`}
     size={
       size ?? {
         initial: '2',

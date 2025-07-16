@@ -1,14 +1,15 @@
-export enum Language {
-  BrazilianPortuguese = 'pt-BR',
-}
+export const Language = {
+  BrazilianPortuguese: 'pt-BR',
+} as const;
+export type Language = (typeof Language)[keyof typeof Language];
 
-export const locales = Object.values(Language);
-export const defaultLocale = Language.BrazilianPortuguese;
+export const locales: Language[] = Object.values(Language);
+export const defaultLocale: Language = Language.BrazilianPortuguese;
 
-export function generateStaticParamsWithLang() {
-  return [{ lang: Language.BrazilianPortuguese }];
-}
-
-export type ParamWithLangCollection = {
+export interface ParamWithLangCollection {
   lang: Language;
+}
+
+export const generateStaticParamsWithLang = (): ParamWithLangCollection[] => {
+  return [{ lang: Language.BrazilianPortuguese }];
 };

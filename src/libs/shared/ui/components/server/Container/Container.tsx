@@ -7,6 +7,7 @@ import { forwardRef } from 'react';
 
 export type { ContainerProps };
 
+// biome-ignore lint/nursery/useExplicitType: forwardRef already specifies the type
 export const Container = forwardRef<HTMLDivElement, ContainerProps>(
   (
     { asChild = false, children, className = '', ...props }: ContainerProps,
@@ -14,7 +15,7 @@ export const Container = forwardRef<HTMLDivElement, ContainerProps>(
   ) => (
     <PrimitiveContainer
       asChild={asChild}
-      className={classNames(
+      class={classNames(
         'container max-w-7xl mx-auto px-2 sm:px-6 lg:px-8',
         className,
       )}

@@ -1,6 +1,6 @@
 import { FetchPeopleError } from '../model/FetchPeopleError';
 
-export const fetchPeopleQuery = async () => {
+export const fetchPeopleQuery = async (): Promise<unknown> => {
   const usersDatabaseId = process.env.NOTION_USERS_DATABASE_ID;
 
   if (!usersDatabaseId) {

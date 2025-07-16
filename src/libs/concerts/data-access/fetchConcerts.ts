@@ -1,7 +1,7 @@
 import type { Concert } from '../model/Concert';
 import { ConcertsFetchError } from '../model/ConcertsFetchError';
 
-export const fetchConcerts = async () => {
+export const fetchConcerts = async (): Promise<Concert[]> => {
   const appId = process.env.BANDSINTOWN_APP_ID;
 
   if (typeof appId !== 'string' || appId.length === 0) {

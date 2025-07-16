@@ -1,22 +1,18 @@
 import { type LinkProps, TabNav } from '@radix-ui/themes';
+import type { FC } from 'react';
 
 export interface TabNavLinkProps extends LinkProps {
   active?: boolean;
 }
 
-export const TabNavLink = ({
+export const TabNavLink: FC<TabNavLinkProps> = ({
   asChild,
   active,
   className = '',
   children,
   ...props
-}: TabNavLinkProps) => (
-  <TabNav.Link
-    asChild={asChild}
-    active={active}
-    className={className}
-    {...props}
-  >
+}: Readonly<TabNavLinkProps>) => (
+  <TabNav.Link asChild={asChild} active={active} class={className} {...props}>
     {children}
   </TabNav.Link>
 );

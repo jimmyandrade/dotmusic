@@ -1,6 +1,6 @@
 export const dynamic = 'force-static';
 
-export async function GET() {
+export const GET = async (): Promise<Response> => {
   const iconSVG = `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <svg version="1.2" viewBox="0 0 1292 1292" width="323" height="323" baseProfile="tiny-ps" xmlns="http://www.w3.org/2000/svg">
   <title>Jimmy Andrade</title>
@@ -18,4 +18,4 @@ export async function GET() {
       'Content-Type': 'image/svg+xml',
     },
   });
-}
+};

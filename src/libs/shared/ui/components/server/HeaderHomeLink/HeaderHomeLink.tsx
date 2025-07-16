@@ -4,19 +4,20 @@ import {
   Link,
 } from '@radix-ui/themes';
 import NextLink from 'next/link';
+import type { FC } from 'react';
 
 export type { HeaderHomeLinkProps };
 
-export const HeaderHomeLink = ({
+export const HeaderHomeLink: FC<HeaderHomeLinkProps> = ({
   as = 'h1',
   className = '',
   children,
   size,
   ...props
-}: HeaderHomeLinkProps) => (
+}: Readonly<HeaderHomeLinkProps>) => (
   <Heading
     as={as}
-    className={`uppercase ${className}`}
+    class={`uppercase ${className}`}
     size={size ?? { initial: '1', sm: '2', md: '3', lg: '4', xl: '5' }}
     {...props}
   >

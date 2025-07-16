@@ -1,9 +1,11 @@
-import type { ReactNode } from 'react';
+import type { FC, ReactNode } from 'react';
 
 export interface CardListProps {
   children: ReactNode;
 }
 
-export const CardList = ({ children }: CardListProps) => (
-  <ul className="columns-1 sm:columns-2 md:columns-3 pb-8">{children}</ul>
+export const CardList: FC<CardListProps> = ({
+  children,
+}: Readonly<CardListProps>) => (
+  <ul class="columns-1 sm:columns-2 md:columns-3 pb-8">{children}</ul>
 );

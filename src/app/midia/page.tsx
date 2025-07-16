@@ -11,6 +11,7 @@ import {
 } from '@radix-ui/themes';
 import Image from 'next/image';
 import Link from 'next/link';
+import type { FC } from 'react';
 import { getPressReleases } from '@/libs/press-releases/data-access/getPressReleases';
 import { PressReleaseList } from '@/libs/press-releases/ui/PressReleaseList';
 import { Container } from '@/libs/shared/ui/components/server/Container';
@@ -19,7 +20,7 @@ import { PageHeading } from '@/libs/shared/ui/components/server/PageHeading';
 import { YouTubeVideo } from '@/libs/videos/ui/YouTubeVideo';
 import pdfIconImage from '../../../public/media/icons/pdf-icon-image.png';
 
-export default function PressPage() {
+const PressPage: FC = () => {
   const releases = getPressReleases();
   return (
     <article id={PressPage.name}>
@@ -36,7 +37,7 @@ export default function PressPage() {
               height={1067}
               priority
               aria-hidden="true"
-              className="absolute inset-0 w-full h-full object-cover -z-10 opacity-10 pointer-events-none"
+              class="absolute inset-0 w-full h-full object-cover -z-10 opacity-10 pointer-events-none"
             />
             <Heading as="h3" mb="4">
               Fotos em alta resolução
@@ -55,7 +56,7 @@ export default function PressPage() {
                           <picture>
                             <Image
                               alt="Foto de divulgação de Jimmy Andrade"
-                              className="block object-cover w-full"
+                              class="block object-cover w-full"
                               height={2546}
                               src="/media/press/jimmy-andrade-perto-de-tv-de-tubo-antiga.jpg"
                               width={3931}
@@ -97,12 +98,12 @@ export default function PressPage() {
               <ul>
                 <Card asChild>
                   <li>
-                    <YouTubeVideo className="aspect-video" id="BeHjYXsjoUU" />
+                    <YouTubeVideo class="aspect-video" id="BeHjYXsjoUU" />
                   </li>
                 </Card>
                 <Card asChild>
                   <li>
-                    <YouTubeVideo className="aspect-video" id="hmoJUNWfHoU" />
+                    <YouTubeVideo class="aspect-video" id="hmoJUNWfHoU" />
                   </li>
                 </Card>
               </ul>
@@ -114,22 +115,22 @@ export default function PressPage() {
               <ul>
                 <Card asChild>
                   <li>
-                    <YouTubeVideo className="aspect-video" id="_bqLZtpIU7E" />
+                    <YouTubeVideo class="aspect-video" id="_bqLZtpIU7E" />
                   </li>
                 </Card>
                 <Card asChild>
                   <li>
-                    <YouTubeVideo className="aspect-video" id="68Cj9G3vrXw" />
+                    <YouTubeVideo class="aspect-video" id="68Cj9G3vrXw" />
                   </li>
                 </Card>
                 <Card asChild>
                   <li>
-                    <YouTubeVideo className="aspect-video" id="ALgoFiSamS0" />
+                    <YouTubeVideo class="aspect-video" id="ALgoFiSamS0" />
                   </li>
                 </Card>
                 <Card asChild>
                   <li>
-                    <YouTubeVideo className="aspect-video" id="pfHoyHbzwiI" />
+                    <YouTubeVideo class="aspect-video" id="pfHoyHbzwiI" />
                   </li>
                 </Card>
               </ul>
@@ -180,4 +181,6 @@ export default function PressPage() {
       </Container>
     </article>
   );
-}
+};
+
+export default PressPage;

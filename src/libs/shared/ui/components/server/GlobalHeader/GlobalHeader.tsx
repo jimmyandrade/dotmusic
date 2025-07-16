@@ -6,12 +6,13 @@ import {
   Theme,
 } from '@radix-ui/themes';
 import classnames from 'classnames';
+import type { FC } from 'react';
 import { globalHeaderHeightInPixels } from '../../../constants';
 import { Container } from '../Container';
 
 export type { GlobalHeaderProps };
 
-export const GlobalHeader = ({
+export const GlobalHeader: FC<GlobalHeaderProps> = ({
   asChild = true,
   className = '',
   children,
@@ -25,7 +26,7 @@ export const GlobalHeader = ({
   top = '-1px',
   width = '100%',
   ...props
-}: GlobalHeaderProps) => {
+}: Readonly<GlobalHeaderProps>) => {
   if (typeof px !== 'undefined') {
     throw new Error(
       'Please do not use the px prop on the GlobalHeader component.',
@@ -36,7 +37,7 @@ export const GlobalHeader = ({
     <Theme asChild radius="none">
       <Box
         asChild={asChild}
-        className={classnames('z-10', className)}
+        class={classnames('z-10', className)}
         height={height}
         id={id ?? GlobalHeader.name}
         position={position}
@@ -44,7 +45,7 @@ export const GlobalHeader = ({
         width={width}
         {...props}
       >
-        <Card asChild className="relative">
+        <Card asChild class="relative">
           <header itemScope={itemScope} itemType={itemType} role={role}>
             <Container>
               <Flex justify="between" align="center">

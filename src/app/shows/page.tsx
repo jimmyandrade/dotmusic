@@ -1,4 +1,5 @@
 import { Card, Em, Flex, Grid, Link, Text } from '@radix-ui/themes';
+import type { FC } from 'react';
 import { Container } from '@/libs/shared/ui/components/server/Container';
 import { PageHeader } from '@/libs/shared/ui/components/server/PageHeader';
 import { PageHeading } from '@/libs/shared/ui/components/server/PageHeading';
@@ -6,13 +7,13 @@ import { ProseText } from '@/libs/shared/ui/components/server/ProseText';
 import { YouTubeVideo } from '@/libs/videos/ui/YouTubeVideo';
 import { ConcertsList } from '../../libs/concerts/feature/ConcertsList';
 
-export default async function ConcertsPage() {
+const ConcertsPage: FC = () => {
   return (
     <article id={ConcertsPage.name}>
       <YouTubeVideo
         allowFullScreen={false}
         autoPlay={true}
-        className="aspect-video h-full w-full object-fill fixed pointer-events-none opacity-25 -z-10"
+        class="aspect-video h-full w-full object-fill fixed pointer-events-none opacity-25 -z-10"
         controls={false}
         id="hmoJUNWfHoU"
         loop={true}
@@ -28,13 +29,13 @@ export default async function ConcertsPage() {
       <Container>
         <Grid columns={'3fr 1fr 1fr'} gap={'6'}>
           <div>
-            <ProseText as="p" className="pb-8" size="4">
+            <ProseText as="p" class="pb-8" size="4">
               Durante a turnê &ldquo;QUEM EU SOU? - o show&rdquo;, Jimmy Andrade
               compartilha histórias que inspiraram as letras das canções e se
               conecta com seu público. O espetáculo conta com uma banda completa
               e, dependendo do formato, inclui intérpretes de Libras.
             </ProseText>
-            <ProseText as="p" className="pb-8" size="4">
+            <ProseText as="p" class="pb-8" size="4">
               O show convida o público a refletir sobre temas fundamentais para
               a população LGBTQIAPN+, como auto amor, acolhimento, orgulho e a
               celebração da existência.
@@ -61,7 +62,7 @@ export default async function ConcertsPage() {
               </li>
 
               <li>
-                <Card asChild className="h-full">
+                <Card asChild class="h-full">
                   <Link
                     href="https://open.spotify.com/playlist/4gEHuLcJegImyunC9prd1D?si=eaa24c27d24f432e"
                     rel="noopener noreferrer"
@@ -81,4 +82,6 @@ export default async function ConcertsPage() {
       </Container>
     </article>
   );
-}
+};
+
+export default ConcertsPage;

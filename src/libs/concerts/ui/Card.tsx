@@ -6,6 +6,7 @@ import {
   Text,
 } from '@radix-ui/themes';
 import Image from 'next/image';
+import type { FC } from 'react';
 import type { Concert } from '../model/Concert';
 import { getConcertDate } from '../model/getConcertDate';
 import { getCountryName } from '../model/getCountryName';
@@ -15,7 +16,7 @@ export interface CardProps {
   concert: Concert;
 }
 
-export const Card = ({ concert }: CardProps) => {
+export const Card: FC<CardProps> = ({ concert }: Readonly<CardProps>) => {
   const dateTime = getConcertDate(concert);
   const countryName = getCountryName(concert.venue.country);
   return (
@@ -23,8 +24,8 @@ export const Card = ({ concert }: CardProps) => {
       <PrimitiveCard key={concert.id} mb="4">
         {concert.artist?.image_url ? (
           <>
-            <Inset className="relative">
-              <div className="bg-gradient-to-t from-[--color-background] absolute w-full h-full"></div>
+            <Inset class="relative">
+              <div class="bg-gradient-to-t from-[--color-background] absolute w-full h-full"></div>
               <Image
                 alt={`Imagem de divulgação do ${concert.title}`}
                 src={concert.artist?.image_url}
@@ -40,7 +41,7 @@ export const Card = ({ concert }: CardProps) => {
                 sm: '4',
               }}
               as="h4"
-              className="relative"
+              class="relative"
               mt="-9"
               mb="4"
             >

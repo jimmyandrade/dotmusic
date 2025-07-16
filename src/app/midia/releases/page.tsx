@@ -2,8 +2,9 @@ import fs from 'node:fs';
 import path from 'node:path';
 import matter from 'gray-matter';
 import Link from 'next/link';
+import type { FC } from 'react';
 
-export default async function ReleasesPage() {
+const ReleasesPage: FC = () => {
   const dir = path.join(process.cwd(), 'content/press-releases');
   const files = fs
     .readdirSync(dir)
@@ -23,14 +24,14 @@ export default async function ReleasesPage() {
   });
 
   return (
-    <main className="p-8">
-      <h1 className="text-2xl font-bold mb-4">Releases</h1>
+    <main class="p-8">
+      <h1 class="text-2xl font-bold mb-4">Releases</h1>
       <ul>
         {releases.map(({ slug, title }) => (
-          <li key={slug} className="mb-2">
+          <li key={slug} class="mb-2">
             <Link
               href={`/midia/releases/${slug}`}
-              className="text-blue-600 hover:underline"
+              class="text-blue-600 hover:underline"
             >
               {title}
             </Link>
@@ -39,4 +40,6 @@ export default async function ReleasesPage() {
       </ul>
     </main>
   );
-}
+};
+
+export default ReleasesPage;

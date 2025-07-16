@@ -1,11 +1,14 @@
-import type { ReactNode } from 'react';
+import type { FC, ReactNode } from 'react';
 import { Container } from '../Container';
 
 export interface PageHeaderProps extends React.HTMLAttributes<HTMLElement> {
   children: ReactNode;
 }
 
-export const PageHeader = ({ children, ...props }: PageHeaderProps) => (
+export const PageHeader: FC<PageHeaderProps> = ({
+  children,
+  ...props
+}: PageHeaderProps) => (
   <header {...props}>
     <Container
       pt={{

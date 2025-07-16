@@ -2,10 +2,11 @@ import {
   IconButton as PrimitiveIconButton,
   type IconButtonProps as SocialMediaIconButtonProps,
 } from '@radix-ui/themes';
+import type { FC } from 'react';
 
 export type { SocialMediaIconButtonProps };
 
-export const SocialMediaIconButton = ({
+export const SocialMediaIconButton: FC<SocialMediaIconButtonProps> = ({
   children,
   color = 'gray',
   highContrast,
@@ -15,7 +16,7 @@ export const SocialMediaIconButton = ({
   },
   variant = 'ghost',
   ...props
-}: SocialMediaIconButtonProps) => (
+}: Readonly<SocialMediaIconButtonProps>) => (
   <PrimitiveIconButton
     color={color}
     highContrast={highContrast}

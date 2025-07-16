@@ -1,6 +1,8 @@
 import { CustomSearchError, type CustomSearchResponseData } from '../model';
 
-export const fetchGoogleCustomSearchResults = async (query: string) => {
+export const fetchGoogleCustomSearchResults = async (
+  query: string,
+): Promise<CustomSearchResponseData> => {
   const customSearchBaseURL = 'https://www.googleapis.com/customsearch/v1';
   const url = new URL(customSearchBaseURL);
 

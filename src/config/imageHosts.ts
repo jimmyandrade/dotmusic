@@ -14,4 +14,4 @@ export const allowedImageHosts = [
   'rsv-ink-images-production.s3.sa-east-1.amazonaws.com',
   'rsv-ink-images.ink.rsvcloud.com',
   'yt3.googleusercontent.com',
-];
+] as const;

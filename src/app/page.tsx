@@ -8,12 +8,13 @@ import {
   VisuallyHidden,
 } from '@radix-ui/themes';
 import Link from 'next/link';
+import type { FC } from 'react';
 import { MusicPage } from '@/libs/music/ui/components/server/MusicPage';
 import { Container } from '@/libs/shared/ui/components/server/Container';
 import { ConcertsList } from '../libs/concerts/feature/ConcertsList';
 import { SubscribeForm } from '../libs/newsletter/SubscribeForm';
 
-export default async function IndexPage() {
+const IndexPage: FC = () => {
   return (
     <article id={IndexPage.name}>
       <Box asChild mt="0">
@@ -42,10 +43,10 @@ export default async function IndexPage() {
           <Heading align="center" as="h2" mb="6">
             Destaques
           </Heading>
-          <Box className="sm:columns-2 xl:columns-3" asChild>
+          <Box class="sm:columns-2 xl:columns-3" asChild>
             <ul>
-              <li className="break-inside-avoid mb-8">
-                <Heading as="h3" className="uppercase" mb="2" size="4">
+              <li class="break-inside-avoid mb-8">
+                <Heading as="h3" class="uppercase" mb="2" size="4">
                   2024: Profissionais da Música
                 </Heading>
                 <ul>
@@ -62,8 +63,8 @@ export default async function IndexPage() {
                   </li>
                 </ul>
               </li>
-              <li className="break-inside-avoid mb-8">
-                <Heading as="h3" className="uppercase" mb="2" size="4">
+              <li class="break-inside-avoid mb-8">
+                <Heading as="h3" class="uppercase" mb="2" size="4">
                   2024: Prêmio Audio For Singers
                 </Heading>
                 <ul>
@@ -76,10 +77,10 @@ export default async function IndexPage() {
                 </ul>
               </li>
 
-              <li className="break-inside-avoid mb-8">
-                <Heading as="h3" className="uppercase" mb="2" size="4">
+              <li class="break-inside-avoid mb-8">
+                <Heading as="h3" class="uppercase" mb="2" size="4">
                   2024: 3&ordf; Edição do Festival{' '}
-                  <span className="uppercase">
+                  <span class="uppercase">
                     É Pop <abbr title="Belo Horizonte">BH</abbr>
                   </span>
                 </Heading>
@@ -91,8 +92,8 @@ export default async function IndexPage() {
                 </ul>
               </li>
 
-              <li className="break-inside-avoid mb-8">
-                <Heading as="h3" className="uppercase" mb="2" size="4">
+              <li class="break-inside-avoid mb-8">
+                <Heading as="h3" class="uppercase" mb="2" size="4">
                   2023: Prêmios Butterfly
                 </Heading>
                 <ul>
@@ -106,8 +107,8 @@ export default async function IndexPage() {
                   </li>
                 </ul>
               </li>
-              <li className="break-inside-avoid mb-8">
-                <Heading as="h3" className="uppercase" mb="2" size="4">
+              <li class="break-inside-avoid mb-8">
+                <Heading as="h3" class="uppercase" mb="2" size="4">
                   2019: Prêmio Biscoito
                 </Heading>
                 <ul>
@@ -134,4 +135,6 @@ export default async function IndexPage() {
       </Section>
     </article>
   );
-}
+};
+
+export default IndexPage;

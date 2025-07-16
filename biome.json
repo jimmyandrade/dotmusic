@@ -18,9 +18,13 @@
     "domains": {
       "next": "all",
       "react": "all",
+      "solid": "all",
       "test": "all"
     },
     "rules": {
+      "nursery": {
+        "useExplicitType": "error"
+      },
       "recommended": true
     }
   },

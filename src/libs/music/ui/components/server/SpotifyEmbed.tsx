@@ -7,14 +7,14 @@ interface SpotifyEmbedProps {
   className?: string;
 }
 
-const SpotifyEmbed: FC<Readonly<SpotifyEmbedProps>> = ({
+const SpotifyEmbed: FC<SpotifyEmbedProps> = ({
   src,
   title = 'Spotify Player',
   height = 400,
   className,
-}) => (
+}: Readonly<SpotifyEmbedProps>) => (
   <iframe
-    className={className ?? 'rounded-2xl border-0 w-full bg-black'}
+    class={className ?? 'rounded-2xl border-0 w-full bg-black'}
     src={src}
     title={title}
     height={height}

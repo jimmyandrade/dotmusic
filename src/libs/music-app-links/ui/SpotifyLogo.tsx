@@ -1,6 +1,8 @@
-import type { SVGProps } from 'react';
+import type { FC, SVGProps } from 'react';
 
-export const SpotifyLogo = (props: SVGProps<SVGSVGElement>) => (
+export const SpotifyLogo: FC<SVGProps<SVGSVGElement>> = (
+  props: SVGProps<SVGSVGElement>,
+) => (
   <svg
     width="131"
     height="40"

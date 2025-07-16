@@ -1,16 +1,17 @@
 import { Button, Flex, Quote, TextField } from '@radix-ui/themes';
+import type { FC } from 'react';
 
 export type SiteSearchFormProps = TextField.RootProps;
 
-export const SiteSearchForm = ({
+export const SiteSearchForm: FC<SiteSearchFormProps> = ({
   defaultValue,
   ...props
-}: SiteSearchFormProps) => (
+}: Readonly<SiteSearchFormProps>) => (
   <Flex asChild gapX={'2'}>
     <form action="/buscar" method="GET">
-      <fieldset className="w-full">
+      <fieldset class="w-full">
         <TextField.Root
-          className="flex-grow"
+          class="flex-grow"
           defaultValue={defaultValue}
           id="q"
           name="q"

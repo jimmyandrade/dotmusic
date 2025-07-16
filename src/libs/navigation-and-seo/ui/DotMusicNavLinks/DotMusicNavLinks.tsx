@@ -2,11 +2,12 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import type { FC } from 'react';
 import { SiteNavigation } from '@/libs/shared/ui/components/server/GlobalNavigation';
 import { TabNavLink } from '@/libs/shared/ui/components/server/TabNavLink';
 import { NavigationURL } from '../../model';
 
-export const DotMusicNavLinks = () => {
+export const DotMusicNavLinks: FC = () => {
   const pathname = usePathname();
 
   return (
@@ -17,7 +18,7 @@ export const DotMusicNavLinks = () => {
       <TabNavLink
         asChild
         active={pathname === NavigationURL.HOME}
-        className="xs:hidden xl:flex"
+        class="xs:hidden xl:flex"
       >
         <Link href={NavigationURL.HOME} rel="home" title="Início">
           Início
@@ -30,7 +31,7 @@ export const DotMusicNavLinks = () => {
       </TabNavLink>
       <TabNavLink asChild active={pathname === NavigationURL.CONCERTS}>
         <Link href={NavigationURL.CONCERTS} title="Shows">
-          <i className="not-italic" lang="en">
+          <i class="not-italic" lang="en">
             Shows
           </i>
         </Link>

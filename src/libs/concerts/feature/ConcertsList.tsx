@@ -1,4 +1,5 @@
 import { Callout } from '@radix-ui/themes';
+import type { FC } from 'react';
 import { fetchConcerts } from '../data-access/fetchConcerts';
 import type { Concert as ConcertRecord } from '../model/Concert';
 import { ConcertsFetchError } from '../model/ConcertsFetchError';
@@ -12,7 +13,7 @@ export interface ConcertsListProps {
 
 const START = 0;
 
-export const ConcertsList = async ({ maxYears }: ConcertsListProps) => {
+export const ConcertsList: FC = async ({ maxYears }: ConcertsListProps) => {
   let concerts = [] as ConcertRecord[];
 
   try {
@@ -50,7 +51,7 @@ export const ConcertsList = async ({ maxYears }: ConcertsListProps) => {
   }
 
   const concertsByYear = groupConcertsByYear(concerts);
-  const sortStrategy = (a: string, b: string) => Number(b) - Number(a);
+  const sortStrategy = (a: string, b: string): number => Number(b) - Number(a);
   const years = Object.keys(concertsByYear)
     .sort(sortStrategy)
     .slice(START, maxYears);
@@ -58,7 +59,7 @@ export const ConcertsList = async ({ maxYears }: ConcertsListProps) => {
   return (
     <ul>
       {years.map((year) => (
-        <li className="relative" key={year}>
+        <li class="relative" key={year}>
           <YearHeading>{year}</YearHeading>
           <Concert.CardList>
             {[...concertsByYear[year]]

@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import type { IframeHTMLAttributes } from 'react';
+import type { FC, IframeHTMLAttributes } from 'react';
 
 export interface YouTubeVideoProps
   extends IframeHTMLAttributes<HTMLIFrameElement> {
@@ -14,7 +14,7 @@ export interface YouTubeVideoProps
   start?: number;
 }
 
-export const YouTubeVideo = ({
+export const YouTubeVideo: FC<YouTubeVideoProps> = ({
   allowFullScreen = true,
   autoPlay = false,
   className,
@@ -29,7 +29,7 @@ export const YouTubeVideo = ({
   start = 0,
   title = 'YouTube video player',
   ...props
-}: YouTubeVideoProps) => {
+}: Readonly<YouTubeVideoProps>) => {
   const baseURL = `https://www.youtube.com/embed/${id}`;
   const url = new URL(baseURL);
   const searchParams = {
@@ -77,7 +77,7 @@ export const YouTubeVideo = ({
     <iframe
       id={`youtube-${id}`}
       allow={allow.join('; ')}
-      className={classNames('border-0 overflow-hidden', className)}
+      class={classNames('border-0 overflow-hidden', className)}
       referrerPolicy="strict-origin-when-cross-origin"
       seamless
       src={url.toString()}
