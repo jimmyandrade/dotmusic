@@ -74,9 +74,15 @@ const nextConfig: NextConfig = {
         destination: 'https://linktr.ee/jimmyandrade',
         permanent: false,
       },
+
       {
         source: '/albums',
         destination: '/musica',
+        permanent: false,
+      },
+      {
+        source: '/links',
+        destination: 'https://linktr.ee/jimmyandrade',
         permanent: false,
       },
       {
