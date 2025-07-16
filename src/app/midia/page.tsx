@@ -1,6 +1,7 @@
 import { Container } from '@/libs/shared/ui/components/server/Container';
 import { PageHeader } from '@/libs/shared/ui/components/server/PageHeader';
 import { PageHeading } from '@/libs/shared/ui/components/server/PageHeading';
+import { YouTubeVideo } from '@/libs/videos/ui/YouTubeVideo';
 import {
   Badge,
   Button,
@@ -24,7 +25,6 @@ export default function PressPage() {
         <Heading as="h3" mb="4">
           Fotos em alta resolução
         </Heading>
-
         <Grid asChild columns="3">
           <ul>
             <li>
@@ -67,15 +67,53 @@ export default function PressPage() {
                 </Link>
               </Card>
             </li>
-            {/* <li>
-                <Inset asChild pb="current" side="top">
-                  <figure>
-
-
-                  </figure>
-                </Inset>
-
-                 */}
+          </ul>
+        </Grid>
+        <Heading as="h3" mt="8" mb="4">
+          Vídeos de shows
+        </Heading>
+        <Heading as="h4" mb="4">
+          Ao Vivo no Centro Cultural UFMG (<time dateTime="2024">2024</time>)
+        </Heading>
+        <Grid asChild columns={{ xs: '1', sm: '2' }} gap="2">
+          <ul>
+            <Card asChild>
+              <li>
+                <YouTubeVideo className="aspect-video" id="BeHjYXsjoUU" />
+              </li>
+            </Card>
+            <Card asChild>
+              <li>
+                <YouTubeVideo className="aspect-video" id="hmoJUNWfHoU" />
+              </li>
+            </Card>
+          </ul>
+        </Grid>
+        <Heading as="h4" mb="4" mt="6">
+          Show na Autêntica (<time dateTime="2023">2023</time>)
+        </Heading>
+        <Grid asChild columns={{ xs: '1', sm: '2' }} gap="2">
+          <ul>
+            <Card asChild>
+              <li>
+                <YouTubeVideo className="aspect-video" id="_bqLZtpIU7E" />
+              </li>
+            </Card>
+            <Card asChild>
+              <li>
+                <YouTubeVideo className="aspect-video" id="68Cj9G3vrXw" />
+              </li>
+            </Card>
+            <Card asChild>
+              <li>
+                <YouTubeVideo className="aspect-video" id="ALgoFiSamS0" />
+              </li>
+            </Card>
+            <Card asChild>
+              <li>
+                <YouTubeVideo className="aspect-video" id="pfHoyHbzwiI" />
+              </li>
+            </Card>
           </ul>
         </Grid>
       </Container>
