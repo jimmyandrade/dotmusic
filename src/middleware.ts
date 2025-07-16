@@ -6,12 +6,12 @@ export function middleware(request: NextRequest) {
     connect-src 'self';
     font-src 'self';
     frame-ancestors 'none';
-    frame-src open.spotify.com www.youtube.com;
+    frame-src open.spotify.com www.youtube.com onerpm.link;
     img-src 'self' db.music ffm.to gstatic.com i.ytimg.com jimmyandrade.com jimmyandrade.music jimmyandrade.net jyverso.com.br quemeusou.com.br photos.bandsintown.com rsv-ink-images-production.s3.sa-east-1.amazonaws.com;
     manifest-src 'self';
     script-src-elem 'self' 'unsafe-inline' va.vercel-scripts.com;
     style-src 'self' 'unsafe-inline';
-    style-src-elem 'self';
+    style-src-elem 'self' 'unsafe-inline';
     upgrade-insecure-requests;
 `;
   const cleanedCspHeaderValue = cspHeader.replace(/\s{2,}/g, ' ').trim();

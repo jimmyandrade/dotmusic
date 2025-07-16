@@ -3,7 +3,7 @@ import {
   type HeadingProps as PageHeadingProps,
 } from '@radix-ui/themes';
 
-export { type PageHeadingProps };
+export type { PageHeadingProps };
 
 export const PageHeading = ({
   as = 'h2',

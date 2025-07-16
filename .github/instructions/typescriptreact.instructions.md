@@ -103,3 +103,23 @@ For secondary actions, prefer using the `ghost` variant for buttons. Avoid havin
 ## Component Props Best Practices
 
 When creating custom components that wrap Radix Themes components (like `Button`), always accept all props from the base component (e.g., `ButtonProps`) and pass them through. Set useful default values, but always allow consumers to override them.
+
+# Headings
+
+When creating Markdown headings (h1-h4) or mapping them in MDX, always use the Radix Themes `Heading` component with the appropriate `as` and `size` props for semantic and visual consistency.
+
+Example:
+
+- h1: `<Heading as="h1" size="4" {...props} />`
+- h2: `<Heading as="h2" size="3" {...props} />`
+- h3: `<Heading as="h3" size="2" {...props} />`
+- h4: `<Heading as="h4" size="1" {...props} />`
+
+## Dynamic Route Params
+
+When using dynamic route params in Next.js App Router, always await the params object before accessing its properties:
+
+```tsx
+const { slug } = await params;
+```
+This ensures compatibility with async route APIs and prevents runtime errors.

@@ -1,4 +1,4 @@
-import { type ReactNode } from 'react';
+import type { ReactNode } from 'react';
 import { Container } from '../Container';
 
 export interface PageHeaderProps extends React.HTMLAttributes<HTMLElement> {

@@ -16,7 +16,7 @@ interface ReleasePageProps {
 }
 
 export default async function ReleasePage({ params }: ReleasePageProps) {
-  const { slug } = params;
+  const { slug } = await params;
   const dir = path.join(process.cwd(), 'content/press-releases');
   const files = fs
     .readdirSync(dir)

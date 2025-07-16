@@ -1,7 +1,12 @@
 // @ts-check
+
+import createMDX from '@next/mdx';
 import type { NextConfig } from 'next';
 
+const withMDX = createMDX({ extension: /\.mdx?$/ });
+
 const nextConfig: NextConfig = {
+  pageExtensions: ['md', 'mdx', 'ts', 'tsx'],
   images: {
     remotePatterns: [
       {
@@ -96,11 +101,6 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: '/ultimato',
-        destination: 'https://onerpm.link/528000625018',
-        permanent: false,
-      },
-      {
         source: '/ultimato/video',
         destination: 'https://www.youtube.com/watch?v=E_sZHM53ekE',
         permanent: false,
@@ -119,4 +119,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+export default withMDX(nextConfig);
