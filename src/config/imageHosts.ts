@@ -1,0 +1,16 @@
+export const allowedImageHosts = [
+  'db.music',
+  'ffm.to',
+  'gstatic.com',
+  'i.ytimg.com',
+  'images.sympla.com.br',
+  'jimmyandrade.com',
+  'jimmyandrade.music',
+  'jimmyandrade.net',
+  'jyverso.com.br',
+  'quemeusou.com.br',
+  'photos.bandsintown.com',
+  'rsv-ink-images-production.s3.sa-east-1.amazonaws.com',
+  'rsv-ink-images.ink.rsvcloud.com',
+  'yt3.googleusercontent.com',
+];

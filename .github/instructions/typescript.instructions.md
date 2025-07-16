@@ -12,6 +12,40 @@ Always consider extracting logic into functions with a single responsibility. Th
 
 Avoid declaring variables or constants that are not used in the code. Always remove unused declarations to keep the code clean.
 
+## Prefer Interfaces Over Types
+
+Always prefer using `interface` instead of `type` for object shapes and component props, unless you need advanced type features that only `type` provides (e.g., unions, intersections, mapped types). Interfaces are more extensible and idiomatic in TypeScript for describing object structures.
+
+Example:
+
+```ts
+interface MyProps {
+  text: string;
+}
+```
+
 ## Comments
 
-Do not include comments explaining what the code is doing. Prefer clear and descriptive function, variable, and component names instead of explanatory comments.
+Code should be self-explanatory and not require comments to describe its purpose or logic. Prefer clear and descriptive function, variable, and component names instead of explanatory comments.
+
+If comments are strictly necessary (for complex logic, TODOs, or clarifications), they must be written in English.
+
+## Alphabetical Order for Properties
+
+Whenever possible, order properties in objects, interfaces, and enums alphabetically. This improves readability, maintainability, and helps prevent duplication.
+
+Example:
+
+```ts
+interface Person {
+  age: number;
+  firstName: string;
+  lastName: string;
+}
+
+enum Status {
+  ACTIVE,
+  INACTIVE,
+  PENDING,
+}
+```

@@ -1,5 +1,5 @@
 import { Callout } from '@radix-ui/themes';
-import { fetchConcerts } from '../data-access';
+import { fetchConcerts } from '../data-access/fetchConcerts';
 import type { Concert as ConcertRecord } from '../model/Concert';
 import { ConcertsFetchError } from '../model/ConcertsFetchError';
 import { groupConcertsByYear } from '../model/groupConcertsByYear';

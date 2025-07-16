@@ -1,5 +1,6 @@
 export enum NavigationURL {
   BIO = '/bio',
+  COMMUNITY = '/jyverso',
   CONCERTS = '/shows',
   HOME = '/',
   MUSIC = '/musica',

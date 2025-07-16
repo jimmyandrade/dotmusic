@@ -16,8 +16,8 @@ type SourceSet = {
 
 export interface VideoBannerProps extends Omit<ImageProps, 'src'> {
   alt: string;
-  imageSources: SourceSet;
-  videoSources?: SourceSet;
+  imageSources: Partial<SourceSet>;
+  videoSources?: Partial<SourceSet>;
 }
 
 const mediaDimensions: Record<

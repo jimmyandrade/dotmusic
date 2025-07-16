@@ -2,6 +2,7 @@ import { PageHeader } from '@/libs/shared/ui/components/server/PageHeader';
 import { PageHeading } from '@/libs/shared/ui/components/server/PageHeading';
 import { ProseText } from '@/libs/shared/ui/components/server/ProseText';
 import { Container, Flex } from '@radix-ui/themes';
+import Image from 'next/image';
 
 export default function BioPage() {
   return (
@@ -19,6 +20,16 @@ export default function BioPage() {
             Novas, uma cidade localizada na região do Vale do Jequitinhonha, em
             Minas Gerais, conhecida por sua riqueza cultural.
           </ProseText>
+
+          <Image
+            src={'/media/press/jimmy-andrade-perto-de-tv-de-tubo-antiga.jpg'}
+            alt={'Jimmy Andrade perto de TV de tubo antiga'}
+            width={1600}
+            height={1067}
+            className="mb-6 rounded-xl object-cover w-full h-auto"
+            priority
+          />
+
           <ProseText as="p" size="3">
             Jimmy Andrade é um artista não-binário (parte da População
             LGBTQIAPN+) do gênero de indie pop brasileiro, residente em Belo
@@ -37,7 +48,7 @@ export default function BioPage() {
             teatros, centros culturais ("CCUFMG") e casas de shows ("Autêntica",
             "O Gueto").
           </ProseText>
-          <ProseText as="p" size="3">
+          <ProseText as="p" className="pb-6" size="3">
             Em junho de 2022, participou da ação "Feat Store" do Mercado Livre,
             em que gravou um feat da música "Mais Uma Voz", com Pabllo Vittar,
             para campanha de marketing da empresa. Em 2023, recebeu indicação à

@@ -1,4 +1,4 @@
-import { type Concert } from '../model/Concert';
+import type { Concert } from '../model/Concert';
 import { ConcertsFetchError } from '../model/ConcertsFetchError';
 
 export const fetchConcerts = async () => {

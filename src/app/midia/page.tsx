@@ -29,6 +29,15 @@ export default function PressPage() {
       <Container>
         <Grid columns={{ xs: '1', sm: '3fr 1fr' }}>
           <Box>
+            <Image
+              src={'/media/concerts/ao-vivo-na-absurda/32-mariane-botelho.jpg'}
+              alt={''}
+              width={1600}
+              height={1067}
+              priority
+              aria-hidden="true"
+              className="absolute inset-0 w-full h-full object-cover -z-10 opacity-10 pointer-events-none"
+            />
             <Heading as="h3" mb="4">
               Fotos em alta resolução
             </Heading>

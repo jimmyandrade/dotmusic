@@ -15,3 +15,9 @@ This project uses Next.js and all coding must be done exclusively in TypeScript.
 - Forbidden: Python, plain JavaScript, other languages
 
 Always follow Next.js and TypeScript best practices.
+
+## Date and Time
+
+Always store dates in files using the ISO 8601 format with explicit timezone information. Recommended example: `2023-11-03T00:00:00-03:00`.
+
+This ensures that the date is interpreted correctly in any environment, avoiding timezone conversion issues.

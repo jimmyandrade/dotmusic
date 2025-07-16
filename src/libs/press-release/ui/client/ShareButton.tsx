@@ -14,12 +14,23 @@ export const ShareButton: FC<ShareButtonProps> = ({
   variant = 'ghost',
   ...props
 }) => {
-  const handleShare = () => {
+  const handleShare = async () => {
     if (navigator.share) {
-      navigator.share({
-        title,
-        url: window.location.href,
-      });
+      try {
+        await navigator.share({
+          title,
+          url: window.location.href,
+        });
+      } catch (error) {
+        if (
+          typeof error === 'object' &&
+          error !== null &&
+          'name' in error &&
+          (error as { name?: string }).name !== 'AbortError'
+        ) {
+          alert('Erro ao compartilhar.');
+        }
+      }
     } else {
       alert('Compartilhamento não suportado neste dispositivo.');
     }

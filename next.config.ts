@@ -3,69 +3,17 @@
 import createMDX from '@next/mdx';
 import type { NextConfig } from 'next';
 
+import { allowedImageHosts } from './src/config/imageHosts';
+
 const withMDX = createMDX({ extension: /\.mdx?$/ });
 
 const nextConfig: NextConfig = {
   pageExtensions: ['md', 'mdx', 'ts', 'tsx'],
   images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'db.music',
-      },
-      {
-        protocol: 'https',
-        hostname: '*.ffm.to',
-      },
-      {
-        protocol: 'https',
-        hostname: '*.gstatic.com',
-        pathname: '/images/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'i.ytimg.com',
-        pathname: '/vi/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'jimmyandrade.com',
-      },
-      {
-        protocol: 'https',
-        hostname: 'jimmyandrade.music',
-      },
-      {
-        protocol: 'https',
-        hostname: 'jimmyandrade.net',
-      },
-      {
-        protocol: 'https',
-        hostname: 'jyverso.com.br',
-      },
-      {
-        protocol: 'https',
-        hostname: 'quemeusou.com.br',
-      },
-      {
-        protocol: 'https',
-        hostname: 'photos.bandsintown.com',
-        pathname: '/large/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'photos.bandsintown.com',
-        pathname: '/thumb/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'rsv-ink-images-production.s3.sa-east-1.amazonaws.com',
-      },
-      {
-        protocol: 'https',
-        hostname: 'rsv-ink-images.ink.rsvcloud.com',
-      },
-    ],
+    remotePatterns: allowedImageHosts.map((host) => ({
+      protocol: 'https',
+      hostname: host,
+    })),
   },
   redirects: async () => {
     return [

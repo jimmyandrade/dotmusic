@@ -11,18 +11,17 @@ import { existsSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { cwd } from 'node:process';
 
-type PageParams = {
+interface PageParams {
   slug: string;
-};
-type PageProps = {
+}
+interface PageProps {
   params: PageParams;
-};
-type StaticParams = PageParams[];
-type ContentData = {
+}
+interface ContentData {
   openGraphImages: OpenGraph['images'];
   title: string;
   youtubeVideoId?: string;
-};
+}
 
 export const generateStaticParams = () => {
   return getSongSlugs().map((slug) => ({ slug }));

@@ -30,7 +30,9 @@ export const DotMusicNavLinks = () => {
       </TabNavLink>
       <TabNavLink asChild active={pathname === NavigationURL.CONCERTS}>
         <Link href={NavigationURL.CONCERTS} title="Shows">
-          Shows
+          <i className="not-italic" lang="en">
+            Shows
+          </i>
         </Link>
       </TabNavLink>
       <TabNavLink asChild active={pathname === NavigationURL.BIO}>
