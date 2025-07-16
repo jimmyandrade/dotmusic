@@ -1,16 +1,30 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended"],
-  "assignees": ["jimmyandrade"],
+  "extends": [
+    "config:recommended"
+  ],
+  "assignees": [
+    "jimmyandrade"
+  ],
   "enabled": true,
-  "labels": ["dependencies", "renovate"],
+  "labels": [
+    "dependencies",
+    "renovate"
+  ],
   "packageRules": [
     {
-      "updateTypes": ["digest", "minor", "patch", "pin"],
+      "matchUpdateTypes": [
+        "digest",
+        "minor",
+        "patch",
+        "pin"
+      ],
       "automerge": true
     },
     {
-      "updateTypes": ["major"],
+      "matchUpdateTypes": [
+        "major"
+      ],
       "automerge": false
     }
   ],
