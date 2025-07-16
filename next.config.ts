@@ -65,9 +65,14 @@ const nextConfig: NextConfig = {
   redirects: async () => {
     return [
       {
-        source: '/manifest.json',
-        destination: '/manifest.webmanifest',
-        permanent: true,
+        source: '/%EF%BF%BD',
+        destination: 'https://linktr.ee/jimmyandrade',
+        permanent: false,
+      },
+      {
+        source: '/%F0%9F%94%97',
+        destination: 'https://linktr.ee/jimmyandrade',
+        permanent: false,
       },
       {
         source: '/albums',
@@ -75,8 +80,33 @@ const nextConfig: NextConfig = {
         permanent: false,
       },
       {
+        source: '/sinceramente-axe-remix',
+        destination: 'https://onerpm.link/119821866394',
+        permanent: false,
+      },
+      {
         source: '/songs',
         destination: '/musica',
+        permanent: true,
+      },
+      {
+        source: '/ultimato',
+        destination: 'https://onerpm.link/528000625018',
+        permanent: false,
+      },
+      {
+        source: '/ultimato/video',
+        destination: 'https://www.youtube.com/watch?v=E_sZHM53ekE',
+        permanent: false,
+      },
+      {
+        source: '/ultimato/videos',
+        destination: 'https://www.youtube.com/watch?v=E_sZHM53ekE',
+        permanent: false,
+      },
+      {
+        source: '/manifest.json',
+        destination: '/manifest.webmanifest',
         permanent: true,
       },
     ];
