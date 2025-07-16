@@ -117,6 +117,29 @@ Example:
 
 ## Dynamic Route Params
 
+
+
+## Correct typing for awaited parameters
+
+When using parameters that are awaited (e.g., `const { slug } = await params;`), always use the correct type for the function parameter, not a Promise. The parameter should be typed as the expected object, and you should only use `await` if the value itself is a Promise. Example:
+
+```tsx
+interface PageProps {
+  params: { slug: string }
+}
+
+// Correct:
+const MyPage = async ({ params }: PageProps) => {
+  const { slug } = params;
+  // ...
+}
+
+// Incorrect:
+// const MyPage = async ({ params }: Promise<PageProps>) => { ... }
+```
+
+This prevents typing errors and ensures compatibility with the Next.js App Router. Never type the parameter as a Promise unless the function is actually receiving a Promise as its argument.
+
 When using dynamic route params in Next.js App Router, always await the params object before accessing its properties:
 
 ```tsx
