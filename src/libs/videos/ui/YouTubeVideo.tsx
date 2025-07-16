@@ -1,4 +1,5 @@
-import { type IframeHTMLAttributes } from 'react';
+import classNames from 'classnames';
+import type { IframeHTMLAttributes } from 'react';
 
 export interface YouTubeVideoProps
   extends IframeHTMLAttributes<HTMLIFrameElement> {
@@ -76,7 +77,7 @@ export const YouTubeVideo = ({
     <iframe
       id={`youtube-${id}`}
       allow={allow.join('; ')}
-      className={`border-0 overflow-hidden ${className}`}
+      className={classNames('border-0 overflow-hidden', className)}
       referrerPolicy="strict-origin-when-cross-origin"
       seamless
       src={url.toString()}
