@@ -1,3 +1,9 @@
+pre-commit:
+  parallel: true
+  commands:
+    typescript-check:
+      glob: "*.{ts,tsx}"
+      run: tsc --noEmit
 pre-push:
   parallel: true
   commands:
